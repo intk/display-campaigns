@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=250,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Square</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -55,15 +55,6 @@
     }
   }
 
-  @-webkit-keyframes ctaHover {
-    0% {
-      transform:scale(1.0,1.0);
-    }
-    100% {
-      transform:scale(1.1,1.1);
-    }
-  }
-
    @keyframes titleEnd {
     0% {
       opacity:0.0;
@@ -72,48 +63,6 @@
     100% {
       opacity:1.0;
       transform:translateY(0%);
-    }
-  }
-
-
-   @-webkit-keyframes titleEnd {
-    0% {
-      opacity:0.0;
-      transform:translateY(-20%);
-    }
-    100% {
-      opacity:1.0;
-      transform:translateY(0%);
-    }
-  }
-
-  @keyframes ctaEnd {
-    0% {
-      transform:scale(1.0,1.0);
-    }
-    40% {
-      transform:scale(1.0,1.0);
-    }
-    70% {
-      transform:scale(1.2,1.2);
-    }
-    100% {
-      transform:scale(1.0,1.0);
-    }
-  }
-
-  @-webkit-keyframes ctaEnd {
-    0% {
-      transform:scale(1.0,1.0);
-    }
-    40% {
-      transform:scale(1.0,1.0);
-    }
-    70% {
-      transform:scale(1.2,1.2);
-    }
-    100% {
-      transform:scale(1.0,1.0);
     }
   }
 
@@ -142,8 +91,8 @@
 
 
   .ad, .ad .slide, .ad figure {
-    width:336px;
-    height:280px;
+    width:250px;
+    height:250px;
   }
 
   .ad figure {
@@ -175,7 +124,7 @@
     position: absolute;
     z-index: 2;
     display: block;
-    width:120px;
+    width:100px;
     height:20px;
     bottom:12px;
     right:12px;
@@ -205,10 +154,10 @@
 
 
   button.cta {
-    width:95px;
+    width:60px;
     height:auto;
     background-color:transparent;
-    padding:12px 50px;
+    padding:12px 45px;
     text-decoration: none;
     position:absolute;
     bottom:12px;
@@ -226,10 +175,6 @@
     opacity: 1.0;
     outline:none;
     transition:0.2s transform ease-out;
-    animation-name:ctaEnd;
-    animation-timing-function: ease-out;
-    animation-delay:5s;
-    animation-duration:1s;
   }
 
   .ad:hover button.cta {
@@ -330,21 +275,18 @@
 	<div class="ad">
     <div class="slide slide1">
     <figure>
-      <amp-img class="background" width="475" height="280" alt="Wereldmuseum" src="images/background-1.jpg"></amp-img>
+      <amp-img class="background" width="424" height="250" alt="Wereldmuseum" src="images/background-1.jpg"></amp-img>
     </figure>
   </div>
   <div class="slide slide2">
     <figure>
-       <amp-img class="background" width="475" height="280" alt="Wereldmuseum" src="images/background-2.jpg"></amp-img>
+       <amp-img class="background" width="424" height="250" alt="Wereldmuseum" src="images/background-2.jpg"></amp-img>
     </figure>
   </div>
   <div class="slide slide3">
      <figure>
-       <amp-img class="background" width="336" height="280" alt="Wereldmuseum" src="images/background-3.jpg"></amp-img>
+       <amp-img class="background" width="300" height="250" alt="Wereldmuseum" src="images/background-3.jpg"></amp-img>
        <div class="text">
-
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" class="title" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 123.8 33" style="enable-background:new 0 0 123.8 33;" xml:space="preserve">
 <g>
@@ -601,7 +543,6 @@
     c0.1,0,0.1,0.1,0.1,0.2V27.9z"/>
 </g>
 </svg>
-
 <button class="cta"></button>
       </div>
     </figure>

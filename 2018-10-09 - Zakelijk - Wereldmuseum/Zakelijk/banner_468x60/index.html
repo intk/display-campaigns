@@ -2,65 +2,44 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=468,height=60">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Banner</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
   <style amp-custom>
   /* Animations */
-  @keyframes logoChange {
+  @keyframes logoEnd {
     0% {
-      fill:#fff;
-    }
-    20% {
-      fill:#fff;
-    }
-    25% {
       fill:#000;
     }
-    80% {
+    100% {
       fill:#000;
-    }
-    85% {
-      fill:#fff;
     }
   }
 
-   @-webkit-keyframes logoChange {
+  @keyframes ctaEnd {
     0% {
-      fill:#fff;
+      transform:scale(0.9,0.9);
     }
-    20% {
-      fill:#fff;
+    40% {
+      transform:scale(0.9,0.9);
     }
-    25% {
-      fill:#000;
+    70% {
+      transform:scale(1.0,1.0);
     }
-    80% {
-      fill:#000;
-    }
-    85% {
-      fill:#fff;
+    100% {
+      transform:scale(0.9,0.9);
     }
   }
 
   @keyframes ctaHover {
     0% {
-      transform:scale(1.0,1.0);
+      transform:scale(0.9,0.9);
     }
     100% {
-      transform:scale(1.1,1.1);
-    }
-  }
-
-  @-webkit-keyframes ctaHover {
-    0% {
       transform:scale(1.0,1.0);
-    }
-    100% {
-      transform:scale(1.1,1.1);
     }
   }
 
@@ -72,48 +51,6 @@
     100% {
       opacity:1.0;
       transform:translateY(0%);
-    }
-  }
-
-
-   @-webkit-keyframes titleEnd {
-    0% {
-      opacity:0.0;
-      transform:translateY(-20%);
-    }
-    100% {
-      opacity:1.0;
-      transform:translateY(0%);
-    }
-  }
-
-  @keyframes ctaEnd {
-    0% {
-      transform:scale(1.0,1.0);
-    }
-    40% {
-      transform:scale(1.0,1.0);
-    }
-    70% {
-      transform:scale(1.2,1.2);
-    }
-    100% {
-      transform:scale(1.0,1.0);
-    }
-  }
-
-  @-webkit-keyframes ctaEnd {
-    0% {
-      transform:scale(1.0,1.0);
-    }
-    40% {
-      transform:scale(1.0,1.0);
-    }
-    70% {
-      transform:scale(1.2,1.2);
-    }
-    100% {
-      transform:scale(1.0,1.0);
     }
   }
 
@@ -142,8 +79,8 @@
 
 
   .ad, .ad .slide, .ad figure {
-    width:336px;
-    height:280px;
+    width:468px;
+    height:60px;
   }
 
   .ad figure {
@@ -155,11 +92,19 @@
     background-color:#FFF;
   }
 
-  .ad .slide2 figure .background {
-    transform:translateX(-10%);
+  .ad figure .background {
+    transform:scale(1.1,1.1);
   }
 
-  .ad .slide3:after {
+  .ad .slide2 figure .background {
+    transform:scale(1.1,1.1)translateY(-25%);
+  }]
+
+   .ad .slide3 figure .background {
+    transform:scale(1.1,1.1)translateX(-20%);
+  }
+
+  .ad .slide:after {
     content:"";
     width:100%;
     height:100%;
@@ -168,29 +113,28 @@
     padding:0;
     position: absolute;
     z-index: 1;
-    background:linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.0) 50%);
+    background:linear-gradient(-90deg, rgba(231,219,207,1.0) 0%, rgba(231,219,207,1.0) 30%, rgba(231,219,207,0.0) 50%);
   }
 
   .ad svg.logo {
     position: absolute;
     z-index: 2;
     display: block;
-    width:120px;
+    width:100px;
     height:20px;
-    bottom:12px;
+    top:5px;
     right:12px;
-    fill:#fff;
-    animation-name:logoChange;
+    animation-name:logoEnd;
     animation-timing-function: ease-out;
-    animation-delay:1s;
-    animation-duration:5s;
+    animation-delay:5s;
+    animation-duration:1s;
     animation-fill-mode: forwards;
   }
 
   .ad figure div.text {
     padding:15px;
-    width:80%;
-    height:40%;
+    width:40%;
+    height:45px;
     display: block;
     position: absolute;
     z-index: 3;
@@ -198,9 +142,26 @@
     left:0;
   }
 
-  .ad figure div.text svg.title {
+    .ad figure div.text:after {
+    content:"";
     width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(90deg, rgba(0,0,0,0.46) 0%, rgba(0,0,0,0.0) 90%);
+  }
+
+  .ad figure div.text svg.title {
+    width:80%;
     fill:#fff;
+    position: absolute;
+    z-index: 3;
+    top:calc(50% - 15px);
+    transform:translateY(0, -50%);
   }
 
 
@@ -211,8 +172,8 @@
     padding:12px 50px;
     text-decoration: none;
     position:absolute;
-    bottom:12px;
-    left:15px;
+    bottom:5px;
+    right:5px;
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
     background-size:80%;
@@ -223,8 +184,9 @@
     border:0px;
     cursor: pointer;
     z-index: 100;
-    opacity: 1.0;
+    opacity: 0.0;
     outline:none;
+    transform:scale(0.9,0.9);
     transition:0.2s transform ease-out;
     animation-name:ctaEnd;
     animation-timing-function: ease-out;
@@ -233,7 +195,7 @@
   }
 
   .ad:hover button.cta {
-    transform:scale(1.1,1.1);
+    transform:scale(1.0,1.0);
   }
   </style>
 
@@ -251,7 +213,7 @@
         "selector": ".slide1 img",
         "keyframes": [
           {
-             "transform": "translateX(-12%)"
+             "transform": "translateY(-25%)"
           }
         ]
       }]
@@ -285,7 +247,7 @@
         "selector": ".slide2 .background",
         "keyframes": [
           {
-              "transform": "translateX(-25%)"
+              "transform": "translateY(-50%)"
           }
         ]
       }]
@@ -319,8 +281,26 @@
         "selector": ".slide3 .background",
         "keyframes": [
           {
-              "transform": "scale(1.2,1.2)"
+              "transform": "scale(1.1,1.1)translateY(-15%)"
           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="Slide3.2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "5s",
+        "duration": "0.2s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "button.cta",
+        "keyframes": [
+          {
+              "opacity": "1.0"
+          }
+
         ]
       }]
     </script>
@@ -340,11 +320,8 @@
   </div>
   <div class="slide slide3">
      <figure>
-       <amp-img class="background" width="336" height="280" alt="Wereldmuseum" src="images/background-3.jpg"></amp-img>
+       <amp-img class="background" width="475" height="280" alt="Wereldmuseum" src="images/background-3.jpg"></amp-img>
        <div class="text">
-
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" class="title" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 123.8 33" style="enable-background:new 0 0 123.8 33;" xml:space="preserve">
 <g>
@@ -601,8 +578,6 @@
     c0.1,0,0.1,0.1,0.1,0.2V27.9z"/>
 </g>
 </svg>
-
-<button class="cta"></button>
       </div>
     </figure>
   </div>
@@ -678,6 +653,7 @@
     C76,4.9,76,4.9,76,4.9z"/>
 </g>
 </svg>
+<button class="cta"></button>
   </div>
 </body>
 </html>
