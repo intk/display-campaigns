@@ -1,0 +1,393 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=336,height=280">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Large rectangle</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes logoFirst {
+    0% {
+      opacity:1.0;
+    }
+    100% {
+      opacity:0.0;
+    }
+  }
+
+  @keyframes logoLast {
+    0% {
+      opacity:0.0;
+    }
+    100% {
+      opacity:1.0;
+    }
+  }
+
+  @keyframes ctaEnd {
+    0% {
+      transform:scale(1.0,1.0);
+    }
+    40% {
+      transform:scale(1.0,1.0);
+    }
+    70% {
+      transform:scale(1.1,1.1);
+    }
+    100% {
+      transform:scale(1.0,1.0);
+    }
+  }
+
+  @keyframes ctaHover {
+    0% {
+      transform:scale(1.0,1.0);
+    }
+    100% {
+      transform:scale(1.1,1.1);
+    }
+  }
+
+   @keyframes titleEnd {
+    0% {
+      opacity:0.0;
+      transform:translateY(-20%);
+    }
+    100% {
+      opacity:1.0;
+      transform:translateY(0%);
+    }
+  }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
+    width:336px;
+    height:280px;
+  }
+
+  .ad .slide .wrapper {
+    position: relative;
+    display: block;
+    width:100%;
+  }
+
+  .ad figure {
+    width:calc(336px);
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#FFF;
+    overflow:hidden;
+
+  }
+
+   .ad figure:nth-child(1) .background {
+      transform: translateX(-25%);
+   }
+
+
+  .ad figure:nth-child(3) .background {
+      transform: translateX(-15%);
+   }
+
+  .ad .slide1 figure figcaption { 
+    position: absolute;
+    z-index: 1;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:50%;
+  }
+
+ .ad .slide1 figure figcaption:after {
+    content:"";
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.0) 90%);
+  }
+
+
+  .ad .slide1 figure figcaption span { 
+    background-repeat: no-repeat;
+    width:200px;
+    height:40px;
+    top:50%;
+    left:50%;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-70%);
+    z-index: 2;
+    opacity: 0.0;
+  }
+
+  .ad .slide1 figure:nth-child(1) figcaption span { 
+    background-image:url('images/architecture.svg');
+  }
+
+  .ad .slide1 figure:nth-child(2) figcaption span { 
+    background-image:url('images/design.svg');
+  }
+
+  .ad .slide1 figure:nth-child(3) figcaption span { 
+    background-image:url('images/digital-culture.svg');
+    width:250px;
+  }
+
+  .ad .slide1 figure:nth-child(4) figcaption span { 
+    background-image:url('images/logo.svg');
+    width:300px;
+    opacity: 1.0;
+  }
+
+  .ad figure {
+    transform: translateY(0%);
+  }
+
+
+  .ad .slide3:after {
+    content:"";
+    width:100%;
+    height:100%;
+    top:0;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.0) 50%);
+  }
+
+  .ad svg.logo {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width:120px;
+    height:20px;
+    bottom:12px;
+    right:12px;
+  }
+
+  .ad svg.logo.first {
+    opacity:1.0;
+    fill:#000;
+    animation-name:logoFirst;
+    animation-timing-function: ease-out;
+    animation-delay:5s;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+  }
+
+  .ad svg.logo.last {
+    opacity:0.0;
+    fill:#FFF;
+    animation-name:logoLast;
+    animation-timing-function: ease-out;
+    animation-delay:5s;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+  }
+
+  .ad figure div.text {
+    padding:15px;
+    width:80%;
+    height:40%;
+    display: block;
+    position: absolute;
+    z-index: 3;
+    bottom:0;
+    left:0;
+  }
+
+  .ad figure div.text svg.title {
+    width:100%;
+    fill:#fff;
+  }
+
+
+  button.cta {
+    width:100px;
+    height:auto;
+    background-color:transparent;
+    padding:15px 50px;
+    text-decoration: none;
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:90%;
+    background-color:#BCE493;
+    background-position:center center;
+    transform-origin: center center;
+    border-radius:10px;
+    border:0px;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 1.0;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaEnd;
+    animation-timing-function: ease-out;
+    animation-delay:7s;
+    animation-duration:1s;
+  }
+
+  .ad:hover button.cta {
+    transform:scale(1.1,1.1);
+  }
+  </style>
+
+
+</head>
+<body>
+  <!--Animate banner-->
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "6s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure",
+        "keyframes": [
+          {
+             "transform": "translateY(-100%)",
+             "offset": "0.25"
+          },
+          {
+             "transform": "translateY(-100%)",
+             "offset": "0.5"
+          },
+          {
+             "transform": "translateY(-200%)",
+             "offset": "0.7"
+          },
+          {
+             "transform": "translateY(-200%)",
+             "offset": "0.85"
+          },
+          {
+             "transform": "translateY(-300%)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="FirstText" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure:nth-child(1) figcaption span",
+        "keyframes": [
+          {
+             "transform": "translate(-50%,-40%)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="secondText" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2s",
+        "duration": "1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure:nth-child(2) figcaption span",
+        "keyframes": [
+          {
+             "transform": "translate(-50%,-40%)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="thirdText" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "4s",
+        "duration": "1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure:nth-child(3) figcaption span",
+        "keyframes": [
+          {
+             "transform": "translate(-50%,-40%)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+  
+
+  <!-- Setup structure-->
+	<div class="ad">
+    <div class="slide slide1">
+    <figure>
+      <amp-img class="background" width="475" height="280" alt="Architecture" src="images/architecture.jpg"></amp-img>
+      <figcaption><span></span></figcaption>
+    </figure>
+    <figure>
+      <amp-img class="background" width="475" height="280" alt="Design" src="images/design.jpg"></amp-img>
+      <figcaption><span></span></figcaption>
+    </figure>
+    <figure>
+      <amp-img class="background" width="475" height="280" alt="Digital culture" src="images/digital-culture.jpg"></amp-img>
+      <figcaption><span></span></figcaption>
+    </figure>
+    <figure>
+      <amp-img class="background" width="475" height="280" alt="Digital culture" src="images/building.jpg"></amp-img>
+      <figcaption><span></span></figcaption>
+      <button class="cta"></button>
+    </figure>
+  </div>
+  </div>
+</body>
+</html>
