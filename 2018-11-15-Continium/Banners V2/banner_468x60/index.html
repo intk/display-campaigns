@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=300,height=250">
+  <meta name="ad.size" content="width=468,height=60">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Inline rectangle</title>
+  <title>Banner</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -55,12 +55,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption, .snowflakes {
-    width:300px;
-    height:250px;
-  }
-
-  .snowflakes {
-    width:336px;
+    width:468px;
+    height:60px;
   }
 
   .ad .slide .wrapper {
@@ -77,12 +73,20 @@
     background-color:#FFF;
     overflow:hidden;
     opacity: 0.0;
+  }
 
+  .ad figure .background {
+    left:20%;
   }
 
    .ad figure.child1 .background {
-      transform: translate(-10%, -20%)scale(1.5,1.5);
+      transform: translate(0%, -75%)scale(1.0,1.0);
    }
+
+   .ad figure.child2 .background {
+      transform: translate(0%, 0%)scale(1.0,1.0);
+   }
+
 
   .ad figure.child3 .background {
       transform: translateX(0%);
@@ -94,11 +98,7 @@
     bottom:0;
     left:0;
     width:100%;
-    height:50%;
-  }
-
-  .ad .slide1 figure.child2 figcaption, .ad .slide1 figure.child3 figcaption { 
-      height:80%;
+    height:100%;
   }
 
  .ad .slide1 figure figcaption:after {
@@ -109,15 +109,15 @@
     padding:0;
     position: absolute;
     z-index: 1;
-    background:linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.0) 90%);
+    background:linear-gradient(90deg, rgba(114,150,169,1.0) 0%, rgba(114,150,169,1.0) 20%, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.0) 65%, rgba(114,150,169,1.0) 80%, rgba(114,150,169,1.0) 100%);
   }
 
   .ad .slide1 figure figcaption span { 
     background-repeat: no-repeat;
     background-size:contain;
-    width:180px;
-    height:60%;
-    top:30%;
+    width:200px;
+    height:50%;
+    top:50%;
     left:21px;
     display: block;
     position: absolute;
@@ -133,16 +133,14 @@
 
   .ad .slide1 figure.child2 figcaption span { 
     background-image:url('images/text2.svg');
-    top:30%;
-    transform: translate(-100%,0%);
-    z-index: 100;
+    width:300px;
+    height:70%;
+    left:10%;
   }
 
   .ad .slide1 figure.child3 figcaption span { 
     background-image:url('images/text3.svg');
-    top:45%;
-    transform: translate(-100%,-20%);
-    z-index: 100;
+    left:10%;
   }
 
   .ad figure {
@@ -175,13 +173,13 @@
 
 
   button.cta {
-    width:120px;
+    width:100px;
     height:auto;
     background-color:transparent;
-    padding:17px 50px;
+    padding:15px 20px;
     text-decoration: none;
     position:absolute;
-    bottom:20px;
+    bottom:15px;
     right:20px;
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
@@ -198,7 +196,7 @@
     transition:transform 0.2s ease-out;
     animation-name:ctaEnd;
     animation-timing-function: ease-out;
-    animation-delay:9.5s;
+    animation-delay:8.5s;
     animation-duration:1s;
   }
 
@@ -206,8 +204,9 @@
     transform:scale(1.1,1.1);
   }
 
-
   /* Christmas */
+
+    /* Christmas */
   .snowflakes {
   position: absolute; top: -200px; left: 0;
 }
@@ -232,10 +231,10 @@ i:before { -webkit-transform: rotate(240deg); }
 
 @-webkit-keyframes snowflakes {
   0% {
-    -webkit-transform: translate3d(0,0,0) rotate(0deg) scale(0.5);
+    -webkit-transform: translate3d(0,0,0) rotate(0deg) scale(0.4);
   }
   100% {
-    -webkit-transform: translate3d(15px, 1200px, 0px) rotate(360deg) scale(0.5);
+    -webkit-transform: translate3d(15px, 1200px, 0px) rotate(360deg) scale(0.4);
   }
 }
 
@@ -317,16 +316,7 @@ i:before { -webkit-transform: rotate(240deg); }
 .christmas.left {
   left:-10px;
 }
-
-.christmas.right {
-  right:-10px;
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-}
-</style>
+  </style>
 
 
 </head>
@@ -360,11 +350,11 @@ i:before { -webkit-transform: rotate(240deg); }
         "selector": ".slide figure.child1 .background",
         "keyframes": [
            {
-            "transform": "translate(-10%, 0%)scale(1.0,1.0)",
-            "offset": "0.3"
+            "transform": "translate(0%, -40%)scale(1.0,1.0)",
+            "offset": "0.7"
            },
            {
-            "transform": "translate(-10%, 0%)scale(1.2,1.2)"
+            "transform": "translate(0%, -30%)scale(1.1,1.1)"
            }
         ]
       }]
@@ -423,11 +413,11 @@ i:before { -webkit-transform: rotate(240deg); }
         "selector": ".slide figure.child2 .background",
         "keyframes": [
            {
-            "transform": "translate(-10%, 0%)scale(1.0,1.0)",
-            "offset": "0.3"
+            "transform": "translate(0%, -25%)scale(1.0,1.0)",
+            "offset": "0.8"
            },
            {
-            "transform": "translate(-10%, 0%)scale(1.2,1.2)"
+            "transform": "translate(0%, -25%)scale(1.1,1.1)"
            }
         ]
       }]
@@ -444,12 +434,12 @@ i:before { -webkit-transform: rotate(240deg); }
         "selector": ".slide figure.child2 figcaption span",
         "keyframes": [
            {
-            "transform": "translate(5%,0%)",
+            "transform": "translate(5%,-50%)",
             "opacity": "0.8",
             "offset": "0.75"
            },
            {
-            "transform": "translate(0%,0%)",
+            "transform": "translate(0%,-50%)",
             "opacity": "1.0"
            }
            
@@ -485,12 +475,12 @@ i:before { -webkit-transform: rotate(240deg); }
         "iterations": "1",
         "selector": ".slide figure.child3 .background",
         "keyframes": [
-           {
-            "transform": "translate(0%, 0%)scale(1.0,1.0)",
-            "offset": "0.3"
+          {
+            "transform": "translate(0%, -15%)scale(1.0,1.0)",
+            "offset": "0.8"
            },
            {
-            "transform": "translate(0%, 0%)scale(1.2,1.2)"
+            "transform": "translate(0%, -15%)scale(1.1,1.1)"
            }
         ]
       }]
@@ -507,12 +497,12 @@ i:before { -webkit-transform: rotate(240deg); }
         "selector": ".slide figure.child3 figcaption span",
         "keyframes": [
            {
-            "transform": "translate(5%,-20%)",
+            "transform": "translate(5%,-50%)",
             "opacity": "0.8",
             "offset": "0.75"
            },
            {
-            "transform": "translate(0%,-20%)",
+            "transform": "translate(0%,-50%)",
             "opacity": "1.0"
            }
            
@@ -583,17 +573,17 @@ i:before { -webkit-transform: rotate(240deg); }
         <i class="third1 seventh6"></i>
         <i class="third2 seventh"></i>
       </div>
-      <amp-img class="background" width="420" height="280" alt="Continium" src="images/background1.jpg"></amp-img>
+      <amp-img class="background" width="350" height="233" alt="Continium" src="images/background1.jpg"></amp-img>
       <figcaption><span></span></figcaption>
       <div class="logo"></div>
     </figure>
     <figure class="child2">
-      <amp-img class="background" width="420" height="280" alt="Continium" src="images/background2.jpg"></amp-img>
+      <amp-img class="background" width="300" height="200" alt="Continium" src="images/background2.jpg"></amp-img>
       <figcaption><div class="christmas left"></div><span></span></figcaption>
       <div class="logo"></div>
     </figure>
     <figure class="child3">
-      <amp-img class="background" width="420" height="280" alt="Continium" src="images/background3.jpg"></amp-img>
+      <amp-img class="background" width="300" height="200" alt="Continium" src="images/background3.jpg"></amp-img>
       <figcaption><div class="christmas left"></div><span></span></figcaption>
       <button class="cta"></button>
     </figure>
