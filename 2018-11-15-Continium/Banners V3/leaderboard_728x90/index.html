@@ -1,0 +1,480 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=728,height=90">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Leaderboard</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+
+  @keyframes ctaEnd {
+    0% {
+      transform:scale(1.0,1.0);
+    }
+    40% {
+      transform:scale(1.0,1.0);
+    }
+    70% {
+      transform:scale(1.1,1.1);
+    }
+    100% {
+      transform:scale(1.0,1.0);
+    }
+  }
+
+  @keyframes ctaHover {
+    0% {
+      transform:scale(1.0,1.0);
+    }
+    100% {
+      transform:scale(1.1,1.1);
+    }
+  }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption, .snowflakes {
+    width:728px;
+    height:90px;
+  }
+
+  .ad .slide .wrapper {
+    position:absolute;
+    display: block;
+    width:100%;
+  }
+
+  .ad figure {
+    display:block;
+    margin:0;
+    padding:0;
+    position:absolute;
+    background-color:#FFF;
+    overflow:hidden;
+    opacity: 0.0;
+  }
+
+  .ad figure .background {
+    left:20%;
+  }
+
+   .ad figure.child1 .background {
+      transform: translate(0%, -75%)scale(1.0,1.0);
+   }
+
+   .ad figure.child2 .background {
+      transform: translate(0%, 0%)scale(1.0,1.0);
+   }
+
+
+  .ad figure.child3 .background {
+      transform: translateX(0%);
+   }
+
+  .ad .slide1 figure figcaption { 
+    position: absolute;
+    z-index: 1;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+
+ .ad .slide1 figure figcaption:after {
+    content:"";
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(90deg, rgba(114,150,169,1.0) 0%, rgba(114,150,169,1.0) 20%, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.0) 65%, rgba(114,150,169,1.0) 80%, rgba(114,150,169,1.0) 100%);
+  }
+
+  .ad .slide1 figure figcaption span { 
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:200px;
+    height:50%;
+    top:50%;
+    left:21px;
+    display: block;
+    position: absolute;
+    transform: translate(-100%,-50%);
+    z-index: 2;
+    opacity: 0.0;
+
+  }
+
+  .ad .slide1 figure.child1 figcaption span { 
+    background-image:url('images/text1.svg');
+  }
+
+  .ad .slide1 figure.child2 figcaption span { 
+    background-image:url('images/text2.svg');
+    width:300px;
+    height:70%;
+    left:10%;
+  }
+
+  .ad .slide1 figure.child3 figcaption span { 
+    background-image:url('images/text3.svg');
+    left:10%;
+  }
+
+  .ad figure {
+    transform: translateY(0%);
+  }
+
+  .ad .logo {
+    position: absolute;
+    z-index: 100;
+    display: block;
+    width:100px;
+    height:40px;
+    bottom:0px;
+    right:12px;
+    background-image:url('images/logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .ad figure div.text {
+    padding:15px;
+    width:80%;
+    height:40%;
+    display: block;
+    position: absolute;
+    z-index: 3;
+    bottom:0;
+    left:0;
+  }
+
+
+  button.cta {
+    width:120px;
+    height:auto;
+    background-color:transparent;
+    padding:17px 50px;
+    text-decoration: none;
+    position:absolute;
+    bottom:28px;
+    right:20px;
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:90%;
+    background-color:#ec8c3d;
+    background-position:center center;
+    transform-origin: center center;
+    border-radius:0px;
+    border:1px solid #ffa757;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 1.0;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaEnd;
+    animation-timing-function: ease-out;
+    animation-delay:8.5s;
+    animation-duration:1s;
+  }
+
+  .ad:hover button.cta {
+    transform:scale(1.1,1.1);
+  }
+
+  /* Christmas */
+  .christmas {
+  position: absolute;
+  z-index: 2;
+  background-image:url('images/garland.png');
+  background-size:contain;
+  background-position: right top;
+  background-repeat: no-repeat;
+  display: block;
+  width:100%;
+  height:80px;
+  transform: translate(5%,-18%)rotate(-4deg);
+  top:0;
+  right:0;
+  opacity:1.0;
+  filter: saturate(1.5);
+}
+
+.christmas.left {
+  left:-10px;
+}
+
+@keyframes robot {
+  0% {
+     transform: scale(-1, 1)rotate(10deg)translate(10%, 100%);
+     opacity: 0.0;
+  }
+  100% {
+    transform: scale(-1, 1)rotate(10deg)translate(0%, 0%);
+    opacity: 1.0;
+  }
+}
+
+.robot {
+  position: absolute;
+  z-index: 2;
+  background-image:url('images/robot.png');
+  background-size:cover;
+  background-position: right top;
+  background-repeat: no-repeat;
+  display:cover;
+  width:160px;
+  height:160px;
+  transform:0;
+  bottom:-60px;
+  right:20%;
+  opacity:0.0;
+  animation-name:robot;
+  animation-timing-function: ease-out;
+  animation-delay:8.5s;
+  animation-duration:1s;
+  animation-fill-mode: forwards;
+}
+
+  </style>
+
+
+</head>
+<body>
+  <!--Animate banner-->
+   <amp-animation id="Figure1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "0s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child1",
+        "keyframes": [
+           {
+            "opacity": "1.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child1 .background",
+        "keyframes": [
+           {
+            "transform": "translate(0%, -40%)scale(1.0,1.0)",
+            "offset": "0.7"
+           },
+           {
+            "transform": "translate(0%, -30%)scale(1.1,1.1)"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="firstText" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "0.8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child1 figcaption span",
+        "keyframes": [
+           {
+            "transform": "translate(5%,-50%)",
+            "opacity": "0.8",
+            "offset": "0.75"
+           },
+           {
+            "transform": "translate(0%,-50%)",
+            "opacity": "1.0"
+           }
+           
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "4s",
+        "duration": "0.5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child2",
+        "keyframes": [
+           {
+            "opacity": "1.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="Slide2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "3s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child2 .background",
+        "keyframes": [
+           {
+            "transform": "translate(0%, -25%)scale(1.0,1.0)",
+            "offset": "0.8"
+           },
+           {
+            "transform": "translate(0%, -25%)scale(1.1,1.1)"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="secondText" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "4.5s",
+        "duration": "0.8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child2 figcaption span",
+        "keyframes": [
+           {
+            "transform": "translate(5%,-50%)",
+            "opacity": "0.8",
+            "offset": "0.75"
+           },
+           {
+            "transform": "translate(0%,-50%)",
+            "opacity": "1.0"
+           }
+           
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure3" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "8s",
+        "duration": "0.5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child3",
+        "keyframes": [
+           {
+            "opacity": "1.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="Slide3" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "7s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child3 .background",
+        "keyframes": [
+          {
+            "transform": "translate(0%, -15%)scale(1.0,1.0)",
+            "offset": "0.8"
+           },
+           {
+            "transform": "translate(0%, -15%)scale(1.1,1.1)"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="thirdText" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "8.5s",
+        "duration": "0.8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child3 figcaption span",
+        "keyframes": [
+           {
+            "transform": "translate(5%,-50%)",
+            "opacity": "0.8",
+            "offset": "0.75"
+           },
+           {
+            "transform": "translate(0%,-50%)",
+            "opacity": "1.0"
+           }
+           
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+	<div class="ad">
+    <div class="slide slide1">
+    <figure class="child1">
+      <div class="christmas"></div>
+      <amp-img class="background" width="500" height="333" alt="Continium" src="images/background1.jpg"></amp-img>
+      <figcaption><span></span></figcaption>
+      <div class="logo"></div>
+    </figure>
+    <figure class="child2">
+      <div class="christmas right"></div>
+      <amp-img class="background" width="500" height="333" alt="Continium" src="images/background2.jpg"></amp-img>
+      <figcaption><span></span></figcaption>
+      <div class="logo"></div>
+    </figure>
+    <figure class="child3">
+      <div class="robot"></div>
+      <amp-img class="background" width="500" height="333" alt="Continium" src="images/background3.jpg"></amp-img>
+      <figcaption><span></span></figcaption>
+      <button class="cta"></button>
+    </figure>
+  </div>
+  </div>
+</body>
+</html>
