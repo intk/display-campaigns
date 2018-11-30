@@ -1,0 +1,441 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=336,height=280">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Large rectangle</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes logoFirst {
+    0% {
+      opacity:1.0;
+    }
+    100% {
+      opacity:0.0;
+    }
+  }
+
+  @keyframes logoLast {
+    0% {
+      opacity:0.0;
+    }
+    100% {
+      opacity:1.0;
+    }
+  }
+
+  @keyframes ctaEnd {
+    0% {
+      transform:scale(1.0,1.0) translate(-50%,0%);
+    }
+    40% {
+      transform:scale(1.0,1.0) translate(-50%,0%);
+    }
+    70% {
+      transform:scale(1.1,1.1) translate(-45%,0%);
+    }
+    100% {
+      transform:scale(1.0,1.0) translate(-50%,0%);
+    }
+  }
+
+
+  @keyframes ctaEndSecond {
+    0% {
+      transform:scale(1.0,1.0) translate(-50%,0%);
+    }
+    40% {
+      transform:scale(1.0,1.0) translate(-50%,0%);
+    }
+    70% {
+      transform:scale(1.1,1.1) translate(-45%,0%);
+    }
+    100% {
+      transform:scale(1.0,1.0) translate(-50%,0%);
+    }
+  }
+
+  @keyframes ctaHover {
+    0% {
+      transform:scale(1.0,1.0);
+    }
+    100% {
+      transform:scale(1.1,1.1);
+    }
+  }
+
+   @keyframes titleEnd {
+    0% {
+      opacity:0.0;
+      transform:translateY(-20%);
+    }
+    100% {
+      opacity:1.0;
+      transform:translateY(0%);
+    }
+  }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
+    width:336px;
+    height:280px;
+  }
+
+  .ad .slide .wrapper {
+    position: relative;
+    display: block;
+    width:100%;
+  }
+
+  .ad figure {
+    width:calc(336px);
+  }
+
+  .ad figure {
+    display:block;
+    margin:0;
+    padding:0;
+    position:absolute;
+    background-color:#FFF;
+    overflow:hidden;
+    opacity: 0.0;
+  }
+
+  .ad figure.child1  {
+    opacity: 1.0;
+  }
+
+   .ad figure.child1 .background, .ad figure.child5 .background {
+      transform: translateX(-25%);
+   }
+
+
+  .ad figure.child3 .background, .ad figure.child7 .background {
+      transform: translateX(-15%);
+   }
+
+  .ad .slide1 figure figcaption { 
+    position: absolute;
+    z-index: 1;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:50%;
+  }
+
+
+  .ad .slide1 figure figcaption span { 
+    background-repeat: no-repeat;
+    width:230px;
+    height:200px;
+    top:40%;
+    left:50%;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-45%);
+    z-index: 2;
+    opacity: 1.0;
+  }
+
+  .ad .slide1 figure.child2 figcaption span, .ad .slide1 figure.child6 figcaption span  { 
+    background-image:url('images/text1.svg');
+  }
+
+  .ad .slide1 figure.child4 figcaption span, .ad .slide1 figure.child8 figcaption span  { 
+    background-image:url('images/text2.svg');
+  }
+
+  .ad figure {
+    transform: translateY(0%);
+  }
+
+  .ad svg.logo {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width:120px;
+    height:20px;
+    bottom:12px;
+    right:12px;
+  }
+
+  .ad svg.logo.first {
+    opacity:1.0;
+    fill:#000;
+    animation-name:logoFirst;
+    animation-timing-function: ease-out;
+    animation-delay:5s;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+  }
+
+  .ad svg.logo.last {
+    opacity:0.0;
+    fill:#FFF;
+    animation-name:logoLast;
+    animation-timing-function: ease-out;
+    animation-delay:5s;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+  }
+
+  .ad figure div.text {
+    padding:15px;
+    width:80%;
+    height:40%;
+    display: block;
+    position: absolute;
+    z-index: 3;
+    bottom:0;
+    left:0;
+  }
+
+  .ad figure div.text svg.title {
+    width:100%;
+    fill:#fff;
+  }
+
+
+  button.cta, button.cta2 {
+ 
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:90%;
+    background-color:transparent;
+    background-position:center center;
+    transform-origin: center center;
+    background-repeat: no-repeat;
+    width:230px;
+    height:50px;
+    bottom:10%;
+    left:50%;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,0%);
+    opacity: 1.0;
+    border-radius:0px;
+    border:0px;
+    cursor: pointer;
+    z-index: 100;
+    outline:none;
+    transition:transform 0.2s ease-out;
+  }
+
+  button.cta {
+    animation-name:ctaEnd;
+    animation-timing-function: ease-out;
+    animation-delay:6.5s;
+    animation-duration:1s;
+    animation-iteration-count:1;
+  }
+
+  button.cta2 {
+    animation-name:ctaEndSecond;
+    animation-timing-function: ease-out;
+    animation-delay:16.5s;
+    animation-duration:1s;
+    animation-iteration-count:1;
+  }
+
+
+  .ad:hover button.cta, .ad:hover button.cta2 {
+    transform:scale(1.1,1.1) translate(-45%,0%);
+  }
+  </style>
+
+
+</head>
+<body>
+  <!--Animate banner-->
+  <amp-animation id="Slide2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2s",
+        "duration": "0.1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child2",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide3" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "4s",
+        "duration": "0.1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child3",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide4" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "6s",
+        "duration": "0.1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child4",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide5" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "10s",
+        "duration": "0.1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child5",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="Slide6" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "12s",
+        "duration": "0.1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child6",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide7" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "14s",
+        "duration": "0.1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child7",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="Slide8" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "16s",
+        "duration": "0.1s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child8",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+
+  <!-- Setup structure-->
+	<div class="ad">
+    <div class="slide slide1">
+    <figure class="child1">
+      <amp-img class="background" width="475" height="280" alt="HNI" src="images/background1.jpg"></amp-img>
+    </figure>
+    <figure class="child2">
+      <figcaption><span></span></figcaption>
+    </figure>
+    <figure class="child3">
+      <amp-img class="background" width="475" height="280" alt="HNI" src="images/background2.jpg"></amp-img>
+    </figure>
+    <figure class="child4">
+      <figcaption><span></span></figcaption>
+      <button class="cta"></button>
+    </figure>
+
+     <figure class="child5">
+      <amp-img class="background" width="475" height="280" alt="HNI" src="images/background1.jpg"></amp-img>
+    </figure>
+     <figure class="child6">
+      <figcaption><span></span></figcaption>
+    </figure>
+    <figure class="child7">
+      <amp-img class="background" width="475" height="280" alt="HNI" src="images/background2.jpg"></amp-img>
+    </figure>
+    <figure class="child8">
+      <figcaption><span></span></figcaption>
+      <button class="cta2"></button>
+    </figure>
+
+  </div>
+</div>
+</body>
+</html>
