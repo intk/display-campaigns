@@ -1,0 +1,483 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=300,height=50">
+  <meta name="viewport" content="width=device-widthx,minimum-scale=1,initial-scale=1">
+  <title>Banner mobile</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  
+   @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(-50%,-50%)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(-50%,-50%)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(-50%,-50%)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes cta {
+    0% {
+       opacity:1.0;
+       transform:translate(-50%,-50%)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(-50%,-50%)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(-50%,-50%)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
+    width:300px;
+    height:50px;
+  }
+
+  .ad .slide .wrapper {
+    position: relative;
+    display: block;
+    width:100%;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#FFF;
+    overflow:hidden;
+  }
+
+  .ad .slide1 figure .background  {
+    display:block;
+    position: absolute;
+    bottom:0;
+    left:0;
+    transform-origin: left bottom;
+    transform:scale(0.6,0.6)translate(0,8%);
+  }
+
+  .ad .slide1 figure figcaption { 
+    position: absolute;
+    z-index: 1;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    font-size:100px;
+  }
+
+ .ad .slide1 figure figcaption:after {
+    content:"";
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.0) 60%);
+  }
+
+
+  .ad .slide1 figure figcaption span.maestro, .ad .slide1 figure figcaption span.maestroEnd { 
+    background-image:url('images/maestro.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.9em;
+    height:0.9em;
+    top:8px;
+    left:15px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.0;
+    transform:translate(-100%,0);
+    /*
+    animation-name:title, titleEnd;
+    animation-timing-function: ease-out;
+    animation-delay:1.5s, 17.5s;
+    animation-duration:8s, 8s;
+    animation-iteration-count: 2, 1;
+    animation-fill-mode:none, forwards;
+    */
+ }
+
+ .ad .slide1 figure figcaption span.vanWittel, .ad .slide1 figure figcaption span.vanWittelEnd { 
+    background-image:url('images/van-wittel.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.9em;
+    height:0.9em;
+    top:0.22em;
+    left:15px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.0;
+    transform:translate(-100%,0);
+  }
+
+  .ad .slide1 figure figcaption span.date, .ad .slide1 figure figcaption span.dateEnd { 
+    background-image:url('images/date.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.9em;
+    height:0.9em;
+    top:0.35em;
+    left:15px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.0;
+    transform:translate(0%,10%);
+  }
+
+  .ad .slide1 figure figcaption span.subtitle { 
+    background-image:url('images/subtitle.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:1.1em;
+    height:0.5em;
+    bottom:0px;
+    left:15px;
+    display: block;
+    position: absolute;
+    z-index: 100;
+    opacity: 0.0;
+    transform:translate(0%,10%);
+  }
+
+
+  .ad .slide1 figure figcaption span.logo { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: bottom center;
+    width:0.3em;
+    height:0.3em;
+    top:-8px;
+    right:15px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity: 1.0;
+    transform-origin: center center;
+   
+ }
+
+  .ad figure div.text {
+    padding:15px;
+    width:80%;
+    height:40%;
+    display: block;
+    position: absolute;
+    z-index: 3;
+    bottom:0;
+    left:0;
+  }
+
+  .ad figure div.text svg.title {
+    width:100%;
+    fill:#fff;
+  }
+
+
+  button.cta {
+    font-size:100px;
+    width:1em;
+    height:auto;
+    background-color:transparent;
+    padding:calc(1em/6.9) calc(1em/2);
+    text-decoration: none;
+    position:absolute;
+    top:50%;
+    right:-13%;
+    transform:translate(-50%,-50%);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:80%;
+    background-color:#9e5059;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:1px solid #fff;
+    cursor: pointer;
+    z-index: 100;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaHidden, ctaShow, cta, cta;
+    animation-timing-function:ease-out;
+    animation-delay:0s, 3.5s, 11s, 19s;
+    animation-duration:3.5s, 0.5s, 0.5s, 0.5s;
+    animation-iteration-count: 1, 1, 1, 1;
+    animation-fill-mode:none;
+  }
+
+  .ad:hover figure button.cta {
+    transform:translate(-50%,-50%)scale(1.1,1.1);
+  }
+  </style>
+
+
+</head>
+<body>
+
+  <!--Animate banner-->
+
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": ".slide figure .background",
+        "keyframes": [
+          {
+             "transform": "translate(0%,20%)scale(0.5,0.5)",
+             "offset": "0.35"
+          },
+          {
+             "transform": "translate(0%,45%)scale(0.5,0.5)"
+          }
+
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="maestro" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.maestro",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-0%,0px)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.9"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,10%)scale(1.0,1.0)",
+              "offset": "0.95"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,10%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="maestroEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.maestroEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-0%,0px)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="vanWittel" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.vanWittel",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-0%,0px)scale(1.0,1.0)",
+              "offset": "0.25"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.88"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,10%)scale(1.0,1.0)",
+              "offset": "0.93"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,10%)scale(1.0,1.0)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="vanWittelEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.vanWittelEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-0%,0px)scale(1.0,1.0)",
+              "offset": "0.25"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="date" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.date",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-0%,0px)scale(1.0,1.0)",
+              "offset": "0.12"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0px)scale(1.0,1.0)",
+             "offset": "0.81"          
+          },
+          {
+             "opacity": "0.0",
+             "transform": "translate(0%,10%)scale(1.0,1.0)",       
+             "offset": "0.86"  
+          },
+          {
+             "opacity": "0.0",
+             "transform": "translate(0%,10%)scale(1.0,1.0)"          
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="dateEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.dateEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-0%,0px)scale(1.0,1.0)",
+              "offset": "0.12"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+    <figure>
+      <amp-img class="background" width="700" height="418" alt="Maestro Van Wittel" src="images/background.jpg"></amp-img>
+       <figcaption><span class="maestro"></span><span class="maestroEnd"></span><span class="vanWittel"></span><span class="vanWittelEnd"></span><span class="date"></span><span class="dateEnd"></span><span class="subtitle"></span></figcaption>
+      <button class="cta animated"></button>
+    </figure>
+  </div>
+  </div>
+</body>
+</html>
