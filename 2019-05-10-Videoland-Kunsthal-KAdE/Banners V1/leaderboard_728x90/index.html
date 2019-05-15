@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=728,height=90">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Leaderboard</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -49,26 +49,26 @@
     }
    }
 
-  @keyframes cta {
+   @keyframes cta {
     0% {
        opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     60% {
        opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     63% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
+       transform:translate(-50%,0)scale(1.1,1.1);
     }
     66%, 96% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     97%, 100% {
        opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
 
   }
@@ -76,19 +76,19 @@
    @keyframes ctaEnd {
     0% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     10% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
+       transform:translate(-50%,0)scale(1.1,1.1);
     }
     20% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     100% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
 
   }
@@ -131,8 +131,8 @@
   }
 
   .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
-    width:336px;
-    height:280px;
+    width:728px;
+    height:90px;
     font-size:221px;
   }
 
@@ -142,7 +142,7 @@
     margin:0;
     padding:0;
     position:relative;
-    background-color:#FFF;
+    background-color:#000;
     overflow:hidden;
   }
 
@@ -161,25 +161,31 @@
 
   .ad figure .background {
     position: absolute;
-    left:50%;
-    top:0px;
+    bottom:0px;
   }
 
   .ad .slide1 figure .background {
-    transform: translate(-50%,0)scale(1.0,1.0);
+    right:0;
+    bottom:-100%;
+    transform: translate(0%,0%)scale(1.0,1.0);
   }
 
   .ad .slide2 figure .background {
-    transform: translate(-50%,0%)scale(1.0,1.0);
+    right:0;
+    bottom:-80%;
+    transform: translate(0%,0%)scale(1.0,1.0);
   }
 
   .ad .slide3 figure.left .background {
-    top:-2px;
+    bottom:-100%;
+    left:50%;
     transform: translate(-33%,8%)scale(1.0,1.0);
     transform-origin: center center;
   }
 
   .ad .slide3 figure.right .background {
+    bottom:-80%;
+    left:40%;
     transform: translate(-40%,-8%)scale(1.0,1.0);
   }
 
@@ -193,16 +199,25 @@
     height:100%;
   }
 
- .ad .slide3 figure:after {
+ .ad  figure:after {
     content:"";
     width:100%;
     height:100%;
     margin:0;
     padding:0;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     background:linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.0) 40%);
   }
+
+  .ad .slide1 figure:after {
+  background:linear-gradient(90deg, rgba(0,0,0,1.0) 15%, rgba(0,0,0,0.0) 30%);
+ }
+
+ .ad .slide2 figure:after {
+  background:linear-gradient(90deg, rgba(0,0,0,1.0) 25%, rgba(0,0,0,0.0) 40%);
+ }
+
 
   .ad .slide span.title { 
     background-repeat: no-repeat;
@@ -211,13 +226,13 @@
     background-position: center;
     background-color:#000;
     background-size:95%;
-    width:100%;
+    width:20%;
     height:0.3em;
     top:0px;
     left:0px;
     display: block;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     opacity:1.0;
     transform: translate(0,-100%);
  }
@@ -226,16 +241,16 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-image:url('images/date.svg');
-    background-position:calc(0.25em + 5px) center;
+    background-position:center;
     background-color:#000;
-    background-size:46%;
-    width:100%;
+    background-size:95%;
+    width:20%;
     height:0.2em;
     bottom:0px;
     left:0px;
     display: block;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     opacity:1.0;
     transform: translate(0,100%);
     
@@ -246,10 +261,10 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom center;
-    width:0.25em;
-    height:0.25em;
+    width:0.3em;
+    height:0.3em;
     bottom:5px;
-    left:5px;
+    right:5px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -258,15 +273,16 @@
  }
 
   button.cta {
-    font-size:100px;
+    font-size:120px;
     width:1em;
     height:auto;
-    background-color:transparent;
+    background-color:#000;
     padding:calc(1em/6.9) calc(1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:7px;
-    right:8px;
+    bottom:30%;
+    left:50%;
+    transform:translate(-50%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
     background-size:80%;
@@ -287,7 +303,7 @@
   }
 
   .ad:hover button.cta {
-    transform:translate(0%,0)scale(1.1,1.1);
+    transform:translate(-50%,0)scale(1.1,1.1);
   }
   </style>
 
@@ -297,6 +313,7 @@
 
 
   <!--Animate banner-->
+
   <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -338,18 +355,17 @@
         "selector": ".slide1 figure .background",
         "keyframes": [
           {
-             "transform": "translate(-42%,4%)scale(1.1,1.1)",
+             "transform": "translate(0%,10%)scale(1.1,1.1)",
              "offset": "0.6"
           },
           {
-             "transform": "translate(-60%,0)scale(1.05,1.05)"
+             "transform": "translate(0%,0)scale(1.05,1.05)"
           }
 
         ]
       }]
     </script>
   </amp-animation>
-
 
   <amp-animation id="Slide2" layout="nodisplay" trigger="visibility">
     <script type="application/json">
@@ -392,11 +408,11 @@
         "selector": ".slide2 figure .background",
         "keyframes": [
           {
-             "transform": "translate(-45%,0)scale(1.15,1.15)",
+             "transform": "translate(0%,10%)scale(1.0,1.0)",
              "offset": "0.6"
           },
           {
-             "transform": "translate(-50%,0)scale(1.2,1.2)"
+             "transform": "translate(0%,0)scale(1.2,1.2)"
           }
 
         ]
@@ -487,11 +503,11 @@
         "selector": ".slide3 figure.left .background",
         "keyframes": [
           {
-             "transform": "translate(-33%,-5%)scale(1.0,1.09)",
+             "transform": "translate(-30%,-5%)scale(1.0,1.0)",
              "offset": "0.6"
           },
           {
-             "transform": "translate(-33%,-5%)scale(1.0,1.0)"
+             "transform": "translate(-30%,-5%)scale(1.0,1.0)"
           }
 
         ]
@@ -510,11 +526,11 @@
         "selector": ".slide3 figure.right .background",
         "keyframes": [
           {
-             "transform": "translate(-40%,5%)scale(1.0,1.0)",
+             "transform": "translate(-40%,5%)scale(0.9,0.9)",
              "offset": "0.6"
           },
           {
-            "transform": "translate(-40%,5%)scale(1.0,1.0)"
+            "transform": "translate(-40%,5%)scale(0.9,0.9)"
           }
 
         ]
@@ -526,29 +542,30 @@
   <div class="ad">
     <div class="slide slide1">
       <figure>
-        <amp-img class="background" width="374" height="280" alt="Videoland" src="images/WeatherForecastStill01.jpg"></amp-img>
-        <figcaption><span class="title"></span><div class="bottom"><button class="cta animated"></button></div></figcaption>
+        <amp-img class="background" width="600" height="449" alt="Videoland" src="images/WeatherForecastStill01.jpg"></amp-img>
+        <figcaption><span class="title"></span><div class="bottom"></div></figcaption>
       </figure>
       <span class="logo"></span>
     </div>
 
     <div class="slide slide2">
       <figure>
-        <amp-img class="background" width="374" height="280" alt="Videoland" src="images/WeatherForecastStill06.jpg"></amp-img>
-         <figcaption><span class="title"></span><div class="bottom"><button class="cta animated"></button></div></figcaption>
+        <amp-img class="background" width="600" height="449" alt="Videoland" src="images/WeatherForecastStill06.jpg"></amp-img>
+         <figcaption><span class="title"></span><div class="bottom"></div></figcaption>
       </figure>
       <span class="logo"></span>
     </div>
 
     <div class="slide slide3">
       <figure class="left">
-        <amp-img class="background" width="374" height="280" alt="Videoland" src="images/WeatherForecastStill01.jpg"></amp-img>
+        <amp-img class="background" width="600" height="449" alt="Videoland" src="images/WeatherForecastStill01.jpg"></amp-img>
       </figure>
       <figure class="right">
-        <amp-img class="background" width="374" height="280" alt="Videoland" src="images/WeatherForecastStill06.jpg"></amp-img>
+        <amp-img class="background" width="600" height="449" alt="Videoland" src="images/WeatherForecastStill06.jpg"></amp-img>
       </figure>
-      <figcaption><span class="title"></span><div class="bottom"><button class="cta animated"></button></div></figcaption>
+      <figcaption><span class="title"></span><div class="bottom"></div></figcaption>
       <span class="logo"></span>
+      <button class="cta animated"></button>
     </div>
   </div>
 </body>
