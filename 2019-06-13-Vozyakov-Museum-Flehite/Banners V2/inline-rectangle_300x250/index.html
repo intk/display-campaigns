@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=160,height=600">
+  <meta name="ad.size" content="width=300,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Wide skyscraper</title>
+  <title>Large rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:160px;
-    height:600px;
+    width:300px;
+    height:250px;
   }
 
   .ad .slide .wrapper {
@@ -89,34 +89,33 @@
     position:relative;
     background-color:#170f08;
     overflow:hidden;
-    font-size:300px;
+    font-size:250px;
   }
 
   .ad .slide1 figure .background  {
     display:block;
     position: absolute;
-    top:0px;
-    left:-80%;
-    transform-origin:top center;
-    transform: scale(1.0,1.0)translate(10%,10%);
+    bottom:-80%;
+    left:-45%;
+    transform-origin: center center;
+    transform: scale(0.7,0.7)translate(0%,0%);
   }
 
   .ad .slide1 figure figcaption { 
     position: absolute;
-    z-index: 3;
-    top:5%;
-    left:10px;
+    z-index: 1;
+    top:15px;
+    left:15px;
     width:100%;
     height:70px;
   }
-
 
   .ad .slide1 figure figcaption span.first, .ad .slide1 figure figcaption span.firstEnd { 
     background-image:url('images/first.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.45em;
-    height:0.45em;
+    width:0.6em;
+    height:0.6em;
     top:0px;
     left:0px;
     display: block;
@@ -131,9 +130,9 @@
     background-image:url('images/second.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.45em;
-    height:0.45em;
-    top:0.20em;
+    width:0.6em;
+    height:0.6em;
+    top:0.26em;
     left:0px;
     display: block;
     position: absolute;
@@ -147,17 +146,18 @@
     background-image:url('images/date.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.6em;
-    height:40px;
-    bottom:5%;
-    left:8px;
+    width:0.8em;
+    height:0.115em;
+    bottom:15px;
+    left:15px;
     display: block;
     position: absolute;
     z-index: 2;
     opacity:0.0;
+    transform-style: preserve-3d;
     transform: translate(0%,23%);
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.9));
- }
+    filter: drop-shadow(1px 1px 5px rgba(0,0,0,0.9));
+  }
 
  @keyframes hideElement {
     0% {
@@ -179,8 +179,8 @@
     padding:calc(1em/6.9) calc(1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:23%;
-    left:50%;
+    bottom:5%;
+    right:-14%;
     transform:translate(-50%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
@@ -212,7 +212,6 @@
 <body>
 
   <!--Animate banner-->
-
   <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -224,7 +223,11 @@
         "selector": ".slide figure .background",
         "keyframes": [
           {
-             "transform": "scale(1.0,1.0)translate(-10%,0)"
+             "transform": "scale(0.6,0.6)translate(30%,30%)",
+             "offset": "0.7"
+          },
+          {
+             "transform": "scale(0.6,0.6)translate(30%,30%)"
           }
 
         ]
@@ -245,7 +248,7 @@
           {
              "opacity": "1.0",
              "transform": "translate(-0%,0px)scale(1.0,1.0)",
-              "offset": "0.15"
+              "offset": "0.2"
           },
           {
              "opacity": "1.0",
@@ -279,7 +282,7 @@
           {
              "opacity": "1.0",
              "transform": "translate(-0%,0px)scale(1.0,1.0)",
-              "offset": "0.15"
+              "offset": "0.2"
           },
           {
              "opacity": "1.0",
@@ -293,72 +296,12 @@
   <amp-animation id="second" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
-        "delay": "1.5s",
+        "delay": "1.2s",
         "duration": "8s",
         "fill": "both",
         "easing": "ease-out",
         "iterations": "2",
         "selector": ".slide figure span.second",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(-0%,0px)scale(1.0,1.0)",
-              "offset": "0.15"
-          },
-          {
-             "opacity": "1.0",
-              "transform": "translate(0%,0px)scale(1.0,1.0)",
-              "offset": "0.88"
-          },
-          {
-             "opacity": "0.0",
-              "transform": "translate(0%,10%)scale(1.0,1.0)",
-              "offset": "0.93"
-          },
-          {
-             "opacity": "0.0",
-              "transform": "translate(0%,10%)scale(1.0,1.0)"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="secondEnd" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "17.5s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".slide figure span.secondEnd",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(-0%,0px)scale(1.0,1.0)",
-              "offset": "0.25"
-          },
-          {
-             "opacity": "1.0",
-              "transform": "translate(0%,0px)scale(1.0,1.0)"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-   <amp-animation id="third" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "2s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".slide figure span.third",
         "keyframes": [
           {
              "opacity": "1.0",
@@ -385,15 +328,15 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="thirdEnd" layout="nodisplay" trigger="visibility">
+  <amp-animation id="secondEnd" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
-        "delay": "18s",
+        "delay": "17.2s",
         "duration": "8s",
         "fill": "both",
         "easing": "ease-out",
         "iterations": "1",
-        "selector": ".slide figure span.thirdEnd",
+        "selector": ".slide figure span.secondEnd",
         "keyframes": [
           {
              "opacity": "1.0",
@@ -474,7 +417,7 @@
   <div class="ad">
     <div class="slide slide1">
     <figure>
-      <amp-img class="background" width="600" height="701" alt="Vozyakov" src="images/background.jpg"></amp-img>
+      <amp-img class="background" width="600" height="763" alt="Vozyakov" src="images/background.jpg"></amp-img>
       <span class="date"></span><span class="dateEnd"></span>
       <figcaption><span class="first"></span><span class="firstEnd"></span><span class="second"></span><span class="secondEnd"></span></figcaption>
       <button class="cta animated"></button>
