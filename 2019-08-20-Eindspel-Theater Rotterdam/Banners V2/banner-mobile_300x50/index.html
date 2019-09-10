@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=300,height=50">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Banner mobile</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -35,19 +35,19 @@
           transform: translateY(100%);
         }
     10% {
-          transform: translateY(0);
+          transform: translateY(-10%);
         }
     40% {
-          transform: translateY(0);
+          transform: translateY(-10%);
         }
     50% {
-          transform: translateY(0);
+          transform: translateY(-10%);
         }
     60% {
-          transform: translateY(-50%);
+          transform: translateY(-55%);
         }
     100% {
-          transform: translateY(-50%);
+          transform: translateY(-55%);
         }
   }
 
@@ -74,8 +74,8 @@
     position: absolute;
   }
   .ad figure {
-    width:336px;
-    height:280px;
+    width:300px;
+    height:50px;
     display: block;
     margin:0;
     padding:0;
@@ -104,15 +104,15 @@
   }
 
   .ad.slide1 figure:after {
-    background:linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.0) 70%);
+    background:linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.0) 50%);
   }
 
   .ad.slide2 figure:after {
-    background:linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.0) 70%);
+    background:linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.0) 50%);
   }
 
   .ad figure amp-img {
-    width:100%;
+    width:20%;
     height:auto;
     position: absolute;
     left:50%;
@@ -122,13 +122,13 @@
   }
 
   .ad.slide2 figure amp-img {
-    top:10%;
+    top:-15%;
   }
 
 
   .ad figure span.logo {
-    width:85px;
-    height:85px;
+    width:35px;
+    height:35px;
     display: block;
     margin:0;
     padding:0;
@@ -142,30 +142,30 @@
     right:10px;
   }
   .ad figure div.text {
-    width:110%;
-    height:60%;
+    width:95%;
+    height:70%;
     display: block;
     position: absolute;
     z-index: 3;
-    bottom:0;
-    left:0;
+    top:-30px;
+    left:2%;
   }
   .ad figure div.text .wrapper {
     position: relative;
     margin:0;
-    padding:10px;
+    padding:0px;
   }
 
   .ad figure div.text div.title-wrapper {
-     width:16em;
-     height:100px;
+     width:11em;
+     height:70px;
      display: block;
      overflow: hidden;
      position: relative;
   }
 
   .ad figure div.text span.title, .ad figure div.text span.titleAfter {
-    width:105%;
+    width:70%;
     height:100px;
     display: block;
     margin:0;
@@ -195,7 +195,7 @@
   }
 
   .ad figure div.text div.subtitle-wrapper {
-     width:12em;
+     width:10em;
      height:28px;
      padding:0 8px;
      display: block;
@@ -204,14 +204,14 @@
   }
 
   .ad figure div.text div.subtitle-wrapper span.subtitle, .ad figure div.text div.subtitle-wrapper span.subtitleAfter  {
-    width:12em;
+    width:8em;
     height:200%;
     display: block;
     margin:0;
     padding:0;
     background-image:url(images/subtitle.svg);
     background-size:110%;
-    background-position:left top;
+    background-position:left 50%;
     background-repeat: no-repeat;
     transform: translate(0,100%);
     position:absolute;
@@ -235,15 +235,15 @@
   }
 
   button.cta {
-        font-size: 120px;
+        font-size:75px;
         width: 1em;
         height: auto;
-        background-color:transparent;
+        background-color:#d7b930;
         padding: calc(1em/6.9) calc(1em/2.5);
         text-decoration: none;
         position: absolute;
-        bottom:15px;
-        right:15px;
+        top:30%;
+        right:12%;
         background-image: url(images/cta.svg);
         background-repeat: no-repeat;
         background-size: 80%;
@@ -252,7 +252,7 @@
         border-radius: 0px;
         border: 1px solid #fff;
         cursor: pointer;
-        z-index: 100;
+        z-index: 10;
         outline: none;
         transition: transform 0.2s ease-out;
         animation-name: ctaEnd, ctaEnd, ctaEnd;
@@ -262,6 +262,12 @@
         animation-iteration-count: 1, 1, 1;
         animation-fill-mode: none, none, none;
     }
+
+  .ad.slide2 button.cta {
+    z-index: 12;
+    background-color:#555;
+
+  }
 
 
  .ad:hover > figure button.cta {
@@ -363,19 +369,19 @@
         "selector": ".subtitle",
         "keyframes": [
         {
-          "transform": "translateY(0)",
+          "transform": "translateY(-10%)",
           "offset": 0.15
         },
         {
-          "transform": "translateY(0)",
+          "transform": "translateY(-10%)",
            "offset": 0.4
         },
         {
-          "transform": "translateY(-50%)",
+          "transform": "translateY(-55%)",
           "offset": 0.5
         },
         {
-          "transform": "translateY(-50%)",
+          "transform": "translateY(-55%)",
            "offset": 0.7
         },
         {
@@ -473,6 +479,7 @@
         </div>
       </div>
       <span class="logo"></span>
+      <button class="cta animated"></button>
     </figure>
   </div>
 

@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=250,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Square</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -35,19 +35,19 @@
           transform: translateY(100%);
         }
     10% {
-          transform: translateY(0);
+          transform: translateY(10%);
         }
     40% {
-          transform: translateY(0);
+          transform: translateY(10%);
         }
     50% {
-          transform: translateY(0);
+          transform: translateY(10%);
         }
     60% {
-          transform: translateY(-50%);
+          transform: translateY(-55%);
         }
     100% {
-          transform: translateY(-50%);
+          transform: translateY(-55%);
         }
   }
 
@@ -74,8 +74,8 @@
     position: absolute;
   }
   .ad figure {
-    width:336px;
-    height:280px;
+    width:250px;
+    height:250px;
     display: block;
     margin:0;
     padding:0;
@@ -165,7 +165,7 @@
   }
 
   .ad figure div.text span.title, .ad figure div.text span.titleAfter {
-    width:105%;
+    width:90%;
     height:100px;
     display: block;
     margin:0;
@@ -204,13 +204,13 @@
   }
 
   .ad figure div.text div.subtitle-wrapper span.subtitle, .ad figure div.text div.subtitle-wrapper span.subtitleAfter  {
-    width:12em;
-    height:200%;
+    width:10em;
+    height:150%;
     display: block;
     margin:0;
     padding:0;
     background-image:url(images/subtitle.svg);
-    background-size:110%;
+    background-size:90%;
     background-position:left top;
     background-repeat: no-repeat;
     transform: translate(0,100%);
@@ -235,15 +235,15 @@
   }
 
   button.cta {
-        font-size: 120px;
+        font-size: 110px;
         width: 1em;
         height: auto;
         background-color:transparent;
         padding: calc(1em/6.9) calc(1em/2.5);
         text-decoration: none;
         position: absolute;
-        bottom:15px;
-        right:15px;
+        bottom:10px;
+        right:10px;
         background-image: url(images/cta.svg);
         background-repeat: no-repeat;
         background-size: 80%;
@@ -363,19 +363,19 @@
         "selector": ".subtitle",
         "keyframes": [
         {
-          "transform": "translateY(0)",
+          "transform": "translateY(10%)",
           "offset": 0.15
         },
         {
-          "transform": "translateY(0)",
+          "transform": "translateY(10%)",
            "offset": 0.4
         },
         {
-          "transform": "translateY(-50%)",
+          "transform": "translateY(-55%)",
           "offset": 0.5
         },
         {
-          "transform": "translateY(-50%)",
+          "transform": "translateY(-55%)",
            "offset": 0.7
         },
         {
