@@ -28,28 +28,58 @@
     }
   }
 
-  @keyframes ctaEnd {
+  @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
     0% {
-      transform:scale(1.0,1.0);
+       opacity:0.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
-    40% {
-      transform:scale(1.0,1.0);
-    }
-    70% {
-      transform:scale(1.1,1.1);
+    50% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.1,1.1);
     }
     100% {
-      transform:scale(1.0,1.0);
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
+
   }
 
-  @keyframes ctaHover {
+  @keyframes ctaHide {
     0% {
-      transform:scale(1.0,1.0);
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:0.0;
+       transform:translate(-50%,0)scale(1.1,1.1);
     }
     100% {
-      transform:scale(1.1,1.1);
+       opacity:0.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
+
+  }
+
+   @keyframes cta {
+    0% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+
   }
 
    @keyframes titleEnd {
@@ -100,9 +130,10 @@
   .ad figure {
     display:inline-block;
     margin:0;
-    padding:0 0 50px 0;
+    padding:40px 0 0px 0;
     position:relative;
     overflow:hidden;
+    transform:translateY(-40px);
   }
 
    .ad figure.child1 .background {
@@ -114,7 +145,9 @@
    }
 
    .ad figure.child3 .background {
-      transform: translateX(-25%);
+      top:0;
+      left:-10%;
+      transform: scale(1.0,1.0)translate(0%,0%);
    }
 
   .ad figure div {
@@ -122,10 +155,12 @@
     margin:0;
     padding:0;
     width:100%;
-    height:50px;
-    position:relative;
+    height:40px;
+    top:0;
+    position:absolute;
+    z-index: 2;
     background-color:#000;
-    background-position:center 9px;
+    background-position:center 5px;
     background-repeat: no-repeat;
     background-size: 40%;
   }
@@ -147,11 +182,6 @@
     background-image:url('images/logo.svg');
     width:300px;
     opacity: 1.0;
-  }
-
-  .ad figure {
-    transform: translateY(0%);
-    float:left;
   }
 
 
@@ -213,37 +243,39 @@
     fill:#fff;
   }
 
-
   button.cta {
-    width:100px;
+    font-size:120px;
+    width:1em;
     height:auto;
-    background-color:transparent;
-    padding:15px 50px;
+    background-color:#c2e6d1;
+    padding:calc(1em/6.9) calc(1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:20px;
-    right:20px;
+    bottom:24px;
+    right:calc(-14% + 12px);
+    transform:translate(-50%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
-    background-size:90%;
-    background-color:#BCE493;
+    background-size:80%;
     background-position:center center;
-    transform-origin: center center;
-    border-radius:10px;
-    border:0px;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:0px solid #6CA8DC;
     cursor: pointer;
     z-index: 100;
-    opacity: 1.0;
     outline:none;
     transition:transform 0.2s ease-out;
-    animation-name:ctaEnd;
-    animation-timing-function: ease-out;
-    animation-delay:7s;
-    animation-duration:1s;
+    animation-name:ctaHidden, ctaShow, cta, ctaHide;
+    animation-timing-function:ease-out;
+    animation-delay:0s, 1s, 3s, 5s;
+    animation-duration:1s, 0.5s, 0.5s, 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:none, none, none, forwards;
   }
 
-  .ad:hover button.cta {
-    transform:scale(1.1,1.1);
+ .ad:hover button.cta {
+    transform:translate(-50%,0)scale(1.1,1.1);
+
   }
   </style>
 
@@ -251,10 +283,30 @@
 </head>
 <body>
   <!--Animate banner-->
+
   <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
         "delay": "0s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure .background",
+        "keyframes": [
+          {
+             "transform": "scale(1.2,1.2)rotate(0deg)translate(-10%,5%)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
         "duration": "22s",
         "fill": "both",
         "easing": "ease-out",
@@ -262,35 +314,23 @@
         "selector": ".slide figure",
         "keyframes": [
           {
-             "transform": "translateY(-50px)",
+             "transform": "translateY(0px)",
+            "opacity": "1.0",
              "offset": "0.05"
           },
           {
-             "transform": "translateY(-50px)",
-             "offset": "0.25"
+             "transform": "translateY(0px)",
+            "opacity": "1.0",
+             "offset": "0.3"
           },
           {
-             "transform": "translateY(-100%)",
+             "transform": "translateY(-40px)",
+             "opacity": "0.0",
              "offset": "0.35"
           },
           {
-             "transform": "translateY(-100%) translateY(-50px)",
-              "offset": "0.40"
-          },
-          {
-             "transform": "translateY(-100%) translateY(-50px)",
-             "offset": "0.60"
-          },
-          {
-             "transform": "translateY(-200%)",
-             "offset": "0.70"
-          },
-          {
-             "transform": "translateY(-200%) translateY(-50px)",
-             "offset": "0.75"
-          },
-          {
-             "transform": "translateY(-200%) translateY(-50px)"
+             "transform": "translateY(-40px)",
+             "opacity": "0.0"
           }
 
         ]
@@ -365,22 +405,11 @@
   <!-- Setup structure-->
 	<div class="ad">
     <div class="slide slide1">
-    <figure class="child1">
-      <amp-img class="background" width="475" height="280" alt="Architecture" src="images/architecture.jpg"></amp-img>
-      <div class="architecture"></div>
-    </figure>
-    <figure class="child2">
-      <amp-img class="background" width="475" height="280" alt="Design" src="images/design.jpg"></amp-img>
-      <div class="design"></div>
-    </figure>
     <figure class="child3">
-      <amp-img class="background" width="475" height="280" alt="Digital culture" src="images/digital-culture.jpg"></amp-img>
       <div class="digital-culture"></div>
+      <amp-img class="background" width="373" height="280" alt="Digital culture" src="images/background.jpg"></amp-img>
     </figure>
-    <figure class="child4">
-      <amp-img class="background" width="475" height="280" alt="Digital culture" src="images/building.jpg"></amp-img>
-      <button class="cta"></button>
-    </figure>
+     <button class="cta animated"></button>
   </div>
   </div>
 </body>
