@@ -295,7 +295,6 @@
 </head>
 <body>
   <!--Animate banner-->
-
   <amp-animation id="Slides" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -340,26 +339,26 @@
     <script type="application/json">
       [{
         "delay": "0s",
-        "duration": "4s",
+        "duration": "10s",
         "fill": "both",
         "easing": "ease-out",
-        "iterations": "1",
+        "iterations": "2",
         "selector": ".slide figure.child1",
         "keyframes": [
           {
              "transform": "translateY(0px)",
              "opacity": "1.0",
-             "offset": "0.2"
+             "offset": "0.08"
           },
           {
              "transform": "translateY(0px)",
             "opacity": "1.0",
-             "offset": "0.7"
+             "offset": "0.28"
           },
           {
              "transform": "translateY(-40px)",
              "opacity": "0.0",
-             "offset": "0.8"
+             "offset": "0.35"
           },
           {
              "transform": "translateY(-100%)",
@@ -498,62 +497,22 @@
     </script>
   </amp-animation>
 
-  <!--
-
-   <amp-animation id="Slide4" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "7.5s",
-        "duration": "4s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".slide figure.child4",
-        "keyframes": [
-          {  
-             "transform": "translateY(-40px)",
-             "opacity": "1.0",
-             "offset": "0.2"
-          },
-          { 
-            "transform": "translateY(-40px)",
-            "opacity": "1.0",
-             "offset": "0.8"
-          },
-          {
-             "transform": "translateY(-80px)",
-             "opacity": "0.0",
-             "offset": "0.9"
-          },
-          {
-             "transform": "translateY(-100%)",
-             "opacity": "0.0"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
--->
-  
-
   <!-- Setup structure-->
 	<div class="ad">
     <div class="slide slide1">
-      <figure class="child1">
+      <figure class="child1 child">
       <div class="architecture"></div>
       <amp-img class="background" width="373" height="280" alt="Architecture" src="images/architecture.jpg"></amp-img>
     </figure>
-    <figure class="child2">
+    <figure class="child2 child">
       <div class="design"></div>
       <amp-img class="background" width="373" height="280" alt="Design" src="images/design.jpg"></amp-img>
     </figure>
-    <figure class="child3">
+    <figure class="child3 child">
       <div class="digital-culture"></div>
       <amp-img class="background" width="373" height="280" alt="Digital culture" src="images/digital-culture.jpg"></amp-img>
     </figure>
-    <figure class="child4">
+    <figure class="child4 child">
       <amp-img class="background" width="373" height="280" alt="Building" src="images/building.jpg"></amp-img>
       <figcaption><span></span></figcaption>
     </figure>
