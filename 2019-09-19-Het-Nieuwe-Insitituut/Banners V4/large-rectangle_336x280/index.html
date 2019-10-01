@@ -10,29 +10,6 @@
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
   <style amp-custom>
   /* Animations */
-  @keyframes logoFirst {
-    0% {
-      opacity:1.0;
-    }
-    100% {
-      opacity:0.0;
-    }
-  }
-
-  @keyframes logoLast {
-    0% {
-      opacity:0.0;
-    }
-    100% {
-      opacity:1.0;
-    }
-  }
-
-  @keyframes ctaHidden {
-    from, to {
-      transform:translate(0,40px);
-    }
-   }
 
   @keyframes ctaShow {
     0% {
@@ -47,7 +24,7 @@
 
   }
 
-   @keyframes cta {
+   @keyframes cta1 {
     0% {
       transform:scale(1.0);
     }
@@ -60,15 +37,30 @@
 
   }
 
-   @keyframes titleEnd {
+  @keyframes cta2 {
     0% {
-      opacity:0.0;
-      transform:translateY(-20%);
+      transform:scale(1.0);
+    }
+    50% {
+      transform:scale(1.1);
     }
     100% {
-      opacity:1.0;
-      transform:translateY(0%);
+      transform:scale(1.0);
     }
+
+  }
+
+  @keyframes cta3 {
+    0% {
+      transform:scale(1.0);
+    }
+    50% {
+      transform:scale(1.1);
+    }
+    100% {
+      transform:scale(1.0);
+    }
+
   }
 
   /* Setup */
@@ -229,7 +221,7 @@
     animation-delay:0.5s;
     animation-duration:1s;
     animation-iteration-count: 1;
-    animation-fill-mode:forwards, none;
+    animation-fill-mode:forwards;
     cursor: pointer;
   }
 
@@ -240,7 +232,7 @@
     background-repeat: no-repeat;
     background-size: 40%;
     background-image:url('images/cta.svg');
-    animation-name:cta, cta, cta;
+    animation-name:cta1, cta2, cta3;
     animation-timing-function:ease-out;
     animation-delay:1s, 6s, 11s;
     animation-duration:0.5s;
@@ -481,7 +473,7 @@
   </amp-animation>
 
   <!-- Setup structure-->
-	<div class="ad">
+  <div class="ad">
     <div class="slide slide1">
       <figure class="child1 child">
       <div class="architecture"></div>
