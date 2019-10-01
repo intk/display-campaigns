@@ -63,6 +63,19 @@
 
   }
 
+  @keyframes cta4 {
+    0% {
+      transform:scale(1.0);
+    }
+    50% {
+      transform:scale(1.1);
+    }
+    100% {
+      transform:scale(1.0);
+    }
+
+  }
+
   /* Setup */
   body {
     margin:0;
@@ -232,9 +245,9 @@
     background-repeat: no-repeat;
     background-size: 40%;
     background-image:url('images/cta.svg');
-    animation-name:cta1, cta2, cta3;
+    animation-name:cta1, cta2, cta3, cta4;
     animation-timing-function:ease-out;
-    animation-delay:1s, 6s, 11s;
+    animation-delay:1s, 3.5s, 6s, 10s;
     animation-duration:0.5s;
     animation-iteration-count: 1;
     animation-fill-mode:none;
@@ -456,7 +469,7 @@
    <amp-animation id="endSlide" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
-        "delay": "9s",
+        "delay": "8s",
         "duration": "1.5s",
         "fill": "both",
         "easing": "ease-out",
