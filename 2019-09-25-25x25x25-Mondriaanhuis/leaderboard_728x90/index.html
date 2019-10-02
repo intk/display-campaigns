@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=728,height=90">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Leaderboard</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:336px;
-    height:280px;
+    width:728px;
+    height:90px;
   }
 
   .ad .slide .wrapper {
@@ -89,18 +89,19 @@
     position:relative;
     background-color:#fff;
     overflow:hidden;
-    font-size:300px;
+    font-size:100px;
   }
 
   .ad .slide1 .blocks  {
     width:200%;
-    height:100%;
+    height:200%;
     display:block;
     position: absolute;
-    top:0%;
-    left:0%;
-    background-size:cover;
-    transform:translate(-20%,0);
+    top:-70%;
+    left:30%;
+    background-size:80%;
+    background-repeat: no-repeat;
+    transform:translate(-39%,0);
     background-image:url('images/blocks.svg')
 
   }
@@ -115,7 +116,7 @@
     height:0.85em;
     position: absolute;
     top:52%;
-    left:50%;
+    left:10%;
     transition:transform 0.5s ease-out;
     transform-origin: center center;
     transform:translate(-50%,-50%);
@@ -207,11 +208,10 @@
    .ad .slide1 figure figcaption span.first, .ad .slide1 figure figcaption span.firstEnd { 
     background-image:url('images/title.svg');
     background-repeat: no-repeat;
-    background-size:60%;
-    background-position: center center;
+    background-size:19%;
+    background-position:30px center;
     background-color:#324694;
-    width:100%;
-    height:0.2em;
+    height:0.5em;
     top:50%;
     left:0;
     transform: translate(0,-50%);
@@ -219,16 +219,18 @@
     position: absolute;
     z-index: 2;
     opacity:1.0;
+    width:100%;
+    opacity:1.0;
  }
 
   .ad .slide1 figure figcaption span.second, .ad .slide1 figure figcaption span.secondEnd { 
     background-image:url('images/date.svg');
     background-repeat: no-repeat;
-    background-size:50%;
+    background-size:42%;
     background-position: center center;
     width:100%;
-    height:0.1em;
-    top:29%;
+    height:0.15em;
+    top:32%;
     left:2%;
     transform: translate(0,50%);
     display: block;
@@ -240,12 +242,12 @@
  .ad .slide1 figure figcaption span.third, .ad .slide1 figure figcaption span.thirdEnd { 
     background-image:url('images/subtitle.svg');
     background-repeat: no-repeat;
-    background-size:50%;
+    background-size:42%;
     background-position: center center;
     width:100%;
-    height:0.1em;
-    top:63%;
-    left:2%;
+    height:0.4em;
+    top:42%;
+    left:2.2%;
     transform: translate(0,-50%);
     display: block;
     position: absolute;
@@ -283,15 +285,15 @@
  }
 
   button.cta {
-    font-size:120px;
+    font-size:110px;
     width:1em;
     height:auto;
     background-color:#c43221;
     padding:calc(1em/6.9) calc(1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:5%;
-    right:-14%;
+    bottom:30%;
+    right:-6.5%;
     transform:translate(-50%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
