@@ -114,15 +114,93 @@
     width:0.85em;
     height:0.85em;
     position: absolute;
-    top:45%;
+    top:50%;
     left:50%;
+    transition:transform 0.5s ease-out;
+    transform-origin: center center;
     transform:translate(-50%,-50%);
+    z-index:1;
   }
 
-  .ad .slide1 figure figcaption .tile svg { 
-    width:100%;
-    height:100%;
-  }
+    .stage {
+      font-size:0.74em;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      width: 1em;
+      height: 1em;
+      perspective:5.33em;
+      perspective-origin: 50% -0.85em;
+      -webkit-perspective:5.33em;
+      -webkit-perspective-origin: 50% -0.85em;
+    }
+
+    .part {
+        display: block;
+        position: absolute;
+        width:0.15em;
+        height:1em;
+        margin:0;
+        padding:0;
+        transform-origin: 50% 50% 0;
+        -webkit-transform-origin: 50% 50% 0;
+
+
+    }
+
+    .graphicHover {
+       transform-style: preserve-3d;
+       transform: rotateY(0deg);
+       transition:transform 0.5s ease-out;
+    }
+
+    .graphic {
+        transform-style: preserve-3d;
+        transform: rotateY(-90deg)translateX(20%);
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateY(-90deg)translateX(20%);
+    }
+    
+    .left {
+      transform: translateZ(0.55em);
+      -webkit-transform: translateZ(0.55em);
+      background-color:#af2e1c;
+    }
+
+    .right {
+         transform: rotateY(180deg) translateZ(0.55em);
+        -webkit-transform: rotateY(180deg) translateZ(0.55em);
+         background-color:#af2e1c;
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(0.55em);
+        -webkit-transform: rotateX(90deg) translateZ(0.55em);
+        height:1.1em;
+        background-color:#CE5D46;
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(0.45em);
+        -webkit-transform: rotateX(-90deg) translateZ(0.45em);
+        height:1.1em;
+        background-color:#c43221;
+    }
+
+    .front {
+        transform: rotateY(-90deg) translateZ(0.55em);
+        -webkit-transform: rotateY(-90deg) translateZ(0.55em);
+        width:1.1em;
+        background-color:#c43221;
+    }
+
+    .back {
+       transform: rotateY(90deg) translateZ(-0.4em);
+        -webkit-transform: rotateY(90deg) translateZ(-0.4em);
+        width:1.1em;
+        background-color:#c43221;
+    }
 
 
 
@@ -238,6 +316,15 @@
     transform:translate(-50%,0)scale(1.1,1.1);
 
   }
+
+  .ad:hover figure div.tile {
+    transform:translate(-49%,-49%);
+  }
+
+  .ad:hover figure div.graphicHover {
+    transform:rotateY(-5deg)translateX(-5%);
+  }
+
   </style>
 
 
@@ -257,6 +344,54 @@
           {
              "transform": "scale(1.2,1.2)translate(-40%,-10%)"
           }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="graphic" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": ".slide figure .stage",
+        "keyframes": [
+          {
+             "transform": "translate(-22%,-50%)",
+             "offset": "0.3"
+          },
+          {
+             "transform": "translate(-25.5%,-50%)"
+          }
+
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="graphicRotate" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": ".slide figure .stage .graphic",
+        "keyframes": [
+          {
+             "transform": "rotateY(-50deg)translateX(20%)",
+             "offset": "0.3"
+          },
+          {
+             "transform": "rotateY(-55deg)translateX(20%)"
+          }
+
 
         ]
       }]
@@ -390,17 +525,18 @@
       <div class="blocks"></div>
       <figcaption>
         <div class="tile">
-          <svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="233.4px" height="290.5px" viewBox="0 0 233.4 290.5" style="enable-background:new 0 0 233.4 290.5;" xml:space="preserve">
-          <style type="text/css">
-            .st0{fill:#C43221;}
-            .st1{fill:#D05D41;}
-            .st2{fill:#AF2E1C;}
-          </style>
-          <polygon class="st0" points="23.7,290.5 23.7,36.1 233.4,4.7 233.4,230.3 23.7,290.5 "/>
-          <polygon class="st1" points="23.7,36.1 0,32.4 209.8,2.1 233.4,4.7 233.4,4.7 "/>
-          <polygon class="st2" points="0,283.7 0,32.4 23.7,36.1 23.7,290.5 "/>
-          </svg>
+          <div class="stage hover">
+            <div class="graphicHover">
+              <div class="graphic">
+                  <div class="back part"></div>
+                  <div class="top part"></div>
+                  <div class="bottom part"></div>
+                  <div class="left part"></div>
+                  <div class="right part"></div>
+                  <div class="front part"></div>
+              </div>
+              </div>
+          </div>
         </div>
         <span class="first"></span><span class="firstEnd"></span>
         <span class="second"></span><span class="secondEnd"></span>
