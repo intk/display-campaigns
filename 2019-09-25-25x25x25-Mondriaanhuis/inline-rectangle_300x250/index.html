@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=160,height=600">
+  <meta name="ad.size" content="width=300,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Wide Skyscraper</title>
+  <title>Inline rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:160px;
-    height:600px;
+    width:300px;
+    height:250px;
   }
 
   .ad .slide .wrapper {
@@ -89,7 +89,7 @@
     position:relative;
     background-color:#fff;
     overflow:hidden;
-    font-size:220px;
+    font-size:290px;
   }
 
   .ad .slide1 .blocks  {
@@ -99,7 +99,7 @@
     position: absolute;
     top:0%;
     left:0%;
-    background-size:100%;
+    background-size:cover;
     transform:translate(-20%,0);
     background-image:url('images/blocks.svg')
 
@@ -114,7 +114,7 @@
     width:0.85em;
     height:0.85em;
     position: absolute;
-    top:40%;
+    top:52%;
     left:50%;
     transition:transform 0.5s ease-out;
     transform-origin: center center;
@@ -207,12 +207,12 @@
    .ad .slide1 figure figcaption span.first, .ad .slide1 figure figcaption span.firstEnd { 
     background-image:url('images/title.svg');
     background-repeat: no-repeat;
-    background-size:80%;
+    background-size:60%;
     background-position: center center;
     background-color:#324694;
     width:100%;
-    height:0.23em;
-    top:38%;
+    height:0.2em;
+    top:50%;
     left:0;
     transform: translate(0,-50%);
     display: block;
@@ -224,12 +224,12 @@
   .ad .slide1 figure figcaption span.second, .ad .slide1 figure figcaption span.secondEnd { 
     background-image:url('images/date.svg');
     background-repeat: no-repeat;
-    background-size:60%;
+    background-size:55%;
     background-position: center center;
     width:100%;
-    height:0.4em;
-    top:24%;
-    left:-6%;
+    height:0.1em;
+    top:27%;
+    left:2%;
     transform: translate(0,50%);
     display: block;
     position: absolute;
@@ -240,12 +240,12 @@
  .ad .slide1 figure figcaption span.third, .ad .slide1 figure figcaption span.thirdEnd { 
     background-image:url('images/subtitle.svg');
     background-repeat: no-repeat;
-    background-size:82%;
+    background-size:55%;
     background-position: center center;
     width:100%;
     height:0.1em;
-    top:43%;
-    left:5%;
+    top:64%;
+    left:2%;
     transform: translate(0,-50%);
     display: block;
     position: absolute;
@@ -274,8 +274,8 @@
     padding:calc(1em/6.9) calc(1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:25%;
-    left:50%;
+    bottom:5%;
+    right:-16%;
     transform:translate(-50%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
