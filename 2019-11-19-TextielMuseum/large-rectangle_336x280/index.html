@@ -166,7 +166,7 @@
     left:-10%;
     display: block;
     position: absolute;
-    background: linear-gradient(90deg, rgba(246,246,246,1.0) 0%,rgba(0,0,0,0.0) 100%);
+    background: linear-gradient(to left, rgba(246,246,246,1.0) 0%,rgba(246,246,246,0.0) 100%);
   }
 
   .ad figure figcaption {
@@ -250,7 +250,7 @@
     }
 
     .top {
-       transform: rotateY(90deg) translateZ(-0.4em);
+       transform: rotateY(90deg) translateZ(0em);
        -webkit-transform: rotateY(0deg) translateZ(0em);
        background-color:#FFF;
        background-size:100%;
@@ -258,7 +258,8 @@
 
     .front {
       -webkit-transform-origin:0% 0% 0;
-       -webkit-transform:rotateX(-90deg) translateZ(0.1em);
+      transform:rotateX(-90deg) translateZ(0.1em);
+      -webkit-transform:rotateX(-90deg) translateZ(0.1em);
        background-color:#FFF;
        background-size:105%;
        background-image:url(images/cta.svg);
