@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=728,height=90">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Leaderboard</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -68,9 +68,9 @@
   }
 
   .ad, .ad figure {
-    width:336px;
-    height:280px;
-    font-size:250px;
+    width:728px;
+    height:90px;
+    font-size:230px;
   }
 
   .ad figure {
@@ -97,6 +97,7 @@
   .ad figure.child3 {
     opacity: 0.0;
     z-index: 30;
+    background-color:#F0EFF4;
   }
 
   .ad figure div.background, .ad figure amp-img.background {
@@ -106,22 +107,26 @@
   }
 
   .ad figure.child1 .background {
-    transform:translate(30%,0)scale(1.1,1.1);
+    top:-50%;
+    left:20%;
+    transform:translate(30%,-30%)scale(0.8,0.8)rotate(-3deg);
   }
 
    .ad figure.child2 .background {
     transform-origin:center center;
-    transform:translate(-25%,-20%)scale(0.7,0.7);
+    transform:translate(-25%,-15%)scale(0.7,0.7);
    }
 
     .ad figure.child3 .background {
+    left:20%;
+    top:-40%;
     transform-origin:center center;
-    transform:translate(0%,0%)scale(1.1,1.1);
+    transform:translate(0%,-20%)scale(0.8,0.8);
    }
 
 
 
-   .ad figure.child1 .background:after {
+   .ad figure.child1 .background:after,  .ad figure.child3 .background:after {
     content:"";
     margin:0;
     padding:0;
@@ -135,12 +140,31 @@
     background: linear-gradient(to left, rgba(246,246,246,1.0) 0%,rgba(246,246,246,0.0) 100%);
   }
 
+  .ad figure.child1 .background:before,  .ad figure.child3 .background:before {
+    content:"";
+    margin:0;
+    padding:0;
+    width:40%;
+    height:100%;
+    z-index: 2;
+    top:0;
+    right:-10%;
+    display: block;
+    position: absolute;
+    background: linear-gradient(to left, rgba(246,246,246,1.0) 0%,rgba(246,246,246,0.0) 100%);
+  }
+
+  .ad figure.child3 .background:after, .ad figure.child3 .background:before {
+    width:15%;
+    background: linear-gradient(to left, rgba(240,239,244,1.0) 0%,rgba(240,239,244,0.0) 100%);
+  }
+
   .ad figure figcaption {
     width:1em;
     height:0.3em;
-    bottom:25%;
-    left:50%;
-    transform:translate(-50%,0);
+    bottom:10%;
+    right:5%;
+    transform:translate(0%,0);
     display: block;
     margin:0;
     padding:0;
@@ -399,14 +423,14 @@
         "selector": "figure.child1 .background",
         "keyframes": [
           {
-             "transform": "translate(0%,0)scale(1,1)"
+             "transform": "translate(0%,0)scale(0.8,0.8)rotate(-3deg)"
           }
         ]
       }]
     </script>
   </amp-animation>
 
-  <amp-animation id="Background3" layout="nodisplay" trigger="visibility">
+  <amp-animation id="Background2" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
         "delay": "5s",
@@ -417,14 +441,14 @@
         "selector": "figure.child2 .background",
         "keyframes": [
           {
-             "transform": "translate(-39%,-40%)scale(0.45,0.45)"
+             "transform": "translate(-39%,-60%)scale(0.45,0.45)"
           }
         ]
       }]
     </script>
   </amp-animation>
 
-  <amp-animation id="Background2" layout="nodisplay" trigger="visibility">
+  <amp-animation id="Background3" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
         "delay": "10s",
@@ -435,7 +459,7 @@
         "selector": "figure.child3 .background",
         "keyframes": [
           {
-             "transform": "translate(-22%,0%)scale(1.0,1.0)"
+             "transform": "translate(-22%,0%)scale(0.9,0.9)"
           }
         ]
       }]
