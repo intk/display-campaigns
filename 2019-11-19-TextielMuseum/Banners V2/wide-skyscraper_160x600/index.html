@@ -1,0 +1,597 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=160,height=600">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Wide skyscraper</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes graphic1 {
+      0% {
+        transform: rotateY(0deg)rotateX(0deg)scale(1.0,1.0);
+      }
+      15%, 85% {
+        transform: rotateY(0deg)rotateX(90deg)scale(1.1,1.1)translate(-2%,0);
+      },
+      86%, 90% {
+        transform: rotateY(0deg)rotateX(0deg)scale(1.0,1.0);
+      }
+    }
+
+    @keyframes graphic2 {
+      0% {
+        transform: rotateY(0deg)rotateX(0deg)scale(1.0,1.0);
+      }
+      15%, 85% {
+        transform: rotateY(0deg)rotateX(90deg)scale(1.1,1.1)translate(-2%,0);
+      },
+      86%, 90% {
+        transform: rotateY(0deg)rotateX(0deg)scale(1.0,1.0);
+      }
+    }
+
+    @keyframes graphic3 {
+      0% {
+        transform: rotateY(0deg)rotateX(0deg)scale(1.0,1.0);
+      }
+      15%, 85% {
+        transform: rotateY(0deg)rotateX(90deg)scale(1.1,1.1)translate(-2%,0);
+      },
+      86%, 90% {
+        transform: rotateY(0deg)rotateX(0deg)scale(1.0,1.0);
+      }
+    }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    background-color:#FFF;
+    opacity: 1.0;
+  }
+
+  .ad, .ad figure {
+    width:160px;
+    height:600px;
+    font-size:150px;
+  }
+
+  .ad figure {
+    display:block;
+    margin:0;
+    padding:0;
+    position:absolute;
+    overflow:hidden;
+    opacity: 0.0;
+  }
+
+  .ad figure.child1 {
+    opacity: 1.0;
+    z-index: 10;
+    background-color:rgba(246,246,246,1.0);
+  }
+
+  .ad figure.child1:after {
+    content:"";
+    margin:0;
+    padding:0;
+    width:100%;
+    height:30%;
+    z-index:1;
+    top:0;
+    display: block;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(236,236,236,1.0) 0%, rgba(236,236,236,0.0) 100%);
+  }
+
+  .ad figure.child2 {
+    opacity: 0.0;
+    z-index: 20;
+    background-color:rgba(246,246,246,1.0);
+  }
+
+  .ad figure.child3 {
+    opacity: 0.0;
+    z-index: 30;
+    background-color:#F0EFF4;
+  }
+
+  .ad figure div.background, .ad figure amp-img.background {
+    width:100%;
+    height:auto;
+    position:absolute;
+  }
+
+  .ad figure.child1 .background {
+    left:-5%;
+    top:10%;
+    z-index: 3;
+    transform:translate(0,0)scale(1.1,1.1);
+  }
+
+   .ad figure.child2 .background {
+    transform-origin:center center;
+    bottom:0;
+    transform:translate(-25%,0%)scale(0.7,0.7);
+   }
+
+    .ad figure.child3 .background {
+    left:-5%;
+    transform-origin:center center;
+    transform:translate(0%,0%)scale(1.1,1.1);
+   }
+
+   .ad figure.child1 .background:before {
+    content:"";
+    margin:0;
+    padding:0;
+    width:100%;
+    height:10%;
+    z-index: 2;
+    bottom:0;
+    display: block;
+    position: absolute;
+    background: linear-gradient(to top, rgba(246,246,246,1.0) 0%,rgba(246,246,246,0.0) 100%);
+  }
+
+   .ad figure.child1 .background:after {
+    content:"";
+    margin:0;
+    padding:0;
+    width:100%;
+    height:10%;
+    z-index:1;
+    top:0;
+    display: block;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(236,236,236,1.0) 0%, rgba(236,236,236,1.0) 20%, rgba(236,236,236,0.0) 100%);
+  }
+
+  .ad figure.child2 .background:after {
+    content:"";
+    margin:0;
+    padding:0;
+    width:100%;
+    height:10%;
+    z-index: 2;
+    top:0;
+    display: block;
+    position: absolute;
+    background: linear-gradient(to bottom,rgba(236,246,246,1.0) 0%,rgba(246,246,246,0.0) 100%);
+  }
+
+  .ad figure.child3 .background:before {
+    content:"";
+    margin:0;
+    padding:0;
+    width:100%;
+    height:10%;
+    z-index: 2;
+    top:0;
+    display: block;
+    position: absolute;
+    background: linear-gradient(to bottom,rgba(240,239,244,1.0) 0%,rgba(240,239,244,0.0) 100%);
+  }
+
+
+  .ad figure.child3 .background:after {
+    content:"";
+    margin:0;
+    padding:0;
+    width:100%;
+    height:10%;
+    z-index: 2;
+    bottom:0;
+    display: block;
+    position: absolute;
+    background: linear-gradient(to top,rgba(240,239,244,1.0) 0%,rgba(240,239,244,0.0) 100%);
+  }
+
+  .ad figure figcaption {
+    width:1em;
+    height:0.5em;
+    bottom:25%;
+    left:50%;
+    transform:translate(-50%,0);
+    display: block;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index:100;
+  }
+
+  .ad figure figcaption span.title, .ad figure figcaption span.titleEnd {
+    width:100%;
+    height:65%;
+    display: block;
+    background-color:#069BBC;
+    background-image:url(images/title.svg);
+    background-size:85%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.0;
+    transform: translate(-10%,0);
+  }
+
+  .animate, .animateEnd {
+     position: absolute;
+      width:50%;
+      height:40%;
+      bottom:2px;
+      left:25%;
+      display:block;
+      z-index: 2;
+      opacity: 0.0;
+      z-index: 100;
+      transform: translate(10%,0);
+    }
+
+  .ad figure figcaption .animate .stage {
+      position: absolute;
+      width:100%;
+      height:100%;
+      display:block;
+      opacity: 1.0;
+      perspective:5.33em;
+      perspective-origin:100%;
+      -webkit-perspective:5.33em;
+      z-index: 100;
+    }
+
+    .part {
+        display: block;
+        position: absolute;
+        width:0.7em;
+        height:0.17em;
+        margin:0;
+        padding:0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transform-origin: 50% 50% 0;
+        -webkit-transform-origin:50% 50% 0;a
+    }
+
+    .graphic {
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform-origin:center center;
+      -webkit-transform: rotateY(0deg)rotateX(0deg)scale(1.0,1.0);
+      transition: transform 0.2s ease-out;
+      opacity: 1.0;
+      animation-name:graphic1, graphic2, graphic3;
+      animation-timing-function:ease-out;
+      animation-delay:4s, 9s, 14.5s;
+      animation-duration:2.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode:none;
+    }
+
+    .ad:hover .graphic {
+       -webkit-transform: rotateY(0deg)rotateX(90deg)scale(1.1,1.1)translate(-2%,0);
+       -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+        -o-animation-play-state: paused;
+        animation-play-state: paused;
+        -webkit-animation:0;
+    }
+
+    .top {
+       transform: rotateY(90deg) translateZ(0em);
+       -webkit-transform: rotateY(0deg) translateZ(0em);
+       background-color:#FFF;
+       background-size:100%;
+    }
+
+    .front {
+      -webkit-transform-origin:0% 0% 0;
+      transform:rotateX(-90deg) translateZ(0.1em);
+      -webkit-transform:rotateX(-90deg) translateZ(0.1em);
+       background-color:#FFF;
+       background-size:105%;
+       background-image:url(images/cta.svg);
+    }
+
+  .ad figure.child1 figcaption .top {
+    background-image:url(images/viktor-rolf.svg);
+  }
+
+  .ad figure.child2 figcaption .top {
+    background-image:url(images/mae-engelgeer.svg);
+  }
+
+  .ad figure.child3 figcaption .top {
+    background-image:url(images/studio-job.svg);
+  }
+
+  .ad .logo {
+    width:120px;
+    height:30px;
+    bottom:20px;
+    left:50%;
+    transform: translate(-50%,0);
+    display:block;
+    background-color:#FFF;
+    background-size:100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image:url(images/logo.svg);
+    position: absolute;
+    z-index: 100;
+  }
+  </style>
+
+
+</head>
+<body>
+  <!--Animate banner-->
+  <amp-animation id="Title" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.5s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": "figure figcaption .title",
+        "keyframes": [
+          {
+             "transform": "translate(-2%,0)",
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "transform": "translate(0%,0)",
+             "opacity": "1.0",
+             "offset": "0.9"
+          },
+          {
+             "transform": "translate(-10%,0)",
+             "opacity": "0.0",
+             "offset": "0.95"
+          },
+          {
+             "transform": "translate(-10%,0)",
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="TitleEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "12s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child3 figcaption .titleEnd",
+        "keyframes": [
+          {
+             "transform": "translate(-2%,0)",
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "transform": "translate(0%,0)",
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="Subitle" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.5s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": "figure figcaption .animate",
+        "keyframes": [
+          {
+             "transform": "translate(2%,0)",
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "transform": "translate(0%,0)",
+             "opacity": "1.0",
+             "offset": "0.9"
+          },
+          {
+             "transform": "translate(10%,0)",
+             "opacity": "0.0",
+             "offset": "0.95"
+          },
+          {
+             "transform": "translate(10%,0)",
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="SubitleEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "12s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child3 figcaption .animateEnd",
+        "keyframes": [
+          {
+             "transform": "translate(2%,0)",
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "transform": "translate(0%,0)",
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Background1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child1 .background",
+        "keyframes": [
+          {
+             "transform": "translate(-60%,0%)scale(1.1,1.1)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Background2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "5s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child2 .background",
+        "keyframes": [
+          {
+             "transform": "translate(-55%,0%)scale(0.7,0.7)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Background3" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "10s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child3 .background",
+        "keyframes": [
+          {
+             "transform": "translate(-60%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slides" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "5.5s",
+        "duration": "0.3s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child2",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slides" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "10.5s",
+        "duration": "0.3s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child3",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+
+      <figure class="child1 child">
+      <amp-img class="background" width="600" height="323" alt="Viktor & rolf" src="images/viktor-rolf.jpg"></amp-img>
+      <figcaption><span class="title"></span>
+        <div class="animate">
+        <div class="stage">
+          <div class="graphic">
+            <div class="top part"></div>
+            <div class="front part"></div>
+          </div>
+        </div>
+      </div>
+      </figcaption>
+    </figure>
+    <figure class="child2 child">
+      <amp-img class="background" width="800" height="667" alt="Mae Engelgeer" src="images/mae-engelgeer.jpg"></amp-img>
+      <figcaption><span class="title"></span>
+      <div class="animate">
+        <div class="stage">
+          <div class="graphic">
+            <div class="top part"></div>
+            <div class="front part"></div>
+          </div>
+        </div>
+      </div>
+    </figcaption>
+    </figure>
+    <figure class="child3 child">
+      <amp-img class="background" width="600" height="368" alt="Studio Job" src="images/studio-job.jpg"></amp-img>
+      <figcaption><span class="titleEnd"></span><div class="animateEnd">
+        <div class="stage">
+          <div class="graphic">
+            <div class="top part"></div>
+            <div class="front part"></div>
+          </div>
+        </div>
+      </div></figcaption>
+    </figure>
+    <div class="logo"></div>
+  </div>
+</body>
+</html>
