@@ -118,49 +118,9 @@
   }
 
     .ad figure.child3 .background {
-    left:10%;
-    top:-40%;
     transform-origin:center center;
-    transform:translate(0%,-40%)scale(0.9,0.9);
+    transform:translate(0%,-30%);
    }
-
-   .ad figure.child3 .background:after {
-    content:"";
-    margin:0;
-    padding:0;
-    width:10%;
-    height:100%;
-    z-index: 2;
-    top:0;
-    left:-10%;
-    display: block;
-    position: absolute;
-    background: linear-gradient(to left, rgba(246,246,246,1.0) 0%, rgba(246,246,246,0.0) 100%);
-  }
-
-
-  .ad figure.child3 .background:before {
-    content:"";
-    margin:0;
-    padding:0;
-    width:20%;
-    height:100%;
-    z-index: 2;
-    top:0;
-    right:-10%;
-    display: block;
-    position: absolute;
-    background: linear-gradient(to left, rgba(246,246,246,1.0) 0%,rgba(246,246,246,0.0) 100%);
-  }
-
-  /*
-
-  .ad figure.child3 .background:before {
-    width:15%;
-    background: linear-gradient(to left, rgba(240,239,244,1.0) 0%,rgba(240,239,244,0.0) 100%);
-  }
-
-  */
 
   .ad figure figcaption {
     width:1em;
@@ -464,7 +424,7 @@
         "selector": "figure.child3 .background",
         "keyframes": [
           {
-             "transform": "translate(0%,0%)scale(0.9,0.9)"
+             "transform": "translate(0%,0%)"
           }
         ]
       }]
@@ -539,7 +499,7 @@
     </figcaption>
     </figure>
     <figure class="child3 child">
-      <amp-img class="background" width="457" height="280" alt="Studio Job" src="images/studio-job.jpg"></amp-img>
+      <amp-img class="background" width="728" height="208" alt="Studio Job" src="images/studio-job.jpg"></amp-img>
       <figcaption><span class="titleEnd"></span><div class="animateEnd">
         <div class="stage">
           <div class="graphic">
