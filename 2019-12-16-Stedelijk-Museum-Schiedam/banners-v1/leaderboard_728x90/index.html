@@ -1,0 +1,526 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=336,height=280">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Leaderboard</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes title {
+    0% {
+      opacity: 0.0;
+      transform: translate(20px,20px)scale(1.1,1.1);
+    }
+    2% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+    80% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+    84% {
+      opacity:0.0;
+      transform: translate(0px,-10px)scale(1.0,1.0);
+    }
+  }
+
+  @keyframes titleEnd {
+    0% {
+      opacity: 0.0;
+      transform: translate(20px,20px)scale(1.,1.1);
+    }
+    2%, 100% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+  }
+
+   @keyframes ctaHidden {
+    from {
+      opacity: 0.0;
+    }
+    to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes cta {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    60% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    63% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    66%, 96% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    97%, 100% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes ctaEnd {
+    0% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    10% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    20% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+  }
+
+  .ad .slide1 {
+    z-index:3;
+  }
+
+  .ad .slide2 {
+    z-index:2;
+  }
+
+  .ad .slide3 {
+    z-index:0;
+  }
+
+
+  .ad .slide {
+    opacity: 0;
+  }
+
+  .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
+    width:728px;
+    height:90px;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#FFF;
+    overflow:hidden;
+  }
+
+  .ad .slide3 figure {
+    width:50%;
+    height:100%;
+  }
+
+  .ad figure .background {
+    position: absolute;
+    left:0%;
+    top:0px;
+  }
+
+  .ad .slide1 figure .background {
+    transform: translate(0%,-25%)scale(1.05,1.05);
+  }
+
+  .ad .slide1 figure:after {
+  background:linear-gradient(90deg, rgba(233,238,232,1.0) 15%, rgba(0,0,0,0.0) 30%);
+ }
+
+  .ad .slide figure figcaption { 
+    position: absolute;
+    z-index: 1;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    font-size:221px;
+  }
+
+  .ad .slide figure figcaption .wrapper { 
+    width:calc(1em + 10px);
+    height:0.3em;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+    right:10px;
+    top:10px;
+    transform:scale(0.9,0.9);
+  }
+
+  @keyframes wrapper {
+    0% {
+      background-color: #000;
+    }
+    2% {
+      background-color: #FFF;
+      top:0;
+      transform:scale(0.8,0.8);
+    }
+    100% {
+      background-color: #FFF;
+      top:0;
+      transform:scale(0.8,0.8);
+    }
+   }
+
+
+
+  .ad .slide1 figure figcaption .wrapper { 
+    width:calc(1.01em + 10px);
+    background-color:#000;
+    animation-name:wrapper, wrapper;
+    animation-timing-function:ease-out;
+    animation-delay:7.5s, 19.5s;
+    animation-duration:4.8s, 4.8s;
+    animation-iteration-count:1;
+    animation-fill-mode:none, forwards;
+  }
+
+
+  .ad .slide figure figcaption .wrapper span.title { 
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:calc(1em - 20px);
+    height:0.3em;
+    top:10px;
+    left:10px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:0.0;
+ }
+
+ .ad .slide1 figure figcaption .wrapper span.title.firstQuote { 
+    background-image:url('images/rothko-marieke.svg');
+    top:12px;
+ }
+
+ .ad .slide1 figure figcaption .wrapper span.title.secondQuote { 
+    background-image:url('images/rothko-peter.svg');
+ }
+
+ .ad .slide1 figure figcaption .wrapper span.title.thirdQuote { 
+    background-image:url('images/rothko-halil.svg');
+ }
+
+ .ad .slide1 figure figcaption .wrapper span.title.fourth, .ad .slide1 figure figcaption .wrapper span.title.fourthEnd { 
+    background-image:url('images/rothko-title.svg');
+ }
+
+  .ad span.logo { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: bottom center;
+    width:100px;
+    height:100px;
+    bottom:0px;
+    left:10px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin: center center;
+ }
+
+ .ad .slide3 span.logo {
+    bottom:none;
+    top:0px;
+    background-position:top center;
+ }
+
+  button.cta {
+    font-size:140px;
+    width:1em;
+    height:auto;
+    background-color:#000;
+    padding:calc(1em/7.9) calc(1em/2);
+    text-decoration: none;
+    position:absolute;
+    bottom:-40%;
+    left:0;
+    transform:translate(0%,0);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:95%;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:0px;
+    cursor: pointer;
+    z-index: 100;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaHidden, ctaEnd, ctaHidden, ctaEnd;
+    animation-timing-function:ease-out, ease-out;
+    animation-delay:0s, 8.5s, 12s, 21s;
+    animation-duration:7.5s, 2.5s, 7.5s, 2.5s;
+    animation-iteration-count:1;
+    animation-fill-mode: none;
+  }
+
+  .ad:hover button.cta {
+    transform:translate(0%,0)scale(1.1,1.1);
+  }
+  </style>
+
+
+</head>
+<body>
+
+  <!--Animate banner-->
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide1",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide1_Background" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1 figure .background",
+        "keyframes": [
+          {
+             "transform": "translate(0%,-50%)scale(1.0,1.0)",
+             "offset": "0.8"
+          },
+          {
+            "transform": "translate(0%,-50%)scale(1.1,1.1)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="firstQuote" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1 figure figcaption .firstQuote",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.3"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.35"
+          },
+          {
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="secondQuote" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.5s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1 figure figcaption .secondQuote",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.3"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.35"
+          },
+          {
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="thirdQuote" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "5s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1 figure figcaption .thirdQuote",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.3"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.35"
+          },
+          {
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="titleEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "7.3s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide1 figure figcaption .fourth",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.55"
+          },
+          {
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="titleEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "19.3s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide1 figure figcaption .fourthEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+      <figure>
+        <amp-img class="background" width="728" height="474" alt="Rothko" src="images/rothko.jpg"></amp-img>
+        <figcaption>
+          <div class="wrapper">
+            <span class="title firstQuote"></span>
+            <span class="title secondQuote"></span>
+            <span class="title thirdQuote"></span>
+            <span class="title fourth"></span><span class="title fourthEnd"></span>
+            <button class="cta animated"></button>
+          </div>
+        </figcaption>
+      </figure>
+      <span class="logo"></span>
+    </div>
+  </div>
+</body>
+</html>
