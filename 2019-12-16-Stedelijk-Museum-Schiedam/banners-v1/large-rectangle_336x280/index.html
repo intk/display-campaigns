@@ -202,7 +202,7 @@
     height:0.3em;
     display: block;
     position: absolute;
-    background-color: #fff;
+    background-color: #000;
     z-index: 1;
     left:20px;
     top:20px;
@@ -210,21 +210,23 @@
 
   @keyframes wrapper {
     0% {
-      background-color: #000;
+      opacity: 0.0;
     }
     2% {
-      background-color: #FFF;
+      opacity: 1.0;
     }
     100% {
-      background-color: #FFF;
+       opacity: 1.0;
     }
    }
 
 
 
-  .ad .slide1 figure figcaption .wrapper { 
+  .ad .slide1 figure figcaption .wrapperWhite { 
     width:calc(1.01em + 10px);
-    background-color:#000;
+    height:0.3em;
+    background-color:#FFF;
+    opacity: 0.0;
     animation-name:wrapper, wrapper;
     animation-timing-function:ease-out;
     animation-delay:7.5s, 19.5s;
@@ -529,6 +531,7 @@
         <amp-img class="background" width="430" height="280" alt="Rothko" src="images/rothko.jpg"></amp-img>
         <figcaption>
           <div class="wrapper">
+            <div class="wrapperWhite"></div>
             <span class="title firstQuote"></span>
             <span class="title secondQuote"></span>
             <span class="title thirdQuote"></span>

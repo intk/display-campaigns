@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=200,height=200">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Large rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -131,8 +131,8 @@
   }
 
   .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
-    width:728px;
-    height:90px;
+    width:200px;
+    height:200px;
   }
 
   .ad figure {
@@ -152,17 +152,29 @@
 
   .ad figure .background {
     position: absolute;
-    left:0%;
+    left:50%;
     top:0px;
   }
 
   .ad .slide1 figure .background {
-    transform: translate(0%,-25%)scale(1.05,1.05);
+    transform: translate(-60%,0)scale(1.05,1.05);
   }
 
-  .ad .slide1 figure:after {
-  background:linear-gradient(90deg, rgba(233,238,232,1.0) 15%, rgba(0,0,0,0.0) 30%);
- }
+  .ad .slide2 figure .background {
+    top:20px;
+    transform: translate(-50%,0)scale(1.2,1.2);
+  }
+
+  .ad .slide3 figure.left .background {
+    top:-2px;
+    transform: translate(-37%,-5%)scale(1.3,1.3);
+    transform-origin: center center;
+  }
+
+  .ad .slide3 figure.right .background {
+    transform: translate(-60%,0%)scale(1.15,1.15);
+  }
+
 
   .ad .slide figure figcaption { 
     position: absolute;
@@ -171,33 +183,32 @@
     left:0;
     width:100%;
     height:100%;
-    font-size:221px;
+    font-size:150px;
   }
 
-  .ad .slide figure figcaption .wrapper { 
+ .ad .slide3 figure:after {
+    content:"";
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.0) 40%);
+  }
+
+   .ad .slide figure figcaption .wrapper { 
     width:calc(1em + 10px);
     height:0.3em;
     display: block;
     position: absolute;
     background-color: #000;
     z-index: 1;
-    right:10px;
-    top:10px;
-    transform:scale(0.9,0.9);
+    left:20px;
+    top:20px;
   }
 
   @keyframes wrapper {
-    0% {
-    }
-    2% {
-      transform:scale(0.8,0.8)translate(0,-10px);
-    }
-    100% {
-      transform:scale(0.8,0.8)translate(0,-10px);
-    }
-   }
-
-   @keyframes wrapperWhite {
     0% {
       opacity: 0.0;
     }
@@ -205,29 +216,18 @@
       opacity: 1.0;
     }
     100% {
-      opacity: 1.0;
+       opacity: 1.0;
     }
    }
 
 
-
-  .ad .slide1 figure figcaption .wrapper { 
-    width:calc(1.01em + 10px);
-    background-color:#000;
-    animation-name:wrapper, wrapper;
-    animation-timing-function:ease-out;
-    animation-delay:7.5s, 19.5s;
-    animation-duration:4.8s, 4.8s;
-    animation-iteration-count:1;
-    animation-fill-mode:none, forwards;
-  }
 
   .ad .slide1 figure figcaption .wrapperWhite { 
     width:calc(1.01em + 10px);
     height:0.3em;
     background-color:#FFF;
     opacity: 0.0;
-    animation-name:wrapperWhite, wrapperWhite;
+    animation-name:wrapper, wrapper;
     animation-timing-function:ease-out;
     animation-delay:7.5s, 19.5s;
     animation-duration:4.8s, 4.8s;
@@ -271,10 +271,10 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom center;
-    width:100px;
-    height:100px;
+    width:80px;
+    height:80px;
     bottom:0px;
-    left:10px;
+    right:10px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -289,7 +289,7 @@
  }
 
   button.cta {
-    font-size:140px;
+    font-size:100px;
     width:1em;
     height:auto;
     background-color:#000;
@@ -361,11 +361,11 @@
         "selector": ".slide1 figure .background",
         "keyframes": [
           {
-             "transform": "translate(0%,-50%)scale(1.0,1.0)",
+             "transform": "translate(-48%,0)scale(1.0,1.0)",
              "offset": "0.8"
           },
           {
-            "transform": "translate(0%,-50%)scale(1.1,1.1)"
+            "transform": "translate(-48%,0)scale(1.1,1.1)"
           }
 
         ]
@@ -528,7 +528,7 @@
   <div class="ad">
     <div class="slide slide1">
       <figure>
-        <amp-img class="background" width="728" height="474" alt="Rothko" src="images/rothko.jpg"></amp-img>
+        <amp-img class="background" width="307" height="200" alt="Rothko" src="images/rothko.jpg"></amp-img>
         <figcaption>
           <div class="wrapper">
              <div class="wrapperWhite"></div>
