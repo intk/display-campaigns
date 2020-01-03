@@ -1,0 +1,543 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=160,height=600">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Wide skyscraper</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes title {
+    0% {
+      opacity: 0.0;
+      transform: translate(20px,20px)scale(1.1,1.1);
+    }
+    2% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+    80% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+    84% {
+      opacity:0.0;
+      transform: translate(0px,-10px)scale(1.0,1.0);
+    }
+  }
+
+  @keyframes titleEnd {
+    0% {
+      opacity: 0.0;
+      transform: translate(20px,20px)scale(1.,1.1);
+    }
+    2%, 100% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+  }
+
+   @keyframes ctaHidden {
+    from {
+      opacity: 0.0;
+    }
+    to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes cta {
+    0% {
+       opacity:0.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+    60% {
+       opacity:0.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+    63% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.1,1.1);
+    }
+    66%, 96% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+    97%, 100% {
+       opacity:0.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes ctaEnd {
+    0% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+    10% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.1,1.1);
+    }
+    20% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(-50%,0)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+  }
+
+  .ad .slide1 {
+    z-index:3;
+  }
+
+  .ad .slide2 {
+    z-index:2;
+  }
+
+  .ad .slide3 {
+    z-index:0;
+  }
+
+
+  .ad .slide {
+    opacity: 0;
+  }
+
+  .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
+    width:160px;
+    height:600px;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#FFF;
+    overflow:hidden;
+  }
+
+  .ad .slide3 figure {
+    width:50%;
+    height:100%;
+  }
+
+  .ad figure .background {
+    position: absolute;
+    left:65%;
+    top:0%;
+  }
+
+  .ad .slide1 figure .background {
+    transform: translate(-30%,0%)scale(1.0,1.0);
+  }
+
+
+  .ad .slide figure figcaption { 
+    position: absolute;
+    z-index: 3;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    font-size:160px;
+  }
+
+  .ad .slide figure figcaption .last-chance, .ad .slide figure figcaption .last-chanceEnd { 
+    position: absolute;
+    top:0;
+    width:110%;
+    height:35px;
+    background-color: #cd1719;
+    z-index:3000;
+    background-image: url(images/laatste-kans.svg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:60%;
+    transform-origin: center;
+    top:50%;
+    left:50%;
+    opacity: 0.0;
+    transform: translate(-50%,-50%)rotate(-5deg)scale(1.1,1.1);
+
+  }
+
+ .ad .slide3 figure:after {
+    content:"";
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.0) 40%);
+  }
+
+  .ad .slide figure figcaption .wrapper { 
+    width:calc(1em);
+    height:0.55em;
+    display: block;
+    position: absolute;
+    background-color: #FFF;
+    z-index: 1;
+    right:1px;
+    top:2px;
+     transform:scale(0.9,0.9);
+  }
+
+  @keyframes wrapper {
+    0% {
+      opacity: 0.0;
+    }
+    2% {
+      opacity: 1.0;
+    }
+    100% {
+       opacity: 1.0;
+    }
+   }
+
+
+  .ad .slide figure figcaption .wrapper span.title { 
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:100%;
+    height:80%;
+    top:10px;
+    left:10px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:0.0;
+    background-image:url('images/title-black.svg');
+ }
+
+  .ad span.logo { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: bottom center;
+    width:120px;
+    height:120px;
+    bottom:0px;
+    left:50%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    opacity:1.0;
+    transform:translate(-50%,0);
+    transform-origin: center center;
+ }
+
+  button.cta {
+    font-size:140px;
+    width:1em;
+    height:auto;
+    background-color:#000;
+    padding:calc(1em/7.9) calc(1em/2);
+    text-decoration: none;
+    position:absolute;
+    bottom:25%;
+    left:50%;
+    transform:translate(-50%,0);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:95%;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:0px;
+    cursor: pointer;
+    z-index: 100;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaHidden, ctaEnd, ctaHidden, ctaEnd;
+    animation-timing-function:ease-out, ease-out;
+    animation-delay:0s, 7.5s, 12s, 21s;
+    animation-duration:7.5s, 2.5s, 7.5s, 2.5s;
+    animation-iteration-count:1;
+    animation-fill-mode: none;
+  }
+
+  .ad:hover button.cta {
+    transform:translate(-50%,0)scale(1.1,1.1);
+  }
+  </style>
+
+
+</head>
+<body>
+
+  <!--Animate banner-->
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide1",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide1_Background" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1 figure .background",
+        "keyframes": [
+          {
+             "transform": "translate(-50%,0)scale(1.0,1.0)",
+             "offset": "0.8"
+          },
+          {
+            "transform": "translate(-50%,0)scale(1.05,1.05)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="firstQuote" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1 figure figcaption .firstQuote",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.3"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.35"
+          },
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+  
+  <amp-animation id="last-chance" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide1 figure figcaption .last-chance",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.0,1.0)",
+             "offset": "0.02"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.0,1.0)",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.1,1.1)",
+             "offset": "0.52"
+          },
+           {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.0,1.0)",
+             "offset": "0.54"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.0,1.0)",
+             "offset": "0.97"
+          },
+          {
+             "opacity": "0.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.1,1.1)",
+             "offset": "0.98"
+          },
+          {
+             "opacity": "0.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.1,1.1)"
+           }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="last-chanceEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "13.3s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide1 figure figcaption .last-chanceEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.0,1.0)",
+             "offset": "0.02"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.0,1.0)",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.1,1.1)",
+             "offset": "0.52"
+          },
+           {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.0,1.0)",
+             "offset": "0.54"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-45%,-50%)rotate(-5deg)scale(1.0,1.0)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="titleEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "7.3s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide1 figure figcaption .fourth",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.55"
+          },
+          {
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="titleEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "19.3s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide1 figure figcaption .fourthEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+      <figure>
+        <amp-img class="background" width="461" height="600" alt="Magische collages" src="images/background.jpg"></amp-img>
+        <figcaption>
+          <span class="last-chance"></span> <span class="last-chanceEnd"></span>
+          <div class="wrapper">
+            <div class="wrapperWhite"></div>
+            <span class="title firstQuote"></span>
+            <span class="title fourth"></span><span class="title fourthEnd"></span>
+          </div>
+        </figcaption>
+      </figure>
+      <button class="cta animated"></button>
+      <span class="logo"></span>
+    </div>
+  </div>
+</body>
+</html>
