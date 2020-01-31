@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=300,height=50">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Mobile Banner</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -20,15 +20,15 @@
   @keyframes ctaShow {
     0% {
        opacity:0.0;
-       transform:translate(-50%,0)scale(1.0,1.0);
+       transform:translate(0,0)scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.1,1.1);
+       transform:translate(0,0)scale(1.1,1.1);
     }
     100% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0);
+       transform:translate(0,0)scale(1.0,1.0);
     }
 
   }
@@ -36,15 +36,15 @@
    @keyframes cta {
     0% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0);
+       transform:translate(0,0)scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.1,1.1);
+       transform:translate(0,0)scale(1.1,1.1);
     }
     100% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0);
+       transform:translate(0,0)scale(1.0,1.0);
     }
 
   }
@@ -71,9 +71,9 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    font-size:336px;
-    width:336px;
-    height:280px;
+    font-size:50px;
+    width:300px;
+    height:50px;
   }
 
   .ad .slide .wrapper {
@@ -88,26 +88,36 @@
     margin:0;
     padding:0;
     position:relative;
-    background-color:#FFF;
+    background-color:#e4dbd4;
     overflow:hidden;
   }
 
   .ad .slide1 figure .background  {
     display:block;
     position: absolute;
-    top:-40%;
-    left:0;
+    top:-150%;
+    left:50%;
     transform-origin: center center;
-    transform:translate(0%,20%);
+    transform:translate(-50%,-30%);
   }
+
+   .ad .slide1 figure .background:after  {
+    content:"";
+    display: block;
+    position: absolute;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg, #e4dbd4 0%, rgba(0,0,0,0.0) 20%, rgba(0,0,0,0.0) 80%, #e4dbd4 100%);
+   }
 
   .ad .slide1 figure figcaption { 
     position: absolute;
     display: block;
     z-index: 1;
     top:0.05em;
-    left:0.05em;
-    width:calc(100% - 0.1em);
+    left:20%;
+    width:calc(20% - 0.1em);
     height:calc(100% - 0.1em);
   }
 
@@ -117,24 +127,24 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position:right top;
-    width:10%;
+    width:12%;
     height:50%;
-    top:5%;
-    right:10%;
+    bottom:20%;
+    right:30%;
     display: block;
     position: absolute;
     z-index: 2;
     opacity:0.0;
     transform: translate(0%,23%);
-    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.4));
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.4));
   }
 
    .ad .slide1 figure figcaption .titleObj {
     position: absolute;
-    width:100%;
-    height:100%;
+    width:130%;
+    height:130%;
     display: block;
-    top:30%;
+    top:7%;
     left:0;
   }
 
@@ -142,8 +152,8 @@
   .ad .slide1 figure figcaption span {
     background-repeat: no-repeat;
     background-size:contain;
-    width:50%;
-    height:16%;
+    width:100%;
+    height:20%;
     left:0px;
     display: block;
     position: absolute;
@@ -159,12 +169,12 @@
 
   .ad .slide1 figure figcaption span.second, .ad .slide1 figure figcaption span.secondEnd { 
     background-image:url('images/second.svg');
-    top:16%;
+    top:22%;
  }
 
   .ad .slide1 figure figcaption span.third, .ad .slide1 figure figcaption span.thirdEnd { 
     background-image:url('images/third.svg');
-    top:32%;
+    top:44%;
  }
 
  @keyframes hideElement {
@@ -184,9 +194,9 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom center;
-    width:90px;
-    height:90px;
-    bottom:5%;
+    width:50px;
+    height:50px;
+    bottom:10%;
     left:0px;
     display: block;
     position: absolute;
@@ -196,16 +206,16 @@
  }
 
   button.cta {
-    font-size:120px;
+    font-size:70px;
     width:1em;
     height:auto;
     background-color:#6ebea9;
     padding:calc(1em/6.9) calc(1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:5%;
-    right:-14%;
-    transform:translate(-50%,0);
+    bottom:15px;
+    right:10px;
+    transform:translate(0%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
     background-size:80%;
@@ -226,7 +236,7 @@
   }
 
   .ad:hover figure button.cta {
-    transform:translate(-50%,0)scale(1.1,1.1);
+    transform:translate(0%,0)scale(1.1,1.1);
 
   }
   </style>
@@ -248,7 +258,7 @@
         "selector": ".slide figure .background",
         "keyframes": [
           {
-             "transform": "translate(0%,0%)"
+             "transform": "translate(-50%,0%)"
           }
 
         ]
@@ -499,7 +509,7 @@
 <div class="ad">
     <div class="slide slide1">
         <figure>
-            <amp-img class="background" width="336" height="471" alt="Cube" src="images/background.jpg"></amp-img>
+            <amp-img class="background" width="200" height="280" alt="Cube" src="images/background.jpg"></amp-img>
             <figcaption>
               <div class="titleObj">
                     <span class="first"></span><span class="firstEnd"></span><span class="second"></span><span class="secondEnd"></span><span class="third"></span><span class="thirdEnd"></span>
