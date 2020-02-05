@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=468,height=60">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Banner</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:336px;
-    height:280px;
+    width:468px;
+    height:60px;
   }
 
   .ad .slide .wrapper {
@@ -89,23 +89,23 @@
     position:relative;
     background-color:rgba(29, 44, 51, 1.0);
     overflow:hidden;
-    font-size:300px;
+    font-size:200px;
   }
 
   .ad .slide1 figure .background  {
     display:block;
     position: absolute;
-    top:-12%;
-    left:0%;
+    top:-133%;
+    right:9%;
     transform-origin:top center;
-    transform: scale(1.0,1.0)translate(0%,-10%);
+    transform: scale(0.9,0.9)translate(0%,-15%);
   }
 
   .ad .slide1 figure figcaption { 
     position: absolute;
-    z-index: 1;
-    top:15px;
-    left:15px;
+    z-index: 2;
+    top:10px;
+    left:20%;
     width:100%;
     height:70px;
   }
@@ -117,15 +117,15 @@
     padding:0;
     position: absolute;
     z-index: 1;
-    background:linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.0) 50%);
+    background:linear-gradient(90deg, #283a43 0%, #283a43 35%, rgba(0,0,0,0.0) 45%, rgba(0,0,0,0.0) 75%,  #283a43 90%);
   }
 
    .ad .slide1 figure figcaption span.first, .ad .slide1 figure figcaption span.firstEnd { 
     background-image:url('images/first.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.7em;
-    height:0.7em;
+    width:0.6em;
+    height:0.6em;
     top:0px;
     left:0px;
     display: block;
@@ -140,9 +140,9 @@
     background-image:url('images/second.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.7em;
-    height:0.7em;
-    top:0.12em;
+    width:0.6em;
+    height:0.6em;
+    top:0.11em;
     left:0px;
     display: block;
     position: absolute;
@@ -158,7 +158,7 @@
     background-size:contain;
     width:0.7em;
     height:0.7em;
-    top:0.23em;
+    top:0.2em;
     left:0px;
     display: block;
     position: absolute;
@@ -200,9 +200,9 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom center;
-    width:90px;
-    height:90px;
-    bottom:10px;
+    width:70px;
+    height:70px;
+    bottom:16px;
     left:10px;
     display: block;
     position: absolute;
@@ -212,7 +212,7 @@
  }
 
   button.cta {
-    font-size:120px;
+    font-size:80px;
     width:1em;
     height:auto;
     background-color:#bf2a26;
@@ -249,6 +249,7 @@
 
 </head>
 <body>
+
   <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -264,7 +265,7 @@
              "offset": "0.5"
           },
           {
-             "transform": "scale(1.1,1.1)translate(5%,0%)"
+             "transform": "scale(1.1,1.1)translate(0%,-5%)"
           }
 
         ]
@@ -455,7 +456,7 @@
   <div class="ad">
     <div class="slide slide1">
     <figure>
-      <amp-img class="background" width="336" height="504" alt="Mondriaanhuis" src="images/background.jpg"></amp-img>
+      <amp-img class="background" width="300" height="224" alt="Mondriaanhuis" src="images/background.jpg"></amp-img>
       <figcaption><span class="first"></span><span class="firstEnd"></span><span class="second"></span><span class="secondEnd"></span><span class="third"></span><span class="thirdEnd"></span></figcaption>
       <button class="cta animated"></button>
       <span class="logo"></span>
