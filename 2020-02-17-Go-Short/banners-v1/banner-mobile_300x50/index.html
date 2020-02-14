@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=160,height=600">
+  <meta name="ad.size" content="width=300,height=50">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Wide Skyscraper</title>
+  <title>Mobile Banner</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -20,15 +20,15 @@
   @keyframes ctaShow {
     0% {
        opacity:0.0;
-       transform:translateX(-50%)scale(1.0,1.0);
+       transform:scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translateX(-50%)scale(1.1,1.1);
+       transform:scale(1.1,1.1);
     }
     100% {
        opacity:1.0;
-       transform:translateX(-50%)scale(1.0,1.0);
+       transform:scale(1.0,1.0);
     }
 
   }
@@ -36,15 +36,15 @@
    @keyframes cta {
     0% {
        opacity:1.0;
-       transform:translateX(-50%)scale(1.0,1.0);
+       transform:scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translateX(-50%)scale(1.1,1.1);
+       transform:scale(1.1,1.1);
     }
     100% {
        opacity:1.0;
-       transform:translateX(-50%)scale(1.0,1.0);
+       transform:scale(1.0,1.0);
     }
 
   }
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:160px;
-    height:600px;
+    width:300px;
+    height:50px;
   }
 
   .ad .slide .wrapper {
@@ -89,16 +89,27 @@
     position:relative;
     background-color:rgba(29, 44, 51, 1.0);
     overflow:hidden;
-    font-size:300px;
+    font-size:160px;
+  }
+
+  .ad .slide1 figure:after {
+    content:"";
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(90deg, #5C85AD 0%,  #5C85AD 15%,  rgba(217,217,217,0.0) 40%, rgba(217,217,217,0.0) 70%, #5C85AD 90%);
   }
 
   .ad .slide1 figure .background  {
     display:block;
     position: absolute;
-    top:0%;
-    left:calc(-82% - 1px);
+    top:-130%;
+    right:calc(6% + 3px);
     transform-origin:center center;
-    transform: scale(1.1,1.1)translate(30%,0%);
+    transform: scale(1.1,1.1)translate(0%,10%);
   }
 
   .ad .slide1 figure figcaption { 
@@ -106,26 +117,25 @@
     z-index: 1;
     top:50%;
     left:50%;
-    width:0.4em;
-    height:50%;
+    width:1.0em;
+    height:100%;
     transform:translate(-50%,-50%);
-
   }
 
   .ad .slide1 figure figcaption span.first, .ad .slide1 figure figcaption span.firstEnd { 
     background-image:url('images/first.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: bottom left;
-    width:0.2em;
-    height:25%;
-    top:0.23em;
-    left:0px;
+    background-position: center center;
+    width:40%;
+    height:40%;
+    top:52%;
+    left:20%;
     display: block;
     position: absolute;
     z-index: 2;
     opacity:0.0;
-    transform: translate(0%,-40%);
+    transform: translate(-50%,-40%);
     filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
  }
 
@@ -133,15 +143,16 @@
     background-image:url('images/second.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:100%;
-    height:25%;
+    background-position: center center;
+    width:55%;
+    height:55%;
     top:50%;
-    left:0px;
+    left:50%;
     display: block;
     position: absolute;
     z-index: 2;
     opacity:0.0;
-    transform: translate(-10%,-50%);
+    transform: translate(-60%,-50%);
     filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
  }
 
@@ -149,16 +160,16 @@
     background-image:url('images/third.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: bottom left;
-    width:100%;
-    height:25%;
-    top:0.57em;
-    left:0px;
+    background-position: center center;
+    width:50%;
+    height:50%;
+    top:50%;
+    left:82%;
     display: block;
     position: absolute;
     z-index: 2;
     opacity:0.0;
-    transform: translate(0%,-10%);
+    transform: translate(-50%,-60%);
     filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
  }
 
@@ -178,11 +189,12 @@
     background-image:url('images/top.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    background-position:top center;
+    background-position:center center;
     width:100px;
     height:100px;
-    top:22px;
-    left:22px;
+    top:50%;
+    transform: translateY(-50%);
+    left:10px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -191,21 +203,20 @@
  }
 
   button.cta {
-    font-size:110px;
+    font-size:70px;
     width:1em;
     height:auto;
     background-color:#1E1E1E;
-    padding:calc(1em/6.9) calc(1em/2);
+    padding:calc(1em/6.9) calc(1em/2.2);
     text-decoration: none;
     position:absolute;
-    bottom:20%;
-    left:50%;
+    bottom:5px;
+    right:5px;
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
-    background-size:85%;
+    background-size:88%;
     background-position:center center;
     transform-origin:50%, 50%;
-    transform: translateX(-50%);
     border-radius:0px;
     border:1px solid #555;
     cursor: pointer;
@@ -221,7 +232,7 @@
   }
 
   .ad:hover figure button.cta {
-    transform:translateX(-50%)scale(1.1,1.1);
+    transform:scale(1.1,1.1);
 
   }
   </style>
@@ -266,22 +277,22 @@
         "keyframes": [
           {
              "opacity": "1.0",
-             "transform": "translate(0%,-50%)scale(1.0,1.0)",
+             "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.15"
           },
           {
              "opacity": "1.0",
-              "transform": "translate(0%,-50%)scale(1.0,1.0)",
+              "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.8"
           },
           {
              "opacity": "0.0",
-              "transform": "translate(-10%,-50%)scale(1.0,1.0)",
+              "transform": "translate(-60%,-50%)scale(1.0,1.0)",
               "offset": "0.85"
           },
           {
              "opacity": "0.0",
-              "transform": "translate(-10%,-50%)scale(1.0,1.0)"
+              "transform": "translate(-60%,-50%)scale(1.0,1.0)"
           }
         ]
       }]
@@ -300,12 +311,12 @@
         "keyframes": [
           {
              "opacity": "1.0",
-             "transform": "translate(0%,-50%)scale(1.0,1.0)",
+             "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.15"
           },
           {
              "opacity": "1.0",
-              "transform": "translate(0%,-50%)scale(1.0,1.0)"
+              "transform": "translate(-50%,-50%)scale(1.0,1.0)"
           }
         ]
       }]
@@ -323,23 +334,23 @@
         "selector": ".slide figure span.first",
         "keyframes": [
           {
-             "opacity": "0.3",
-             "transform": "translate(0%,-50%)scale(1.0,1.0)",
+             "opacity": "0.5",
+             "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.1"
           },
           {
-             "opacity": "0.3",
-              "transform": "translate(0%,-50%)scale(1.0,1.0)",
+             "opacity": "0.5",
+              "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.8"
           },
           {
              "opacity": "0.0",
-              "transform": "translate(0%,-40%)scale(1.0,1.0)",
+              "transform": "translate(-50%,-40%)scale(1.0,1.0)",
               "offset": "0.85"
           },
           {
              "opacity": "0.0",
-              "transform": "translate(0%,-40%)scale(1.0,1.0)"
+              "transform": "translate(-50%,-40%)scale(1.0,1.0)"
           }
         ]
       }]
@@ -358,12 +369,12 @@
         "keyframes": [
           {
              "opacity": "0.3",
-             "transform": "translate(0%,-50%)scale(1.0,1.0)",
+             "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.1"
           },
           {
              "opacity": "0.3",
-              "transform": "translate(0%,-50%)scale(1.0,1.0)"
+              "transform": "translate(-50%,-50%)scale(1.0,1.0)"
           }
         ]
       }]
@@ -381,23 +392,23 @@
         "selector": ".slide figure span.third",
         "keyframes": [
           {
-             "opacity": "0.3",
-             "transform": "translate(0%,0%)scale(1.0,1.0)",
+             "opacity": "0.5",
+             "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.1"
           },
           {
-             "opacity": "0.3",
-              "transform": "translate(0%,0%)scale(1.0,1.0)",
+             "opacity": "0.5",
+              "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.8"
           },
           {
              "opacity": "0.0",
-              "transform": "translate(0%,-10%)scale(1.0,1.0)",
+              "transform": "translate(-50%,-60%)scale(1.0,1.0)",
               "offset": "0.85"
           },
           {
              "opacity": "0.0",
-              "transform": "translate(0%,-10%)scale(1.0,1.0)"
+              "transform": "translate(-50%,-60%)scale(1.0,1.0)"
           }
         ]
       }]
@@ -415,13 +426,13 @@
         "selector": ".slide figure span.thirdEnd",
         "keyframes": [
           {
-             "opacity": "0.3",
-             "transform": "translate(0%,0%)scale(1.0,1.0)",
+             "opacity": "0.5",
+             "transform": "translate(-50%,-50%)scale(1.0,1.0)",
               "offset": "0.1"
           },
           {
-             "opacity": "0.3",
-              "transform": "translate(0%,0%)scale(1.0,1.0)"
+             "opacity": "0.5",
+              "transform": "translate(-50%,-50%)scale(1.0,1.0)"
           }
         ]
       }]
@@ -432,7 +443,7 @@
   <div class="ad">
     <div class="slide slide1">
     <figure>
-      <amp-img class="background" width="426" height="600" alt="Go Short" src="images/background.jpg"></amp-img>
+      <amp-img class="background" width="247" height="174" alt="Go Short" src="images/background.jpg"></amp-img>
       <figcaption>
         <span class="first"></span><span class="firstEnd"></span>
         <span class="second"></span><span class="secondEnd"></span>
