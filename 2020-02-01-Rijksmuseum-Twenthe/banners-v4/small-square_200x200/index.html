@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=160,height=600">
+  <meta name="ad.size" content="width=200,height=200">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Skyscraper</title>
+  <title>Square</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -20,15 +20,15 @@
   @keyframes ctaShow {
     0% {
        opacity:0.0;
-       transform:translate(-50%,0)scale(1.0,1.0);
+       transform:translate(0%,0)scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.1,1.1);
+       transform:translate(0%,0)scale(1.1,1.1);
     }
     100% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0);
+       transform:translate(0%,0)scale(1.0,1.0);
     }
 
   }
@@ -36,15 +36,15 @@
    @keyframes cta {
     0% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0);
+       transform:translate(0%,0)scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.1,1.1);
+       transform:translate(0%,0)scale(1.1,1.1);
     }
     100% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0);
+       transform:translate(0%,0)scale(1.0,1.0);
     }
 
   }
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:160px;
-    height:600px;
+    width:200px;
+    height:200px;
   }
 
   .ad .slide .wrapper {
@@ -89,7 +89,7 @@
     position:relative;
     background-color:#F7F7ED;
     overflow:hidden;
-    font-size:250px;
+    font-size:150px;
   }
 
   .ad .slide1 figure .background  {
@@ -114,12 +114,12 @@
   .ad .slide1 figure figcaption .picassomatisse {
     display: block;
     position: absolute;
-    left:-5%;
-    top:50%;
-    width:0.8em;
-    height:0.8em;
+    left:25%;
+    top:15%;
+    width:0.9em;
+    height:0.9em;
     z-index:2;
-    transform:rotate(0deg);
+    transform:rotate(30deg);
   }
 
   .ad .slide1 figure figcaption span.title, .ad .slide1 figure figcaption span.titleEnd { 
@@ -185,10 +185,10 @@
     background-image:url('images/background-yellow.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:1.3em;
-    height:1.3em;
-    top:-25%;
-    right:-78%;
+    width:1em;
+    height:1em;
+    top:-40%;
+    right:-32%;
     display:block;
     position: absolute;
     z-index:0;
@@ -199,14 +199,14 @@
     background-image:url('images/background-green.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:1.4em;
-    height:1.4em;
-    bottom:-3%;
-    right:-140%;
+    width:1.1em;
+    height:1.1em;
+    bottom:-55%;
+    left:0%;
     display:block;
     position: absolute;
     z-index:0;
-    transform:rotate(-150deg);
+    transform:rotate(-90deg);
  }
 
  @keyframes hideElement {
@@ -226,11 +226,10 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom center;
-    width:100px;
-    height:100px;
+    width:80px;
+    height:80px;
     bottom:10px;
-    left:50%;
-    transform: translate(-50%,0);
+    left:10px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -239,16 +238,16 @@
  }
 
   button.cta {
-    font-size:110px;
+    font-size:90px;
     width:1em;
     height:auto;
     background-color:#dc2f43;
     padding:calc(1em/6.9) calc(1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:20%;
-    left:50%;
-    transform:translate(-50%,0);
+    bottom:5%;
+    right:5%;
+    transform:translate(0%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
     background-size:80%;
@@ -269,7 +268,7 @@
   }
 
   .ad:hover figure button.cta {
-    transform:translate(-50%,0)scale(1.1,1.1);
+    transform:translate(0%,0)scale(1.1,1.1);
 
   }
   </style>
