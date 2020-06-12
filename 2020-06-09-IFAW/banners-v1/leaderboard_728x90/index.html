@@ -2,27 +2,31 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=728,height=90">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Leaderboard</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
   <style amp-custom>
   /* Animations */
 
-   @keyframes cta {
-    0%,20% {
+  @keyframes cta {
+    0%,30% {
        opacity:0.0;
        transform:translate(-5%,0);
     }
-    23% {
+    33% {
        opacity:1.0;
        transform:translate(5%,0);
     }
-    26%,100% {
+    36%,70%,76%,100% {
        opacity:1.0;
        transform:translate(0%,0);
+    }
+    73% {
+       opacity:1.0;
+       transform:translate(5%,0);
     }
 
   }
@@ -49,8 +53,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:336px;
-    height:280px;
+    width:728px;
+    height:90px;
   }
 
   .ad .slide .wrapper {
@@ -72,26 +76,26 @@
 
   .ad figure:after {
     content:"";
-    width:50%;
-    height:20px;
+    width:80px;
+    height:25px;
     position: absolute;
     z-index: 100;
     display: block;
-    bottom:0;
-    right:0;
+    bottom:-2px;
+    right:24%;
     background-image:url(images/copyright.svg);
     background-repeat: no-repeat;
     background-position:right center;
-    background-size:50%;
+    background-size:90%;
   }
 
   .ad .slide1 figure .background  {
     display:block;
     position: absolute;
-    top:-10%;
-    right:0;
+    top:-120%;
+    left:30%;
     transform-origin:center center;
-    transform: scale(1.0,1.0)translate(0%,0%);
+    transform: scale(1.0,1.0)translate(0%,-30%);
   }
 
   .ad .slide1 figure figcaption { 
@@ -99,9 +103,8 @@
     z-index: 1;
     top:0;
     left:0px;
-    width:50%;
-    height:100%;
-    background-color:#f7f6f5;
+    width:60%;
+    height:90%;
     transform: translate(-100%,0%);
   }
 
@@ -113,7 +116,7 @@
     background-color:transparent;
     width:calc(100% - 30px);
     height:calc(100% - 30px);
-    top:15px;
+    top:18px;
     left:15px;
     display: block;
     position: absolute;
@@ -169,15 +172,15 @@
  }
 
   button.cta {
-    font-size:150px;
+    font-size:130px;
     width:1em;
     height:auto;
     background-color:transparent;
     padding:calc(1em/6.9) calc(1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:30px;
-    left:15px;
+    bottom:25px;
+    right:0px;
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
     background-size:contain;
@@ -191,13 +194,13 @@
     transition:transform 0.2s ease-out;
     animation-name:cta;
     animation-timing-function:ease-out;
-    animation-delay:0.8s;
+    animation-delay:0s;
     animation-duration:8s;
     animation-iteration-count:3;
     animation-fill-mode:none;
   }
 
-  .ad:hover figure button.cta {
+  .ad:hover button.cta {
     transform:translate(5%,0);
 
   }
@@ -217,12 +220,9 @@
         "iterations": "3",
         "selector": ".slide figure .background",
         "keyframes": [
+          
           {
-             "transform": "scale(0.84,0.84)translate(30%,0%)",
-             "offset": "0.2"
-          },
-          {
-             "transform": "scale(0.9,0.9)translate(30%,0%)"
+             "transform": "scale(1.0,1.0)translate(0%,0%)"
           }
 
         ]
@@ -314,8 +314,8 @@
     <figure>
       <amp-img class="background" width="336" height="348" alt="IFAW" src="images/background.jpg"></amp-img>
       <figcaption><span class="title"></span><span class="titleEnd"></span> 
-        <button class="cta animated"></button></figcaption>
     </figure>
+    <button class="cta animated"></button></figcaption>
   </div>
   </div>
 </body>
