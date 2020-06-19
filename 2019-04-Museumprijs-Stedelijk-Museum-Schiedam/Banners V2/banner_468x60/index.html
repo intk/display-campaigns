@@ -1,0 +1,503 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=468,height=60">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Banner</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes title {
+    0% {
+      opacity: 0.0;
+      transform: translate(20px,20px)scale(1.1,1.1);
+    }
+    2% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+    80% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+    84% {
+      opacity:0.0;
+      transform: translate(0px,-10px)scale(1.0,1.0);
+    }
+  }
+
+  @keyframes titleEnd {
+    0% {
+      opacity: 0.0;
+      transform: translate(20px,20px)scale(1.,1.1);
+    }
+    2%, 100% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+  }
+
+   @keyframes ctaHidden {
+    from {
+      opacity: 0.0;
+    }
+    to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes cta {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,-50%)scale(1.0,1.0);
+    }
+    60% {
+       opacity:0.0;
+       transform:translate(0%,-50%)scale(1.0,1.0);
+    }
+    63% {
+       opacity:1.0;
+       transform:translate(0%,-50%)scale(1.1,1.1);
+    }
+    66%, 96% {
+       opacity:1.0;
+       transform:translate(0%,-50%)scale(1.0,1.0);
+    }
+    97%, 100% {
+       opacity:0.0;
+       transform:translate(0%,-50%)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes ctaEnd {
+    0% {
+       opacity:1.0;
+       transform:translate(0%,-50%)scale(1.0,1.0);
+    }
+    10% {
+       opacity:1.0;
+       transform:translate(0%,-50%)scale(1.1,1.1);
+    }
+    20% {
+       opacity:1.0;
+       transform:translate(0%,-50%)scale(1.0,1.0);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,-50%)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+    font-size:180px;
+  }
+
+  .ad .slide1 {
+    z-index:3;
+    background-color: #FFF;
+  }
+
+  .ad .slide2 {
+    z-index:2;
+    background-color:#FFFF;
+  }
+
+  .ad .slide3 {
+    z-index:0;
+    background-color: #FFF;
+  }
+
+  .ad .slide {
+    opacity: 0;
+  }
+
+  .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
+    width:468px;
+    height:60px;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .ad figure .background {
+    position: absolute;
+    left:0%;
+    top:0px;
+  }
+
+  .ad .slide1 figure .background {
+    transform: translate(0%,-12%)scale(1.0,1.0)rotate(-1deg);
+  }
+
+  .ad .slide2 figure .background {
+    transform: translate(0%,-14%)scale(1.0,1.0)rotate(-2deg);
+  }
+
+  .ad .slide figure:after {
+    content:"";
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    background:linear-gradient(90deg, rgba(0,0,0,0.0) 30%, rgba(255,255,255,1.0) 40%, rgba(255,255,255,1.0) 100%);
+  }
+/*
+  .ad .slide1 figure:after {
+    background:linear-gradient(90deg, rgba(0,0,0,0.0) 30%, rgba(167,158,144,1.0) 40%, rgba(167,158,144,1.0) 100%);
+  }
+
+   .ad .slide2 figure:after {
+    background:linear-gradient(90deg, rgba(0,0,0,0.0) 30%, rgba(234,237,236,1.0) 40%, rgba(234,237,236,1.0) 100%);
+  }
+  */
+
+
+  .ad .slide figure figcaption { 
+    position: absolute;
+    z-index: 2;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+
+  .ad .slide1 figure figcaption span.text {
+    background-color: transparent;
+    background-image:url('images/hugoborst.svg');
+    background-repeat: no-repeat;
+    background-size:80%;
+    background-position:top;
+    padding:0.03em;
+    display:block;
+    width:1em;
+    height:1em;
+    right:20%;
+    top:5%;
+    opacity:1.0;
+    z-index:3;
+    position: absolute;
+  }
+
+   .ad .slide2 figure figcaption span.text {
+    background-color: transparent;
+    background-image:url('images/edbraynie-fox.svg');
+    background-repeat: no-repeat;
+    background-size:80%;
+    background-position:top;
+    padding:0.03em;
+    display:block;
+    width:1em;
+    height:1em;
+    right:20%;
+    top:5%;
+    opacity:1.0;
+    z-index:3;
+    position: absolute;
+  }
+
+  .ad .slide3 .wrapper span.newyork { 
+    background-color:#000;
+    background-image:url('images/newyork.svg');
+    background-repeat: no-repeat;
+    background-size:95%;
+    background-position: center;
+    padding:0.03em;
+    display:block;
+    width:1em;
+    height:0.05em;
+    right:30%;
+    top:5%;
+    transform: rotate(-2deg)scale(1.2,1.2)translate(10%,-20%);
+    opacity: 0.0;
+    z-index:3;
+    position: absolute;
+ }
+
+  .ad span.logo { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: bottom center;
+    width:80px;
+    height:80px;
+    bottom:7px;
+    left:10px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin: center center;
+ }
+
+ .ad .slide3 .wrapper {
+  display: block;
+  width:100%;
+  height:30%;
+  position: absolute;
+  top:50%;
+  transform: translate(0,-50%);
+ }
+
+  button.cta {
+    font-size:120px;
+    width:1em;
+    height:auto;
+    background-color:#fff200;
+    padding:calc(1em/3.5) calc(1em/2);
+    text-decoration: none;
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translate(0%,-50%);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:90%;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:2px solid #fff200;
+    cursor: pointer;
+    z-index:2;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaEnd, ctaEnd;
+    animation-timing-function:ease-out, ease-out;
+    animation-delay:9.5s, 21.5s;
+    animation-duration:2.5s, 2.5s;
+    animation-iteration-count:1, 1;
+    animation-fill-mode: none, none;
+  }
+
+  .ad:hover button.cta {
+    transform:translate(0%,-50%)scale(1.1,1.1);
+  }
+  </style>
+
+
+</head>
+<body>
+
+
+  <!--Animate banner-->
+
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.55"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!--
+
+  <amp-animation id="Slide1_Background" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1 figure .background",
+        "keyframes": [
+          {
+             "transform": "translate(-50%,-95%)scale(0.8,0.8)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+-->
+
+  <amp-animation id="Slide2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "4s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide2",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.01"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.55"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.6"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!--
+
+  <amp-animation id="Slide2_Background" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "4s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide2 figure .background",
+        "keyframes": [
+          {
+             "transform": "translate(-50%,-95%)scale(0.8,0.8)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+-->
+
+   <amp-animation id="Slide3" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "8s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide3",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide3_NewYork" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "8s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide3 .wrapper .newyork",
+        "keyframes": [
+          {
+             "transform": "rotate(-2deg)scale(1.2,1.2)translate(10%,-20%)",
+             "opacity": "0.0",
+             "offset": "0.2"
+          },
+          {
+             "transform": "rotate(-2deg)translate(0%,0%)scale(1.0,1.0)",
+             "opacity": "1.0",
+             "offset": "0.23"
+          },
+          {
+             "transform": "rotate(-2deg)translate(0%,0%)scale(1.0,1.0)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+  
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+        <span class="logo"></span>
+      <figure>
+        <amp-img class="background" width="210" height="374" alt="Affice" src="images/affiche1.jpg"></amp-img>
+        <figcaption><span class="text"></span></figcaption>
+      </figure>
+    </div>
+
+    <div class="slide slide2">
+        <span class="logo"></span>
+      <figure>
+        <amp-img class="background" width="210" height="374" alt="Affice" src="images/affiche2.jpg"></amp-img>
+        <figcaption><span class="text"></span></figcaption>
+      </figure>
+    </div>
+
+     <div class="slide slide3">
+        <span class="logo"></span>
+      <div class="wrapper">
+        <button class="cta animated"></button>
+        <span class="newyork"></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

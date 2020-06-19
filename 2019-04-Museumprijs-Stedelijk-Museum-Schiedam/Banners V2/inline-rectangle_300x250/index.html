@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=300,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Inline rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -111,22 +111,19 @@
   .ad .slide {
     position: absolute;
     display: block;
-    font-size:280px;
+    font-size:230px;
   }
 
   .ad .slide1 {
     z-index:3;
-    background-color: #a79e90;
   }
 
   .ad .slide2 {
     z-index:2;
-    background-color:#eaedec;
   }
 
   .ad .slide3 {
     z-index:0;
-    background-color: #f2f2f2;
   }
 
   .ad .slide {
@@ -134,8 +131,8 @@
   }
 
   .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
-    width:728px;
-    height:90px;
+    width:300px;
+    height:250px;
   }
 
   .ad figure {
@@ -144,6 +141,7 @@
     margin:0;
     padding:0;
     position:relative;
+    background-color:#FFF;
     overflow:hidden;
   }
 
@@ -154,11 +152,11 @@
   }
 
   .ad .slide1 figure .background {
-    transform: translate(-50%,-15%)scale(1.0,1.0)rotate(-6deg);
+    transform: translate(-50%,-1%)scale(1.0,1.0);
   }
 
   .ad .slide2 figure .background {
-    transform: translate(-50%,-15%)scale(1.0,1.0)rotate(-6deg);
+    transform: translate(-50%,-1%)scale(1.0,1.0);
   }
 
 
@@ -181,9 +179,9 @@
     display:block;
     width:1em;
     height:0.05em;
-    right:30%;
-    top:5%;
-    transform: rotate(-2deg)scale(1.2,1.2)translate(10%,-20%);
+    right:0px;
+    top:-0.1em;
+    transform: rotate(2deg)scale(1.2,1.2)translate(10%,-20%);
     opacity: 0.0;
     z-index:3;
     position: absolute;
@@ -194,10 +192,10 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom center;
-    width:120px;
-    height:120px;
-    bottom:10px;
-    left:10px;
+    width:0.6em;
+    height:0.6em;
+    bottom:0px;
+    right:10px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -214,8 +212,14 @@
   transform: translate(0,-50%);
  }
 
+ .ad .slide3 .wrapper span.logo {
+  right:auto;
+  left:10px;
+ }
+
+
   button.cta {
-    font-size:130px;
+    font-size:0.6em;
     width:1em;
     height:auto;
     background-color:#fff200;
@@ -231,7 +235,7 @@
     background-position:center center;
     transform-origin:50%, 50%;
     border-radius:0px;
-    border:2px solid #fff200;
+    border:2px solid #fff;
     cursor: pointer;
     z-index:2;
     outline:none;
@@ -297,7 +301,15 @@
         "selector": ".slide1 figure .background",
         "keyframes": [
           {
-             "transform": "translate(-50%,-95%)scale(0.8,0.8)"
+             "transform": "translate(-50%,-28%)scale(1.0,1.0)",
+             "offset": "0.3"
+          },
+          {
+             "transform": "translate(-50%,-28%)scale(1.1,1.1)",
+             "offset": "0.6"
+          },
+          {
+             "transform": "translate(-50%,-28%)scale(1.0,1.0)"
           }
 
         ]
@@ -346,7 +358,15 @@
         "selector": ".slide2 figure .background",
         "keyframes": [
           {
-             "transform": "translate(-50%,-95%)scale(0.8,0.8)"
+             "transform": "translate(-50%,-28%)scale(1.0,1.0)",
+             "offset": "0.4"
+          },
+          {
+             "transform": "translate(-50%,-28%)scale(1.1,1.1)",
+             "offset": "0.6"
+          },
+          {
+             "transform": "translate(-50%,-28%)scale(1.0,1.0)"
           }
 
         ]
@@ -391,17 +411,17 @@
         "selector": ".slide3 .wrapper .newyork",
         "keyframes": [
           {
-             "transform": "rotate(-2deg)scale(1.2,1.2)translate(10%,-20%)",
+             "transform": "rotate(2deg)scale(1.2,1.2)translate(10%,-20%)",
              "opacity": "0.0",
              "offset": "0.2"
           },
           {
-             "transform": "rotate(-2deg)translate(0%,0%)scale(1.0,1.0)",
+             "transform": "rotate(2deg)translate(0%,0%)scale(1.0,1.0)",
              "opacity": "1.0",
              "offset": "0.23"
           },
           {
-             "transform": "rotate(-2deg)translate(0%,0%)scale(1.0,1.0)",
+             "transform": "rotate(2deg)translate(0%,0%)scale(1.0,1.0)",
              "opacity": "1.0"
           }
 
@@ -414,24 +434,22 @@
   <!-- Setup structure-->
   <div class="ad">
     <div class="slide slide1">
-        <span class="logo"></span>
       <figure>
-        <amp-img class="background" width="336" height="600" alt="Affice" src="images/affiche1.jpg"></amp-img>
+        <amp-img class="background" width="300" height="534" alt="Affice" src="images/affiche1.jpg"></amp-img>
         <figcaption></figcaption>
       </figure>
     </div>
 
     <div class="slide slide2">
-        <span class="logo"></span>
       <figure>
-        <amp-img class="background" width="336" height="600" alt="Affice" src="images/affiche2.jpg"></amp-img>
+        <amp-img class="background" width="300" height="534" alt="Affice" src="images/affiche2.jpg"></amp-img>
         <figcaption></figcaption>
       </figure>
     </div>
 
      <div class="slide slide3">
-        <span class="logo"></span>
       <div class="wrapper">
+        <span class="logo"></span>
         <button class="cta animated"></button>
         <span class="newyork"></span>
       </div>
