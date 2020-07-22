@@ -1,0 +1,475 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=336,height=280">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Large rectangle</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes cta {
+    0% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    background-color:#FFF;
+    opacity: 1.0;
+  }
+
+  .ad, .ad figure {
+    width:336px;
+    height:280px;
+    font-size:250px;
+  }
+
+  .ad figure {
+    display:block;
+    margin:0;
+    padding:0;
+    position:absolute;
+    overflow:hidden;
+    opacity: 0.0;
+  }
+
+  .ad figure.child1 {
+    opacity: 1.0;
+    z-index: 10;
+    background-color:#fff;
+  }
+
+  .ad figure.child2 {
+    opacity: 0.0;
+    z-index: 20;
+    background-color:#fff;
+
+  }
+
+  .ad figure.child3 {
+    opacity: 0.0;
+    z-index: 30;
+    background-color:#fff;
+
+  }
+
+  .ad figure .background-holder {
+    position: absolute;
+    overflow: hidden;
+    bottom:10px;
+    right: 0;
+    width:1.0em;
+    height:0.8em;
+    z-index: 3;
+    opacity:0.0;
+    transform:translate(10%,0%)scale(1.0,1.0);
+  }
+
+  .ad figure.child1 .background {
+    left:-40%;
+  }
+
+  .ad figure.child2 .background {
+    left:-10%;
+  }
+
+    .ad figure.child3 .background {
+    left:-10%;
+   }
+
+   .ad figure .fabric-holder {
+    top:0;
+    left:0;
+    width:35%;
+    height:100%;
+    position: absolute;
+    z-index:1;
+    overflow: hidden;
+    opacity: 0.0;
+    transform:translate(-100%,0%)scale(1.0,1.0);
+   }
+
+   .ad figure .fabric-holder .fabric {
+    transform:translate(0%,0%)scale(1.0,1.0);
+   }
+
+   /*
+   .ad figure.child1 .background:after {
+    content:"";
+    margin:0;
+    padding:0;
+    width:10%;
+    height:100%;
+    z-index: 2;
+    top:0;
+    left:-10%;
+    display: block;
+    position: absolute;
+    background: linear-gradient(to left, rgba(246,246,246,1.0) 0%,rgba(246,246,246,0.0) 100%);
+  }
+
+  */
+
+  .ad figure figcaption {
+    width:0.8em;
+    height:0.4em;
+    top:10px;
+    left:10px;
+    transform:translate(0,0);
+    display: block;
+    margin:0;
+    padding:0;
+    position: absolute;
+    z-index:4;
+  }
+
+  .ad figure figcaption span.title, .ad figure figcaption span.titleEnd {
+    width:100%;
+    height:100%;
+    display: block;
+    background-color:transparent;
+    background-image:url(images/title.svg);
+    background-size:90%;
+    background-position:center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 4;
+    opacity: 0.0;
+    transform: translate(-10%,0);
+  }
+
+  .ad .logo {
+    width:100px;
+    height:100px;
+    bottom:0px;
+    right:10px;
+    display:block;
+    background-size:100%;
+    background-position:bottom center;
+    background-repeat: no-repeat;
+    background-image:url(images/logo.svg);
+    position: absolute;
+    z-index: 100;
+  }
+
+  button.cta {
+    font-size:120px;
+    width:1em;
+    height:auto;
+    background-color:#FFF;
+    padding:calc(1em/7.5) calc(1em/2);
+    text-decoration: none;
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    transform:translate(0%,0);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:90%;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:none;
+    cursor: pointer;
+    z-index: 100;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaHidden, ctaShow, cta, cta;
+    animation-timing-function:ease-out;
+    animation-delay:0s, 2.5s, 11s, 19s;
+    animation-duration:2.5s, 0.5s, 0.5s, 0.5s;
+    animation-iteration-count: 1, 1, 1, 1;
+    animation-fill-mode:none;
+  }
+
+  .ad:hover figure button.cta {
+    transform:translate(0%,0)scale(1.1,1.1);
+
+  }
+  </style>
+
+
+</head>
+<body>
+  <!--Animate banner-->
+  <amp-animation id="fabric-holder" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": "figure .fabric-holder",
+        "keyframes": [
+          { 
+             "opacity": "1.0",
+             "transform": "translate(-8%,0)scale(1,1)",
+             "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0)scale(1,1)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="fabric" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": "figure .fabric-holder .fabric",
+        "keyframes": [
+          { 
+             "transform": "translate(-10%,0)scale(1,1)",
+             "offset": "0.2"
+          },
+          {
+             "transform": "translate(-14%,0)scale(1,1)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+
+
+  <amp-animation id="Title" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": "figure figcaption .title",
+        "keyframes": [
+          {
+             "transform": "translate(-2%,0)",
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "transform": "translate(0%,0)",
+             "opacity": "1.0",
+             "offset": "0.9"
+          },
+          {
+             "transform": "translate(-10%,0)",
+             "opacity": "0.0",
+             "offset": "0.95"
+          },
+          {
+             "transform": "translate(-10%,0)",
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="TitleEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "10.5s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child3 figcaption .titleEnd",
+        "keyframes": [
+          {
+             "transform": "translate(-2%,0)",
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "transform": "translate(0%,0)",
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Background1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": "figure .background-holder",
+        "keyframes": [
+          { 
+             "opacity": "1.0",
+             "transform": "translate(0%,0)scale(1,1)",
+             "offset": "0.2"
+          },
+          { 
+             "opacity": "1.0",
+             "transform": "translate(0%,0)scale(1,1)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="fabric" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "5s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": "figure .background",
+        "keyframes": [
+          { 
+             "transform": "translate(0%,0)scale(1,1)",
+             "offset": "0.2"
+          },
+          {
+             "transform": "translate(-4%,0)scale(1,1)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slides" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "5s",
+        "duration": "0.3s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child2",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slides" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "10s",
+        "duration": "0.3s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": "figure.child3",
+        "keyframes": [
+          {
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+
+      <figure class="child1 child">
+      <div class="background-holder">
+        <amp-img class="background" width="420" height="280" alt="" src="images/background-1.jpg"></amp-img>
+      </div>
+      <figcaption><span class="title"></span>
+      </figcaption>
+      <div class="fabric-holder">
+        <amp-img class="fabric" width="502" height="280" alt="" src="images/fabric.jpg"></amp-img>
+      </div>
+        <button class="cta animated"></button>
+    </figure>
+    <figure class="child2 child">
+      <div class="background-holder">
+        <amp-img class="background" width="377" height="280" alt="" src="images/background-2.jpg"></amp-img>
+      </div>
+      <figcaption><span class="title"></span>
+      </figcaption>
+       <div class="fabric-holder">
+        <amp-img class="fabric" width="502" height="280" alt="" src="images/fabric.jpg"></amp-img>
+      </div>
+        <button class="cta animated"></button>
+    </figure>
+    <figure class="child3 child">
+      <div class="background-holder">
+        <amp-img class="background" width="377" height="280" alt="" src="images/background-3.jpg"></amp-img>
+      </div>
+      <figcaption><span class="titleEnd"></span>
+      </figcaption>
+       <div class="fabric-holder">
+        <amp-img class="fabric" width="502" height="280" alt="" src="images/fabric.jpg"></amp-img>
+      </div>
+        <button class="cta animated"></button>
+    </figure>
+    <div class="logo"></div>
+  </div>
+</body>
+</html>
