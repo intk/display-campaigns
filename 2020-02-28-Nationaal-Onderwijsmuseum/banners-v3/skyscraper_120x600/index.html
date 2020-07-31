@@ -50,7 +50,7 @@
     position:relative;
     background-color:#000000;
     overflow:hidden;
-    font-size:155px;
+    font-size:147px;
   }
 
   .ad figure .stroke {
@@ -58,7 +58,7 @@
     top:0;
     left:0;
     width: 100%;
-    height:60%;
+    height:50%;
     display: block;
   }
 
@@ -68,29 +68,41 @@
     width:100%;
     height:60%;
     display: block;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 40%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
     z-index: 0;
   }
 
   .ad figure .stroke .middle {
     position: absolute;
-    top:24%;
+    top:20%;
     width:100%;
-    height:80%;
+    height:60%;
     display: block;
-    clip-path: polygon(0% 100%, 100% 27%, 100% 100%);
+    clip-path: polygon(0% 10%, 100% 30%, 100% 90%, 0% 70%);
     z-index: 2;
   }
 
   .ad figure .stroke .right {
     position: absolute;
-    top:24%;
+    top:30%;
     width:100%;
-    height:80%;
+    height:100%;
     display: block;
-    clip-path: polygon(0% 0%, 85% 38%, 85% 38%, 0% 100%);
+    clip-path: polygon(0% 30%, 100% 15%, 100% 70%, 0% 88%);
     z-index: 1;
   }
+/*
+   .ad figure .stroke:after {
+    content:"";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height:1em;
+    z-index:4;
+    background-image:linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,1.0) 80%, rgba(0,0,0,1.0) 100%);
+
+   }
+   */
 
   .ad figure .stroke .left span, .ad figure .stroke .middle span, .ad figure .stroke .right span {
     width:200%;
@@ -103,11 +115,11 @@
   }
 
   .ad figure .stroke .left span {
-    background:linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.0) 100%);
+    background:linear-gradient(90deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.26) 50%, rgba(255,255,255,0.0) 100%);
   }
 
   .ad figure .stroke .middle span {
-    background:linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.0) 100%);
+    background:linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.0) 100%);
   }
 
   .ad figure .stroke .right span {
@@ -116,13 +128,33 @@
   }
 
 
+
+
+  .ad span.logo { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:top;
+    width:0.9em;
+    height:80%;
+    transform: translate(-50%,-60%);
+    top:55%;
+    left:50%;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    opacity:0.0;
+    transform-origin: center center;
+ }
+
+
   .ad .slide1 figure figcaption { 
     position: absolute;
     z-index: 5;
-    top:30%;
+    top:65%;
     left:50%;
     width:90%;
-    height:0.55em;
+    height:0.53em;
     transform: translate(-50%,0);
   }
 
@@ -145,8 +177,8 @@
     background-image:url('images/subtitle.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.71em;
-    height:0.25em;
+    width:0.70em;
+    height:0.2em;
     top:0.13em;
     left:50%;
     display: block;
@@ -169,7 +201,7 @@
  .ad .slide1 figure div span.dateF {
     background-image:url('images/date-start.svg');
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:100%;
     background-position:top left;
     width:40%;
     height:100%;
@@ -198,8 +230,8 @@
   .ad .slide1 figure div span.dateS {
     background-image:url('images/date-end.svg');
     background-repeat: no-repeat;
-    background-size:contain;
-    background-position:top -10%;
+    background-size:100%;
+    background-position:top right;
     width:40%;
     height:100%;
     top:0px;
@@ -212,10 +244,10 @@
  }
 
  .ad .slide1 figure figcaption div.location, .ad .slide1 figure figcaption div.locationEnd { 
-    width:0.9em;
-    height:0.17em;
-    bottom:-210%;
-    left:50%;
+    width:1.3em;
+    height:0.2em;
+    bottom:-9%;
+    left:0%;
     display: block;
     position: absolute;
     z-index: 2;
@@ -224,12 +256,12 @@
  }
 
    .ad .slide1 figure figcaption div.location .right {
-    width:100%;
+    width:50%;
     height:100%;
     display:block;
     position: absolute;
     top:0;
-    right:25%;
+    right:16%;
     background-image:url('images/see-it-now.svg');
     background-repeat: no-repeat;
     background-size:contain;
@@ -237,39 +269,19 @@
   }
 
   .ad .slide1 figure figcaption div.location .cta {
-    width:100%;
+    width:50%;
     height:100%;
     display:block;
     position: absolute;
     top:0;
-    right:13%;
+    right:0;
     background-image:url('images/cta.svg');
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom right;
-    transform-origin: center center;
     transform: translate(100%,0);
     opacity: 0.0;
   }
-
-  .ad .slide1 figure figcaption div.location span.logo { 
-    background-image:url('images/logo.svg');
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:top;
-    width:0.70em;
-    height:0.4em;
-    transform: translate(-50%,10%);
-    bottom:-0.45em;
-    left:50%;
-    display: block;
-    position: absolute;
-    z-index: 5;
-    opacity:0.0;
-    transform-origin: center center;
- }
-
-
   </style>
 
 
@@ -468,26 +480,26 @@
         "fill": "both",
         "easing": "ease-out",
         "iterations": "3",
-        "selector": ".slide figure  .locationMain .logo",
+        "selector": ".slide figure .strokes .logo",
         "keyframes": [
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)",
+             "transform": "translate(-50%,-50%)",
              "offset": "0.1"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)",
+             "transform": "translate(-50%,-50%)",
              "offset": "0.93"
           },
           {
              "opacity": "0.0",
-             "transform": "translate(-50%,0%)",
+             "transform": "translate(-50%,-60%)",
              "offset": "0.96"
           },
           {
              "opacity": "0.0",
-             "transform": "translate(-50%,10%)"
+             "transform": "translate(-50%,-60%)"
           }
 
         ]
@@ -503,12 +515,134 @@
         "fill": "both",
         "easing": "ease-out",
         "iterations": "1",
-        "selector": ".slide figure .locationEnd .logo",
+        "selector": ".slide figure .strokesEnd .logo",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-50%)",
+             "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-50%)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="title" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.7s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": ".slide figure .title",
         "keyframes": [
           {
              "opacity": "1.0",
              "transform": "translate(-50%,0%)",
-             "offset": "0.1"
+             "offset": "0.07"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)",
+             "offset":"0.93"
+          },
+          {
+             "opacity": "0.0",
+             "transform": "translate(-50%,-10%)",
+             "offset":"0.96"
+          },
+          {
+             "opacity": "0.0",
+             "transform": "translate(-50%,-10%)"
+          }
+
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="titleEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "26.7s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure .titleEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)",
+             "offset": "0.07"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)"
+          }
+
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="subtitle" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.7s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": ".slide figure .subtitle",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)",
+             "offset": "0.07"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)",
+             "offset":"0.93"
+          },
+          {
+             "opacity": "0.0",
+             "transform": "translate(-50%,10%)",
+             "offset":"0.96"
+          },
+          {
+             "opacity": "0.0",
+             "transform": "translate(-50%,10%)"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="subtitle" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "26.7s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure .subtitleEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)",
+             "offset": "0.07"
           },
           {
              "opacity": "1.0",
@@ -520,7 +654,7 @@
     </script>
   </amp-animation>
 
-<amp-animation id="dateLeft" layout="nodisplay" trigger="visibility">
+  <amp-animation id="dateLeft" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
         "delay": "1.5s",
@@ -700,128 +834,6 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="title" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "1.7s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "3",
-        "selector": ".slide figure .title",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)",
-             "offset": "0.07"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)",
-             "offset":"0.93"
-          },
-          {
-             "opacity": "0.0",
-             "transform": "translate(-50%,-10%)",
-             "offset":"0.96"
-          },
-          {
-             "opacity": "0.0",
-             "transform": "translate(-50%,-10%)"
-          }
-
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="titleEnd" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "26.7s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".slide figure .titleEnd",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)",
-             "offset": "0.07"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)"
-          }
-
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="subtitle" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "1.7s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "3",
-        "selector": ".slide figure .subtitle",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)",
-             "offset": "0.07"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)",
-             "offset":"0.93"
-          },
-          {
-             "opacity": "0.0",
-             "transform": "translate(-50%,10%)",
-             "offset":"0.96"
-          },
-          {
-             "opacity": "0.0",
-             "transform": "translate(-50%,10%)"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="subtitle" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "26.7s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".slide figure .subtitleEnd",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)",
-             "offset": "0.07"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
   <amp-animation id="location" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -885,60 +897,6 @@
           {
              "opacity": "1.0",
              "transform": "translate(0%,0%)"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="locationLine" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "4s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "3",
-        "selector": ".slide figure .locationMain .line",
-        "keyframes": [
-          {
-             "transform": "translate(-80%,0%)",
-             "offset": "0.1"
-          },
-          {
-             "transform": "translate(-80%,0%)",
-             "offset": "0.9"
-          },
-          {
-             "transform": "translate(-50%,0%)",
-             "offset": "0.91"
-          },
-          {
-             "transform": "translate(-50%,0%)"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="locationLineEnd" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "28s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".slide figure .locationEnd .line",
-        "keyframes": [
-          {
-             "transform": "translate(-80%,0%)",
-             "offset": "0.1"
-          },
-          {
-             "transform": "translate(-80%,0%)"
           }
 
         ]
@@ -1094,11 +1052,13 @@
         <div class="left"><span></span></div>
         <div class="middle"><span></span></div>
         <div class="right"><span></span></div>
+        <span class="logo"></span>
       </div>
       <div class="strokesEnd stroke">
         <div class="left"><span></span></div>
         <div class="middle"><span></span></div>
         <div class="right"><span></span></div>
+        <span class="logo"></span>
       </div>
       <figcaption>
         <span class="title"></span><span class="titleEnd"></span>
@@ -1116,12 +1076,10 @@
         <div class="location locationMain">
           <span class="right"></span>
           <span class="cta"></span>
-          <span class="logo"></span>
         </div>
         <div class="location locationEnd">
           <span class="right"></span>
           <span class="cta"></span>
-          <span class="logo"></span>
         </div>
       </figcaption>
     </figure>
