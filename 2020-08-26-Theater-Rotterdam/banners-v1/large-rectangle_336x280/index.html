@@ -1,0 +1,676 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=336,height=280">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Large rectangle</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+
+   @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes cta {
+    0% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
+    width:336px;
+    height:280px;
+  }
+
+  .ad .slide .wrapper {
+    position: relative;
+    display: block;
+    width:100%;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#0055d1;
+    overflow:hidden;
+    font-size:250px;
+  }
+
+  .ad .slide1 figure .background  {
+    display:block;
+    position: absolute;
+    top:0%;
+    left:0%;
+    transform-origin:center left;
+    opacity:1.0;
+    transform: scale(1.0,1.0)translate(0%,0%);
+  }
+
+  .ad .slide1 figure figcaption { 
+    position: absolute;
+    z-index: 2;
+    top:10px;
+    left:50%;
+    width:90%;
+    height:95%;
+    transform: translate(-50%,0);
+  }
+
+  .ad .slide1 figure figcaption span.brick1, .ad .slide1 figure figcaption span.brick1End { 
+    background-image:url('images/brick1.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.6em;
+    height:0.2em;
+    left:45%;
+    bottom:0.13em;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin:center center;
+    transform: translate(-50%,-1em)rotate(10deg);
+ }
+
+  .ad .slide1 figure figcaption span.track, .ad .slide1 figure figcaption span.trackEnd { 
+    background-image:url('images/track.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.72em;
+    height:0.22em;
+    left:50%;
+    bottom:0.288em;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin:center center;
+    transform: translate(-50%,-1em)rotate(-15deg);
+ }
+
+ .ad .slide1 figure figcaption span.brick2, .ad .slide1 figure figcaption span.brick2End { 
+    background-image:url('images/brick2.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.4em;
+    height:0.1em;
+    left:34%;
+    bottom:0.445em;
+    display: block;
+    position: absolute;
+    z-index:1;
+    opacity:1.0;
+    transform-origin:left center;
+    transform: translate(-50%,-1em)rotate(1deg);
+ }
+
+ .ad .slide1 figure figcaption span.on, .ad .slide1 figure figcaption span.onEnd { 
+    background-image:url('images/on.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.22em;
+    height:0.22em;
+    left:27%;
+    bottom:0.43em;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin:center center;
+    transform: translate(-50%,-1em)rotate(15deg);
+ }
+
+ .ad .slide1 figure figcaption span.brick3, .ad .slide1 figure figcaption span.brick3End { 
+    background-image:url('images/brick3.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.6em;
+    height:0.2em;
+    left:47%;
+    top:0.36em;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin:center center;
+    transform: translate(-50%,-1em)rotate(-5deg);
+ }
+
+ .ad .slide1 figure figcaption span.back, .ad .slide1 figure figcaption span.backEnd { 
+    background-image:url('images/back.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.72em;
+    height:0.22em;
+    left:60%;
+    top:0.2em;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin:center center;
+    transform: translate(-50%,-1em)rotate(15deg);
+ }
+
+ .ad .slide1 figure figcaption span.brick4, .ad .slide1 figure figcaption span.brick4End { 
+    background-image:url('images/brick4.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.6em;
+    height:0.2em;
+    left:80%;
+    top:0.27em;
+    display: block;
+    position: absolute;
+    z-index:1;
+    opacity:1.0;
+    transform-origin:center center;
+    transform: translate(-50%,-1em)rotate(25deg);
+ }
+
+ .ad .slide1 figure figcaption span.brick5, .ad .slide1 figure figcaption span.brick5End { 
+    background-image:url('images/brick5.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:0.6em;
+    height:0.2em;
+    left:40%;
+    top:-0.02em;
+    display: block;
+    position: absolute;
+    z-index:1;
+    opacity:1.0;
+    transform-origin:center center;
+    transform: translate(-50%,-0.9em)rotate(10deg);
+ }
+
+ @keyframes hideElement {
+    0% {
+      opacity: 1.0;
+      transform: translate(-0%,0px)scale(1.0,1.0);
+    }
+
+    100% {
+      opacity: 0.0;
+      transform: translate(-0%,10%)scale(1.0,1.0);
+    }
+ }
+
+ .ad span.logo { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:right center;
+    width:0.3em;
+    height:0.3em;
+    top:10px;
+    right:10px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin: center center;
+ }
+
+  .ad figure .cta {
+    width:0.25em;
+    height:0.25em;
+    display: block;
+    background-color:transparent;
+    text-decoration: none;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translate(-50%,-1.2em);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:0px solid #fff;
+    cursor: pointer;
+    z-index:1;
+    outline:none;   
+  }
+
+  .ad:hover figure button.cta {
+    transform:translate(0%,0)scale(1.1,1.1);
+
+  }
+  </style>
+
+
+</head>
+<body>
+
+  <amp-animation id="first" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.cta",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)scale(1.0,1.2)",
+              "offset": "0.03"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)scale(1.2,1.0)",
+              "offset": "0.04"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)scale(1.0,1.0)",
+              "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-100%)scale(1.0,1.0)",
+              "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-0%)scale(1.0,1.0)",
+              "offset": "0.14"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-25%)scale(1.0,1.0)",
+              "offset": "0.16"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-0%)scale(1.0,1.0)",
+              "offset": "0.18"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-10%)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-0%)scale(1.0,1.0)",
+              "offset": "0.22"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="brick1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.brick1",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-15%)rotate(10deg)scale(1.0,1.0)",
+              "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(-5deg)scale(1.0,1.0)",
+              "offset": "0.07"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(0deg)scale(1.0,1.0)",
+              "offset": "0.09"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(-5deg)scale(1.0,1.0)",
+              "offset": "0.11"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(-50%,0%)rotate(-5deg)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="track" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.track",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(2deg)scale(1.0,1.0)",
+              "offset": "0.08"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(2deg)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="brick2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.2s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.brick2",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(3deg)scale(1.0,1.0)",
+              "offset": "0.08"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(4deg)scale(1.0,1.0)",
+              "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(2deg)scale(1.0,1.0)",
+              "offset": "0.12"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(3deg)scale(1.0,1.0)",
+              "offset": "0.14"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(3deg)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="on" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.4s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.on",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(15deg)scale(1.0,1.0)",
+              "offset": "0.08"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)",
+              "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
+              "offset": "0.12"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
+              "offset": "0.14"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="brick3" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.6s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.brick3",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-15%)rotate(10deg)scale(1.0,1.0)",
+              "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(15deg)scale(1.0,1.0)",
+              "offset": "0.07"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
+              "offset": "0.09"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(12deg)scale(1.0,1.0)",
+              "offset": "0.11"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="back" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.back",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,20%)rotate(30deg)scale(1.0,1.0)",
+              "offset": "0.08"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(18deg)scale(1.0,1.0)",
+              "offset": "0.12"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(18deg)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="brick4" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.brick4",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,-20%)rotate(10deg)scale(1.0,1.0)",
+              "offset": "0.08"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(15deg)scale(1.0,1.0)",
+              "offset": "0.12"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,1%)rotate(10deg)scale(1.0,1.0)",
+              "offset": "0.14"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,1%)rotate(21deg)scale(1.0,1.0)",
+              "offset": "0.18"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(-50%,1%)rotate(21deg)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="brick5" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "3s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.brick5",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(-8deg)scale(1.0,1.0)",
+              "offset": "0.08"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(-4deg)scale(1.0,1.0)",
+              "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(-5deg)scale(1.0,1.0)",
+              "offset": "0.12"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(-8deg)scale(1.0,1.0)",
+              "offset": "0.14"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(-50%,0%)rotate(-8deg)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+    <figure>
+      <figcaption>
+          <span class="brick1"></span><span class="brick1End"></span>
+          <span class="track"></span><span class="trackEnd"></span>
+
+          <span class="brick2"></span><span class="brick2End"></span>
+          <span class="on"></span><span class="onEnd"></span>
+
+          <span class="brick3"></span><span class="brick3End"></span>
+          <span class="back"></span><span class="backEnd"></span>
+          <span class="brick4"></span><span class="brick4End"></span>
+          <span class="brick5"></span><span class="brick5End"></span>
+          <span class="cta animated"></span>
+      </figcaption>
+      <span class="logo"></span>
+    </figure>
+  </div>
+  </div>
+</body>
+</html>
