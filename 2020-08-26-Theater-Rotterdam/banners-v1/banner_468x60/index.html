@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=468,height=60">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Banner</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -70,9 +70,9 @@
 
   }
 
-  .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:336px;
-    height:280px;
+  .ad, .ad .slide, .ad .slide .wrapper, .ad figure {
+    width:468px;
+    height:60px;
   }
 
   .ad .slide .wrapper {
@@ -89,7 +89,7 @@
     position:relative;
     background-color:#0055d1;
     overflow:hidden;
-    font-size:250px;
+    font-size:240px;
   }
 
   .ad .slide1 figure .background  {
@@ -105,21 +105,21 @@
   .ad .slide1 figure figcaption { 
     position: absolute;
     z-index: 2;
-    top:10px;
+    top:-120%;
     left:50%;
-    width:90%;
-    height:95%;
-    transform: translate(-50%,0);
+    width:calc(336px * 0.9);
+    height:calc(280px * 0.75);
+    transform: translate(-50%,0)scale(0.7,0.7);
   }
 
   .ad .slide1 figure figcaption span.brick1, .ad .slide1 figure figcaption span.brick1End { 
-    background-image:url('images/brick1.svg');
+    background-image:url('images/brick5.svg');
     background-repeat: no-repeat;
     background-size:contain;
     width:0.6em;
     height:0.2em;
-    left:45%;
-    bottom:0.13em;
+    left:64%;
+    bottom:0.24em;
     display: block;
     position: absolute;
     z-index: 2;
@@ -150,8 +150,8 @@
     background-size:contain;
     width:0.4em;
     height:0.1em;
-    left:34%;
-    bottom:0.445em;
+    left:10%;
+    bottom:0.3em;
     display: block;
     position: absolute;
     z-index:1;
@@ -166,8 +166,8 @@
     background-size:contain;
     width:0.22em;
     height:0.22em;
-    left:27%;
-    bottom:0.43em;
+    left:10%;
+    bottom:0.3em;
     display: block;
     position: absolute;
     z-index: 2;
@@ -176,30 +176,14 @@
     transform: translate(-50%,-1em)rotate(15deg);
  }
 
- .ad .slide1 figure figcaption span.brick3, .ad .slide1 figure figcaption span.brick3End { 
-    background-image:url('images/brick3.svg');
-    background-repeat: no-repeat;
-    background-size:contain;
-    width:0.6em;
-    height:0.2em;
-    left:47%;
-    top:0.36em;
-    display: block;
-    position: absolute;
-    z-index: 2;
-    opacity:1.0;
-    transform-origin:center center;
-    transform: translate(-50%,-1em)rotate(-5deg);
- }
-
  .ad .slide1 figure figcaption span.back, .ad .slide1 figure figcaption span.backEnd { 
     background-image:url('images/back.svg');
     background-repeat: no-repeat;
     background-size:contain;
     width:0.72em;
     height:0.22em;
-    left:60%;
-    top:0.2em;
+    left:-10%;
+    bottom:0.35em;
     display: block;
     position: absolute;
     z-index: 2;
@@ -214,8 +198,8 @@
     background-size:contain;
     width:0.6em;
     height:0.2em;
-    left:80%;
-    top:0.27em;
+    left:-10%;
+    bottom:0.45em;
     display: block;
     position: absolute;
     z-index:1;
@@ -225,13 +209,13 @@
  }
 
  .ad .slide1 figure figcaption span.brick5, .ad .slide1 figure figcaption span.brick5End { 
-    background-image:url('images/brick5.svg');
+    background-image:url('images/brick2.svg');
     background-repeat: no-repeat;
-    background-size:contain;
-    width:0.6em;
-    height:0.2em;
-    left:40%;
-    top:-0.02em;
+    background-size:100%;
+    width:0.5em;
+    height:0.08em;
+    left:-20%;
+    bottom:0.32em;
     display: block;
     position: absolute;
     z-index:1;
@@ -257,9 +241,9 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position:right center;
-    width:0.3em;
-    height:0.3em;
-    top:10px;
+    width:0.2em;
+    height:0.2em;
+    top:8px;
     right:10px;
     display: block;
     position: absolute;
@@ -269,14 +253,14 @@
  }
 
   .ad figure .cta, .ad figure .ctaEnd {
-    width:0.25em;
-    height:0.25em;
+    width:0.2em;
+    height:0.2em;
     display: block;
     background-color:transparent;
     text-decoration: none;
     position:absolute;
-    bottom:0;
-    left:50%;
+    bottom:34%;
+    left:83%;
     transform:translate(-50%,-1.2em);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
@@ -525,81 +509,32 @@
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
               "offset": "0.1"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)",
               "offset": "0.12"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(0deg)scale(1.0,1.0)",
               "offset": "0.14"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(0deg)scale(1.0,1.0)",
               "offset": "0.88"
           },
           {
              "opacity": "0.0",
-             "transform": "translate(-50%,10%)rotate(10deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,10%)rotate(0deg)scale(1.0,1.0)",
               "offset": "0.9"
           },
           {
              "opacity": "0.0",
-             "transform": "translate(-50%,10%)rotate(5deg)scale(1.0,1.0)"
-          }
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="brick3" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "2.6s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".slide figure span.brick3",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,-15%)rotate(10deg)scale(1.0,1.0)",
-              "offset": "0.05"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(15deg)scale(1.0,1.0)",
-              "offset": "0.07"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
-              "offset": "0.09"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(12deg)scale(1.0,1.0)",
-              "offset": "0.11"
-          },
-           {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(12deg)scale(1.0,1.0)",
-              "offset": "0.87"
-          },
-           {
-             "opacity": "0.0",
-             "transform": "translate(-50%,10%)rotate(12deg)scale(1.0,1.0)",
-              "offset": "0.89"
-          },
-          {
-             "opacity": "0.0",
-              "transform": "translate(-50%,10%)rotate(10deg)scale(1.0,1.0)"
+             "transform": "translate(-50%,10%)rotate(0deg)scale(1.0,1.0)"
           }
         ]
       }]
@@ -623,22 +558,22 @@
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(18deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)",
               "offset": "0.12"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(18deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)",
               "offset": "0.88"
           },
           {
              "opacity": "0.0",
-             "transform": "translate(-50%,10%)rotate(18deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,10%)rotate(5deg)scale(1.0,1.0)",
               "offset": "0.9"
           },
           {
              "opacity": "0.0",
-             "transform": "translate(-50%,10%)rotate(18deg)scale(1.0,1.0)"
+             "transform": "translate(-50%,10%)rotate(5deg)scale(1.0,1.0)"
           }
         ]
       }]
@@ -721,22 +656,22 @@
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(-8deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(-15deg)scale(1.0,1.0)",
               "offset": "0.14"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(-8deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(-15deg)scale(1.0,1.0)",
               "offset": "0.9"
           },
           {
              "opacity": "0.0",
-             "transform": "translate(-50%,10%)rotate(-8deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,10%)rotate(-15deg)scale(1.0,1.0)",
               "offset": "0.92"
           },
           {
              "opacity": "0.0",
-             "transform": "translate(-50%,10%)rotate(-8deg)scale(1.0,1.0)"
+             "transform": "translate(-50%,10%)rotate(-15deg)scale(1.0,1.0)"
           }
         ]
       }]
@@ -932,61 +867,22 @@
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
               "offset": "0.1"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)",
               "offset": "0.12"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(0deg)scale(1.0,1.0)",
               "offset": "0.14"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)"
-          }
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="brick3" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "18.6s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".slide figure span.brick3End",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,-15%)rotate(10deg)scale(1.0,1.0)",
-              "offset": "0.05"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(15deg)scale(1.0,1.0)",
-              "offset": "0.07"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(10deg)scale(1.0,1.0)",
-              "offset": "0.09"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(12deg)scale(1.0,1.0)",
-              "offset": "0.11"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(12deg)scale(1.0,1.0)"
+             "transform": "translate(-50%,0%)rotate(0deg)scale(1.0,1.0)"
           }
         ]
       }]
@@ -1010,12 +906,12 @@
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(18deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)",
               "offset": "0.12"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(18deg)scale(1.0,1.0)"
+             "transform": "translate(-50%,0%)rotate(5deg)scale(1.0,1.0)"
           }
         ]
       }]
@@ -1088,12 +984,12 @@
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(-8deg)scale(1.0,1.0)",
+             "transform": "translate(-50%,0%)rotate(-15deg)scale(1.0,1.0)",
               "offset": "0.14"
           },
           {
              "opacity": "1.0",
-             "transform": "translate(-50%,0%)rotate(-8deg)scale(1.0,1.0)"
+             "transform": "translate(-50%,0%)rotate(-15deg)scale(1.0,1.0)"
           }
         ]
       }]
