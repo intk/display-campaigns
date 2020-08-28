@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=300,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Inline rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -70,9 +70,9 @@
   }
 
   .ad, .ad figure {
-    width:728px;
-    height:90px;
-    font-size:250px;
+    width:300px;
+    height:250px;
+    font-size:230px;
   }
 
   .ad figure {
@@ -107,9 +107,9 @@
   .ad figure .background-holder {
     position: absolute;
     overflow: hidden;
-    top:-10px;
-    right:5%;
-    width:1.5em;
+    bottom:0px;
+    right: 0;
+    width:1.0em;
     height:0.8em;
     z-index: 3;
     opacity:0.0;
@@ -117,25 +117,22 @@
   }
 
   .ad figure.child1 .background {
-    left:-20%;
-    top:-10%;
+    left:-40%;
   }
 
   .ad figure.child2 .background {
-    top:-30%;
     left:-10%;
   }
 
     .ad figure.child3 .background {
-    top:-15px;
     left:-10%;
    }
 
    .ad figure .fabric-holder {
-    bottom:0;
+    top:0;
     left:0;
-    width:40%;
-    height:70%;
+    width:35%;
+    height:100%;
     position: absolute;
     z-index:1;
     overflow: hidden;
@@ -144,7 +141,6 @@
    }
 
    .ad figure .fabric-holder .fabric {
-    top:-50%;
     transform:translate(0%,0%)scale(1.0,1.0);
    }
 
@@ -166,11 +162,11 @@
   */
 
   .ad figure figcaption {
-    width:0.65em;
+    width:0.8em;
     height:0.4em;
-    top:-10%;
-    left:42%;
-    transform:translate(-50%,0);
+    top:10px;
+    left:10px;
+    transform:translate(0,0);
     display: block;
     margin:0;
     padding:0;
@@ -194,8 +190,8 @@
   }
 
   .ad .logo {
-    width:100px;
-    height:100px;
+    width:90px;
+    height:90px;
     bottom:0px;
     right:0px;
     display:block;
@@ -208,7 +204,7 @@
   }
 
   div.new {
-    font-size:120px;
+    font-size:110px;
     width:1em;
     height:auto;
     background-color:#6260d0;
@@ -233,7 +229,7 @@
   }
 
   button.cta {
-    font-size:120px;
+    font-size:110px;
     width:1em;
     height:auto;
     background-color:#FFF;
@@ -439,7 +435,7 @@
              "offset": "0.2"
           },
           {
-             "transform": "translate(0%,-20%)scale(1,1)"
+             "transform": "translate(-4%,0)scale(1,1)"
           }
         ]
       }]
