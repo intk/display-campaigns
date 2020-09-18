@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=300,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Inline rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:728px;
-    height:90px;
+    width:300px;
+    height:250px;
   }
 
   .ad .slide .wrapper {
@@ -87,7 +87,7 @@
     margin:0;
     padding:0;
     position:relative;
-    background-color:rgba(115,170,155,1.0);
+    background-color:#fff;
     overflow:hidden;
     font-size:330px;
   }
@@ -98,24 +98,12 @@
     top:0%;
     right:0%;
     transform-origin:center center;
-    transform: scale(1.0,1.0)translate(0%,-7%);
-  }
-
-  .ad .slide1 figure:after {
-    content:"";
-    display: block;
-    position: absolute;
-    top: 0;
-    left:0;
-    width:29%;
-    height: 100%;
-    z-index: 1;
-    background:linear-gradient(90deg, rgba(115,170,155,1.0) 0%, rgba(115,170,155,1.0) 95%,  rgba(115,170,155,0.0) 100%);
+    transform: scale(1.0,1.0)translate(0%,-10%);
   }
 
   .ad .slide1 figure figcaption { 
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     top:15px;
     left:15px;
     width:100%;
@@ -141,11 +129,11 @@
     background-image:url('images/date.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: top center;
+    background-position:top left;
     width:0.3em;
-    height:0.3em;
-    top:0px;
-    left:10%;
+    height:0.26em;
+    bottom:0%;
+    left:0;
     display: block;
     position: absolute;
     z-index: 2;
@@ -171,11 +159,11 @@
     background-image:url('images/logo.svg');
     background-repeat: no-repeat;
     background-size:90%;
-    background-position:top left;
+    background-position:top right;
     width:0.25em;
     height:0.25em;
-    top:0px;
-    left:0px;
+    top:5px;
+    right:5px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -238,7 +226,7 @@
              "offset": "0.2"
           },
           {
-             "transform": "scale(1.05,1.05)translate(2%,2%)"
+             "transform": "scale(1.1,1.1)translate(0%,2%)"
           }
 
         ]
@@ -367,7 +355,7 @@
   <div class="ad">
     <div class="slide slide1">
     <figure>
-      <amp-img class="background" width="527" height="110" alt="Het Filiaal Theatermakers" src="images/background.jpg"></amp-img>
+      <amp-img class="background" width="300" height="300" alt="Het Filiaal Theatermakers" src="images/background.jpg"></amp-img>
       <figcaption></span><span class="date"></span><span class="dateEnd"></span>
       </figcaption>
       <button class="cta animated"></button>
