@@ -1,0 +1,745 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=468,height=60">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Banner</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+
+   @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes cta {
+    0% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
+    width:468px;
+    height:60px;
+  }
+
+  .ad .slide .wrapper {
+    position: relative;
+    display: block;
+    width:100%;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#54384c;
+    overflow:hidden;
+    font-size:130px;
+  }
+
+  .ad .slide1 figure .background  {
+    display:block;
+    position: absolute;
+    top:0%;
+    left:0%;
+    transform-origin:center left;
+    opacity:1.0;
+    transform: scale(1.0,1.0)translate(0%,0%);
+  }
+
+  .ad .slide1 figure figcaption { 
+    position: absolute;
+    z-index: 2;
+    top:50%;
+    left:0;
+    width:50%;
+    height:100%;
+    transform: translate(0,-50%);
+  }
+
+  .ad .slide1 figure figcaption span.welcome, .ad .slide1 figure figcaption span.welcomeEnd { 
+    background-image:url('images/welcome.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center center;
+    width:0.9em;
+    height:0.5em;
+    left:0.1em;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    opacity:0.0;
+    transform: translate(0%,0%);
+ }
+
+  .ad .slide1 figure figcaption span.house, .ad .slide1 figure figcaption span.houseEnd { 
+    background-image:url('images/house.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center center;
+    width:0.9em;
+    height:0.5em;
+    right:0px;
+    bottom:0em;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    opacity:0.0;
+    transform: translate(0%,0%);
+ }
+
+ .ad .slide figure figcaption div.notes, .ad .slide figure figcaption div.notesEnd {
+  width:100%;
+  height:100%;
+  display: block;
+  position: absolute;
+  opacity:1.0;
+  z-index: 3;
+ }
+
+ .ad .slide figure figcaption div span.glass, .ad .slide figure figcaption div span.glassEnd {
+    background-image:url('images/glass.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: top left;
+    width:0.65em;
+    height:0.65em;
+    right:0.25em;
+    bottom:-0.13em;
+    display: block;
+    position: absolute;
+    z-index:2;
+    opacity:0.0;
+    transform: translate(0%,10%)scale(5,5);
+ }
+
+ .ad .slide figure figcaption div span.digital, .ad .slide figure figcaption div span.digitalEnd {
+   background-image:url('images/digital.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: top left;
+    width:0.65em;
+    height:0.65em;
+    left:0.55em;
+    top:0.12em;
+    display: block;
+    position: absolute;
+    z-index:2;
+    opacity:0.0;
+    transform: translate(0%,10%)scale(5,5);
+ }
+
+ .ad .slide figure figcaption div span.guest, .ad .slide figure figcaption div span.guestEnd {
+   background-image:url('images/guest.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: top left;
+    width:0.65em;
+    height:0.35em;
+    left:0.93em;
+    bottom:0em;
+    display: block;
+    position: absolute;
+    z-index:2;
+    opacity:0.0;
+    transform: translate(0%,10%)scale(5,5);
+ }
+
+  .ad .slide figure .bottom, .ad .slide figure .bottomEnd {
+    width:0.6em;
+    height:0.5em;
+    display: block;
+    position: absolute;
+    z-index:2;
+    bottom:15px;
+    right:30%;
+    opacity: 0.0;
+  }
+
+ .ad .slide figure span.date {
+   background-image:url('images/date.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:bottom left;
+    width:100%;
+    height:0.2em;
+    bottom:15px;
+    left:0;
+    display: block;
+    position: absolute;
+    z-index:2;
+    transform: translate(0%,0%);
+ }
+
+ .ad .slide figure span.location {
+   background-image:url('images/location.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:bottom left;
+    width:100%;
+    height:0.2em;
+    bottom:0;
+    left:0;
+    display: block;
+    position: absolute;
+    z-index:2;
+    transform: translate(0%,0%);
+ }
+
+ @keyframes hideElement {
+    0% {
+      opacity: 1.0;
+      transform: translate(-0%,0px)scale(1.0,1.0);
+    }
+
+    100% {
+      opacity: 0.0;
+      transform: translate(-0%,10%)scale(1.0,1.0);
+    }
+ }
+
+ .ad span.logo, .ad span.logoEnd { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:top right;
+    background-color:transparent;
+    width:0.15em;
+    height:0.15em;
+    top:10px;
+    right:10px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:0.0;
+    transform-origin: center center;
+ }
+
+  button.cta {
+    font-size:90px;
+    width:1em;
+    height:auto;
+    background-color:transparent;
+    padding:calc(1em/6.9) calc(1em/2);
+    text-decoration: none;
+    position:absolute;
+    bottom:15px;
+    right:35px;
+    transform:translate(0%,0);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:85%;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:1px solid #f2ff00;
+    cursor: pointer;
+    z-index: 100;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaHidden, ctaShow, cta, cta;
+    animation-timing-function:ease-out;
+    animation-delay:0s, 3.5s, 11s, 19s;
+    animation-duration:3.5s, 0.5s, 0.5s, 0.5s;
+    animation-iteration-count: 1, 1, 1, 1;
+    animation-fill-mode:none;
+  }
+
+  .ad:hover figure button.cta {
+    transform:translate(0%,0)scale(1.1,1.1);
+
+  }
+  </style>
+
+
+</head>
+<body>
+  <amp-animation id="welcome" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.welcome",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.9"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.95"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="welcomeEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.welcomeEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="house" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.house",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.9"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.95"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="houseEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.houseEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.1"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="glass" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.glass",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.02"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.8"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.85"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="glassEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.glassEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.02"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="digital" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.3s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.digital",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.02"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.8"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.85"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="digitalEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.3s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.digitalEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.02"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="guest" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.6s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.guest",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.02"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.8"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.85"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="guestEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.6s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.guestEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.02"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="logo" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.logo",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.8"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.85"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="logoEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.logoEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="bottom" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure .bottom",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.8"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.85"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,0%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="bottomEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure .bottomEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+    <figure>
+      <figcaption>
+          <span class="welcome"></span><span class="welcomeEnd"></span>
+          <span class="house"></span><span class="houseEnd"></span>
+          <div class="notes">
+            <span class="glass"></span><span class="glassEnd"></span>
+            <span class="digital"></span><span class="digitalEnd"></span>
+            <span class="guest"></span><span class="guestEnd"></span>
+          </div>
+      </figcaption>
+      <div class="bottom">
+        <span class="date"></span>
+        <span class="location"></span>
+      </div>
+      <div class="bottomEnd">
+        <span class="date"></span>
+        <span class="location"></span>
+      </div>
+      <button class="cta animated"></button>
+      <span class="logo"></span><span class="logoEnd"></span>
+    </figure>
+  </div>
+  </div>
+</body>
+</html>
