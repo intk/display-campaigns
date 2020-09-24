@@ -11,45 +11,6 @@
   <style amp-custom>
   /* Animations */
 
-   @keyframes ctaHidden {
-    from, to {
-      opacity: 0.0;
-    }
-   }
-
-  @keyframes ctaShow {
-    0% {
-       opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
-    }
-    50% {
-       opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
-    }
-    100% {
-       opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
-    }
-
-  }
-
-   @keyframes cta {
-    0% {
-       opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
-    }
-    50% {
-       opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
-    }
-    100% {
-       opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
-    }
-
-  }
-
-
   /* Setup */
   body {
     margin:0;
@@ -89,7 +50,7 @@
     position:relative;
     background-color:#54384c;
     overflow:hidden;
-    font-size:90px;
+    font-size:115px;
   }
 
   .ad .slide1 figure .background  {
@@ -105,7 +66,7 @@
   .ad .slide1 figure figcaption { 
     position: absolute;
     z-index: 2;
-    top:50%;
+    top:42%;
     left:0;
     width:50%;
     height:100%;
@@ -131,11 +92,11 @@
     background-image:url('images/house.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: center center;
+    background-position:bottom center;
     width:0.9em;
     height:0.5em;
-    right:0px;
-    bottom:0em;
+    right:-0.78em;
+    bottom:calc(0.05em - 1px);
     display: block;
     position: absolute;
     z-index: 1;
@@ -157,11 +118,11 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: top left;
-    width:0.65em;
-    height:0.65em;
-    right:0.25em;
-    bottom:-0.13em;
-    display: block;
+    width:0.68em;
+    height:0.68em;
+    right:-0.45em;
+    bottom:-0.22em;
+    display:block;
     position: absolute;
     z-index:2;
     opacity:0.0;
@@ -173,8 +134,8 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: top left;
-    width:0.65em;
-    height:0.65em;
+    width:0.68em;
+    height:0.68em;
     left:0.55em;
     top:0.12em;
     display: block;
@@ -188,57 +149,16 @@
    background-image:url('images/guest.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: top left;
-    width:0.65em;
-    height:0.35em;
-    left:0.93em;
-    bottom:0em;
-    display: block;
+    background-position:bottom left;
+    width:0.69em;
+    height:0.41em;
+    left:0.96em;
+    bottom:-0.05em;
+    display:block;
     position: absolute;
     z-index:2;
     opacity:0.0;
     transform: translate(0%,10%)scale(5,5);
- }
-
-  .ad .slide figure .bottom, .ad .slide figure .bottomEnd {
-    width:0.65em;
-    height:0.2em;
-    display:block;
-    position: absolute;
-    z-index:2;
-    bottom:15px;
-    right:28%;
-    opacity: 0.0;
-  }
-
- .ad .slide figure span.date {
-   background-image:url('images/date.svg');
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:bottom left;
-    width:100%;
-    height:0.2em;
-    bottom:8px;
-    left:0;
-    display: block;
-    position: absolute;
-    z-index:2;
-    transform: translate(0%,0%);
- }
-
- .ad .slide figure span.location {
-   background-image:url('images/location.svg');
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:bottom left;
-    width:100%;
-    height:0.2em;
-    bottom:0;
-    left:0;
-    display: block;
-    position: absolute;
-    z-index:2;
-    transform: translate(0%,0%);
  }
 
  @keyframes hideElement {
@@ -259,8 +179,8 @@
     background-size:contain;
     background-position:top right;
     background-color:transparent;
-    width:0.15em;
-    height:0.15em;
+    width:0.2em;
+    height:0.2em;
     top:5px;
     right:5px;
     display: block;
@@ -292,12 +212,6 @@
     z-index: 100;
     outline:none;
     transition:transform 0.2s ease-out;
-    animation-name:ctaHidden, ctaShow, cta, cta;
-    animation-timing-function:ease-out;
-    animation-delay:0s, 3.5s, 11s, 19s;
-    animation-duration:3.5s, 0.5s, 0.5s, 0.5s;
-    animation-iteration-count: 1, 1, 1, 1;
-    animation-fill-mode:none;
   }
 
   .ad:hover figure button.cta {
@@ -657,64 +571,6 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="bottom" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "2.8s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".slide figure .bottom",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(0%,0%)scale(1.0,1.0)",
-              "offset": "0.2"
-          },
-          {
-             "opacity": "1.0",
-              "transform": "translate(0%,0px)scale(1.0,1.0)",
-              "offset": "0.8"
-          },
-          {
-             "opacity": "0.0",
-              "transform": "translate(0%,0%)scale(1.0,1.0)",
-              "offset": "0.85"
-          },
-          {
-             "opacity": "0.0",
-              "transform": "translate(0%,0%)scale(1.0,1.0)"
-          }
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="bottomEnd" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "18.8s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".slide figure .bottomEnd",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(0%,0%)scale(1.0,1.0)",
-              "offset": "0.2"
-          },
-          {
-             "opacity": "1.0",
-              "transform": "translate(0%,0px)scale(1.0,1.0)"
-          }
-        ]
-      }]
-    </script>
-  </amp-animation>
-
   <!-- Setup structure-->
   <div class="ad">
     <div class="slide slide1">
@@ -728,15 +584,6 @@
             <span class="guest"></span><span class="guestEnd"></span>
           </div>
       </figcaption>
-      <div class="bottom">
-        <span class="date"></span>
-        <span class="location"></span>
-      </div>
-      <div class="bottomEnd">
-        <span class="date"></span>
-        <span class="location"></span>
-      </div>
-      <button class="cta animated"></button>
       <span class="logo"></span><span class="logoEnd"></span>
     </figure>
   </div>
