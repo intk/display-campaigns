@@ -112,12 +112,28 @@
   }
 
   .ad figure span.logo {
+    width:50px;
+    height:50px;
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/logo.svg);
+    background-size:contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top:10px;
+    right:10px;
+  }
+
+  .ad figure span.act {
     width:60px;
     height:60px;
     display: block;
     margin:0;
     padding:0;
-    background-image:url(images/logo.svg);
+    background-image:url(images/act.svg);
     background-size:contain;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -190,7 +206,7 @@
   }
 
   .ad figure div.text div.subtitle-wrapper span.subtitle, .ad figure div.text div.subtitle-wrapper span.subtitleAfter  {
-    width:0.5em;
+    width:0.6em;
     height:200%;
     display: block;
     margin:0;
@@ -224,10 +240,10 @@
 
 
   .ad figure div.text div.subtitle-wrapper span.date, .ad figure div.text div.subtitle-wrapper span.dateEnd  {
-    width:0.6em;
+    width:0.57em;
     height:0.6em;
     display: block;
-    top:0.14em;
+    top:0.2em;
     left:0.01em;
     opacity: 0.0;
     background-image:url(images/date.svg);
@@ -242,7 +258,7 @@
     width:0.6em;
     height:20%;
     display: block;
-    bottom:18%;
+    bottom:14%;
     left:0.05em;
     opacity:0.0;
     background-image:url(images/location.svg);
@@ -595,6 +611,7 @@
          <span class="location"></span>
         <span class="locationEnd"></span>
       </div>
+       <span class="act"></span>
       <span class="logo"></span>
       <button class="cta animated"></button>
     </figure>
@@ -619,6 +636,7 @@
          <span class="location"></span>
         <span class="locationEnd"></span>
       </div>
+       <span class="act"></span>
       <span class="logo"></span>
     </figure>
   </div>

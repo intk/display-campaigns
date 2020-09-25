@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=120,height=600">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Skyscraper</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -12,10 +12,10 @@
   /* Animations */
   @keyframes ctaHover {
     0% {
-      transform:scale(1.0,1.0);
+      transform:translate(-50%,0)scale(1.0,1.0);
     }
     100% {
-      transform:scale(1.1,1.1);
+      transform:translate(-50%,0)scale(1.1,1.1);
     }
   }
 
@@ -30,17 +30,17 @@
     }
   }
 
-  @keyframes subtitleEnd {
+ @keyframes subtitleEnd {
      0% {
-     	  opacity:0.0;
+        opacity:0.0;
           transform: translateY(10%);
         }
     10% { 
-    	  opacity:1.0;
+        opacity:1.0;
           transform: translateY(0);
         }
     100% {
-    	  opacity:1.0;
+        opacity:1.0;
           transform: translateY(0);
         }
   }
@@ -68,9 +68,9 @@
     position: absolute;
   }
   .ad figure {
-    width:728px;
-    height:90px;
-    font-size:220px;
+    width:120px;
+    height:600px;
+    font-size:150px;
     display: block;
     margin:0;
     padding:0;
@@ -79,7 +79,7 @@
   }
 
   .ad {
-    background:linear-gradient(90deg, #583a4e 0%, #583a4e 40%, #e4e8dc 70%, #e4e8dc 100%);
+    background:linear-gradient(180deg, #583a4e 0%, #583a4e 40%, #e4e8dc 100%);
   }
 
   .ad.slide1 {
@@ -104,16 +104,16 @@
     width:100%;
     height:auto;
     position: absolute;
-    left:-5%;
-    top:-35%;
-    transform: scale(1.0,1.0)translate(0%,10%);
+    left:75%;
+    bottom:0%;
+    transform: scale(1.0,1.0)translate(-50%,20%);
     transform-origin:center left;
     z-index: 0;
   }
 
   .ad figure span.logo {
-    width:0.2em;
-    height:0.2em;
+    width:40px;
+    height:40px;
     display: block;
     margin:0;
     padding:0;
@@ -128,8 +128,8 @@
   }
 
   .ad figure span.act {
-    width:0.2em;
-    height:0.2em;
+    width:60px;
+    height:60px;
     display: block;
     margin:0;
     padding:0;
@@ -140,27 +140,26 @@
     position: absolute;
     z-index: 1;
     bottom:10px;
-    right:10px;
+    left:10px;
   }
   .ad figure div.text {
     width:100%;
-    height:55%;
+    height:45%;
     display: block;
     position: absolute;
     z-index: 3;
-    top:0;
+    top:5%;
     left:0;
   }
   .ad figure div.text .wrapper {
     position: relative;
     margin:0;
     padding:10px;
-    left:20%;
   }
 
   .ad figure div.text div.title-wrapper {
-     width:0.8em;
-     height:0.22em;
+     width:0.67em;
+     height:0.5em;
      display: block;
      overflow: hidden;
      position: relative;
@@ -168,7 +167,7 @@
 
   .ad figure div.text span.title, .ad figure div.text span.titleAfter {
     width:100%;
-    height:0.3em;
+    height:0.4em;
     display: block;
     margin:0;
     padding:0;
@@ -197,9 +196,9 @@
   }
 
   .ad figure div.text div.subtitle-wrapper {
-     margin:0px 0 0 0;
-     width:0.8em;
-     height:0.2em;
+     margin:-15px 0 0 0;
+     width:0.7em;
+     height:0.5em;
      padding:0 0px;
      display: block;
      overflow: hidden;
@@ -207,22 +206,22 @@
   }
 
   .ad figure div.text div.subtitle-wrapper span.subtitle, .ad figure div.text div.subtitle-wrapper span.subtitleAfter  {
-    width:0.75em;
+    width:0.6em;
     height:200%;
     display: block;
-    left:0.01em;
     margin:0;
     padding:0;
+    opacity: 0.0;
+     left:0.01em;
     background-image:url(images/subtitle.svg);
     background-size:100%;
     background-position:left top;
     background-repeat: no-repeat;
-    opacity: 0.0;
     transform: translate(0,10%);
     position:absolute;
   }
 
-   .ad figure div.text div.subtitle-wrapper span.subtitle {
+  .ad figure div.text div.subtitle-wrapper span.subtitle {
     animation-name:itemRemove;
     animation-delay: 14s;
     animation-duration: 0.1s;
@@ -239,28 +238,28 @@
     animation-fill-mode: forwards;
   }
 
-  .ad figure div.text span.date, .ad figure div.text span.dateEnd  {
-    width:0.5em;
-    height:100%;
+
+  .ad figure div.text div.subtitle-wrapper span.date, .ad figure div.text div.subtitle-wrapper span.dateEnd  {
+    width:0.57em;
+    height:0.6em;
     display: block;
-    top:0.12em;
-    right:13%;
-    opacity:0.0;
+    top:0.25em;
+    left:0.01em;
+    opacity: 0.0;
     background-image:url(images/date.svg);
     background-size:100%;
     background-position:left top;
     transform: translate(0,10%);
     background-repeat: no-repeat;
     position:absolute;
-    z-index: 2;
   }
 
    .ad figure div.text span.location, .ad figure div.text span.locationEnd  {
-    width:0.5em;
-    height:0.4em;
+    width:0.6em;
+    height:20%;
     display: block;
-    top:0.26em;
-    right:13%;
+    top:0.9em;
+    left:12px;
     opacity:0.0;
     background-image:url(images/location.svg);
     background-size:100%;
@@ -271,17 +270,17 @@
   }
 
   button.cta {
-        font-size:80px;
+        font-size:75px;
         width: 1em;
         height:1em;
         background-color:transparent;
         text-decoration: none;
         position: absolute;
-        bottom:10px;
-        left:50%;
+        bottom:15%;
+        left:70%;
         background-image: url(images/cta.svg);
         background-repeat: no-repeat;
-        background-size: 80%;
+        background-size:80%;
         background-position: center center;
         transform-origin: 50%, 50%;
         border-radius: 0px;
@@ -289,6 +288,7 @@
         cursor: pointer;
         z-index: 100;
         outline: none;
+        transform: translate(-50%,0);
         transition: transform 0.2s ease-out;
         animation-name: ctaEnd, ctaEnd, ctaEnd;
         animation-timing-function: ease-out, ease-out, ease-out;
@@ -347,18 +347,19 @@
         "selector": ".background",
         "keyframes": [
           {
-             "transform": "scale(1.0,1.0)translate(0%,0%)",
+             "transform": "scale(1.0,1.0)translate(-50%,0%)",
              "offset": 0.4
 
           },
           {
-             "transform": "scale(1.1,1.1)translate(0%,0%)"
+             "transform": "scale(1.1,1.1)translate(-50%,0%)"
           }
         ]
       }]
     </script>
   </amp-animation>
-  <amp-animation id="titleFadeIn" layout="nodisplay" trigger="visibility">
+
+<amp-animation id="titleFadeIn" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
         "delay": "1s",
@@ -542,8 +543,6 @@
     </script>
   </amp-animation>
 
-
-
   <amp-animation id="ctaAnimate" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -556,34 +555,34 @@
         "keyframes": [
         {
           "opacity": 1.0,
-          "transform": "scale(1.1)",
+          "transform": "translate(-50%,0)scale(1.1)",
           "offset": 0.05
         },
         {
           "opacity": 1.0,
-          "transform": "scale(1.0)",
+          "transform": "translate(-50%,0)scale(1.0)",
            "offset": 0.1
         },
         {
           "opacity": 1.0,
-          "transform": "scale(1.0)",
+          "transform": "translate(-50%,0)scale(1.0)",
            "offset": 0.5
         },
         {
           "opacity": 1.0,
-          "transform": "scale(1.1)",
+          "transform": "translate(-50%,0)scale(1.1)",
           "offset": 0.53
          
         },
         {
           "opacity": 1.0,
-          "transform": "scale(1.0)",
+          "transform": "translate(-50%,0)scale(1.0)",
           "offset": 0.57
          
         },
         {
           "opacity": 1.0,
-          "transform": "scale(1.0)"
+          "transform": "translate(-50%,0)scale(1.0)"
          
         }
         ]
@@ -595,7 +594,7 @@
   <!-- Setup structure-->
 	<div class="ad slide1">
     <figure>
-      <amp-img class="background" width="180" height="248" alt="Theater Rotterdam" src="images/background.png"></amp-img>
+      <amp-img class="background" width="250" height="345" alt="Theater Rotterdam" src="images/background.png"></amp-img>
       <div class="text">
         <div class="wrapper">
           <div class="title-wrapper">
@@ -604,15 +603,15 @@
           </div>
           <div class="subtitle-wrapper">
             <span class="subtitle"></span>
-            <span class="subtitleAfter"></span>
+             <span class="subtitleAfter"></span>
+            <span class="date"></span>
+            <span class="dateEnd"></span>
           </div>
         </div>
-        <span class="date"></span>
-        <span class="dateEnd"></span>
-        <span class="location"></span>
+         <span class="location"></span>
         <span class="locationEnd"></span>
       </div>
-       <span class="act"></span>
+      <span class="act"></span>
       <span class="logo"></span>
       <button class="cta animated"></button>
     </figure>
@@ -620,7 +619,7 @@
 
   <div class="ad slide2">
     <figure>
-      <amp-img class="background" width="180" height="248" alt="Theater Rotterdam" src="images/background.png"></amp-img>
+      <amp-img class="background" width="250" height="345" alt="Theater Rotterdam" src="images/background.png"></amp-img>
       <div class="text">
         <div class="wrapper">
           <div class="title-wrapper">
@@ -628,16 +627,16 @@
             <span class="titleAfter"></span>
           </div>
           <div class="subtitle-wrapper">
-             <span class="subtitle"></span>
+            <span class="subtitle"></span>
              <span class="subtitleAfter"></span>
+            <span class="date"></span>
+            <span class="dateEnd"></span>
           </div>
         </div>
-        <span class="date"></span>
-        <span class="dateEnd"></span>
-        <span class="location"></span>
+         <span class="location"></span>
         <span class="locationEnd"></span>
       </div>
-       <span class="act"></span>
+      <span class="act"></span>
       <span class="logo"></span>
     </figure>
   </div>

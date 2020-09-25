@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=300,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Inline rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -68,9 +68,9 @@
     position: absolute;
   }
   .ad figure {
-    width:728px;
-    height:90px;
-    font-size:220px;
+    width:300px;
+    height:250px;
+    font-size:300px;
     display: block;
     margin:0;
     padding:0;
@@ -79,7 +79,7 @@
   }
 
   .ad {
-    background:linear-gradient(90deg, #583a4e 0%, #583a4e 40%, #e4e8dc 70%, #e4e8dc 100%);
+    background:linear-gradient(180deg, #583a4e 0%, #583a4e 40%, #e4e8dc 100%);
   }
 
   .ad.slide1 {
@@ -104,16 +104,16 @@
     width:100%;
     height:auto;
     position: absolute;
-    left:-5%;
-    top:-35%;
-    transform: scale(1.0,1.0)translate(0%,10%);
+    left:67%;
+    top:5%;
+    transform: scale(1.0,1.0)translate(-50%,10%);
     transform-origin:center left;
     z-index: 0;
   }
 
   .ad figure span.logo {
-    width:0.2em;
-    height:0.2em;
+    width:70px;
+    height:70px;
     display: block;
     margin:0;
     padding:0;
@@ -128,8 +128,8 @@
   }
 
   .ad figure span.act {
-    width:0.2em;
-    height:0.2em;
+    width:40px;
+    height:40px;
     display: block;
     margin:0;
     padding:0;
@@ -139,23 +139,22 @@
     background-repeat: no-repeat;
     position: absolute;
     z-index: 1;
-    bottom:10px;
-    right:10px;
+    bottom:5px;
+    right:5px;
   }
   .ad figure div.text {
     width:100%;
-    height:55%;
+    height:40%;
     display: block;
     position: absolute;
     z-index: 3;
-    top:0;
+    bottom:0;
     left:0;
   }
   .ad figure div.text .wrapper {
     position: relative;
     margin:0;
     padding:10px;
-    left:20%;
   }
 
   .ad figure div.text div.title-wrapper {
@@ -198,7 +197,7 @@
 
   .ad figure div.text div.subtitle-wrapper {
      margin:0px 0 0 0;
-     width:0.8em;
+     width:0.6em;
      height:0.2em;
      padding:0 0px;
      display: block;
@@ -207,7 +206,7 @@
   }
 
   .ad figure div.text div.subtitle-wrapper span.subtitle, .ad figure div.text div.subtitle-wrapper span.subtitleAfter  {
-    width:0.75em;
+    width:0.6em;
     height:200%;
     display: block;
     left:0.01em;
@@ -239,28 +238,27 @@
     animation-fill-mode: forwards;
   }
 
-  .ad figure div.text span.date, .ad figure div.text span.dateEnd  {
-    width:0.5em;
-    height:100%;
+  .ad figure div.location-wrapper span.date, .ad figure div.location-wrapper span.dateEnd  {
+    width:0.32em;
+    height:0.32em;
     display: block;
-    top:0.12em;
-    right:13%;
-    opacity:0.0;
+    top:0.08em;
+    left:10px;
+    opacity: 0.0;
     background-image:url(images/date.svg);
     background-size:100%;
     background-position:left top;
     transform: translate(0,10%);
     background-repeat: no-repeat;
     position:absolute;
-    z-index: 2;
   }
 
-   .ad figure div.text span.location, .ad figure div.text span.locationEnd  {
-    width:0.5em;
-    height:0.4em;
+   .ad figure  div.location-wrapper span.location, .ad figure  div.location-wrapper span.locationEnd  {
+    width:0.31em;
+    height:20%;
     display: block;
-    top:0.26em;
-    right:13%;
+    top:0.18em;
+    left:10px;
     opacity:0.0;
     background-image:url(images/location.svg);
     background-size:100%;
@@ -271,14 +269,14 @@
   }
 
   button.cta {
-        font-size:80px;
-        width: 1em;
+        font-size:70px;
+        width:1em;
         height:1em;
         background-color:transparent;
         text-decoration: none;
         position: absolute;
-        bottom:10px;
-        left:50%;
+        bottom:25%;
+        right:10px;
         background-image: url(images/cta.svg);
         background-repeat: no-repeat;
         background-size: 80%;
@@ -347,12 +345,12 @@
         "selector": ".background",
         "keyframes": [
           {
-             "transform": "scale(1.0,1.0)translate(0%,0%)",
+             "transform": "scale(1.0,1.0)translate(-50%,0%)",
              "offset": 0.4
 
           },
           {
-             "transform": "scale(1.1,1.1)translate(0%,0%)"
+             "transform": "scale(1.1,1.1)translate(-50%,0%)"
           }
         ]
       }]
@@ -595,7 +593,7 @@
   <!-- Setup structure-->
 	<div class="ad slide1">
     <figure>
-      <amp-img class="background" width="180" height="248" alt="Theater Rotterdam" src="images/background.png"></amp-img>
+      <amp-img class="background" width="200" height="276" alt="Theater Rotterdam" src="images/background.png"></amp-img>
       <div class="text">
         <div class="wrapper">
           <div class="title-wrapper">
@@ -607,12 +605,14 @@
             <span class="subtitleAfter"></span>
           </div>
         </div>
+      </div>
+      <div class="location-wrapper">
         <span class="date"></span>
         <span class="dateEnd"></span>
         <span class="location"></span>
         <span class="locationEnd"></span>
       </div>
-       <span class="act"></span>
+      <span class="act"></span>
       <span class="logo"></span>
       <button class="cta animated"></button>
     </figure>
@@ -620,7 +620,7 @@
 
   <div class="ad slide2">
     <figure>
-      <amp-img class="background" width="180" height="248" alt="Theater Rotterdam" src="images/background.png"></amp-img>
+      <amp-img class="background" width="200" height="276" alt="Theater Rotterdam" src="images/background.png"></amp-img>
       <div class="text">
         <div class="wrapper">
           <div class="title-wrapper">
@@ -628,16 +628,18 @@
             <span class="titleAfter"></span>
           </div>
           <div class="subtitle-wrapper">
-             <span class="subtitle"></span>
+            <span class="subtitle"></span>
              <span class="subtitleAfter"></span>
           </div>
         </div>
+      </div>
+      <div class="location-wrapper">
         <span class="date"></span>
         <span class="dateEnd"></span>
         <span class="location"></span>
         <span class="locationEnd"></span>
       </div>
-       <span class="act"></span>
+      <span class="act"></span>
       <span class="logo"></span>
     </figure>
   </div>

@@ -104,7 +104,7 @@
     width:100%;
     height:auto;
     position: absolute;
-    left:70%;
+    left:66%;
     top:5%;
     transform: scale(1.0,1.0)translate(-50%,10%);
     transform-origin:center left;
@@ -112,20 +112,39 @@
   }
 
   .ad figure span.logo {
-    width:80px;
-    height:80px;
+    width:70px;
+    height:70px;
     display: block;
     margin:0;
     padding:0;
     background-image:url(images/logo.svg);
     background-size:contain;
-    background-position: right;
+    background-position: right bottom;
     background-repeat: no-repeat;
     position: absolute;
     z-index: 1;
     top:10px;
     right:10px;
   }
+
+   .ad figure span.act {
+    width:40px;
+    height:40px;
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/act.svg);
+    background-size:contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    bottom:10px;
+    right:10px;
+  }
+
+
+
   .ad figure div.text {
     width:100%;
     height:40%;
@@ -227,7 +246,7 @@
     height:0.32em;
     display: block;
     top:0.08em;
-    left:15px;
+    left:10px;
     opacity: 0.0;
     background-image:url(images/date.svg);
     background-size:100%;
@@ -238,11 +257,11 @@
   }
 
    .ad figure  div.location-wrapper span.location, .ad figure  div.location-wrapper span.locationEnd  {
-    width:0.32em;
+    width:0.31em;
     height:20%;
     display: block;
-    top:0.2em;
-    left:15px;
+    top:0.18em;
+    left:10px;
     opacity:0.0;
     background-image:url(images/location.svg);
     background-size:100%;
@@ -577,7 +596,7 @@
   <!-- Setup structure-->
 	<div class="ad slide1">
     <figure>
-      <amp-img class="background" width="250" height="345" alt="Theater Rotterdam" src="images/background.png"></amp-img>
+      <amp-img class="background" width="230" height="317" alt="Theater Rotterdam" src="images/background.png"></amp-img>
       <div class="text">
         <div class="wrapper">
           <div class="title-wrapper">
@@ -596,6 +615,7 @@
         <span class="location"></span>
         <span class="locationEnd"></span>
       </div>
+      <span class="act"></span>
       <span class="logo"></span>
       <button class="cta animated"></button>
     </figure>
@@ -603,7 +623,7 @@
 
   <div class="ad slide2">
     <figure>
-      <amp-img class="background" width="250" height="345" alt="Theater Rotterdam" src="images/background.png"></amp-img>
+      <amp-img class="background" width="230" height="317" alt="Theater Rotterdam" src="images/background.png"></amp-img>
       <div class="text">
         <div class="wrapper">
           <div class="title-wrapper">
@@ -622,6 +642,7 @@
         <span class="location"></span>
         <span class="locationEnd"></span>
       </div>
+      <span class="act"></span>
       <span class="logo"></span>
     </figure>
   </div>
