@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=200,height=200">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Small Square</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -131,8 +131,8 @@
   }
 
   .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
-    width:336px;
-    height:280px;
+    width:200px;
+    height:200px;
   }
 
   .ad figure {
@@ -147,7 +147,7 @@
 
   .ad figure .background {
     position: absolute;
-    left:-10%;
+    left:-50%;
     top:0px;
   }
 
@@ -155,18 +155,22 @@
     transform: translate(-10%,0%)scale(1.0,1.0);
   }
 
+  .ad .slide3 figure .background {
+    left:-15%;
+  }
+
   .ad .slide4 figure .background, .ad .slide5 figure .background {
-    left:-10%;
+    left:-15%;
   }
 
 
   .ad .slide figure figcaption { 
     position: absolute;
-    bottom:0;
+    bottom:10px;
     left:0px;
     width:100%;
     height:100%;
-    font-size:336px;
+    font-size:220px;
   }
 
   .ad .slide figure figcaption span.title {
@@ -226,8 +230,8 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom center;
-    width:50px;
-    height:50px;
+    width:30px;
+    height:30px;
     bottom:15px;
     right:15px;
     display: block;
@@ -238,7 +242,7 @@
  }
 
  button.cta {
-    font-size:120px;
+    font-size:100px;
     width:1em;
     height:auto;
     background-color:#EB3233;
@@ -620,7 +624,7 @@
 
      <div class="slide slide3">
       <figure>
-        <amp-img class="background" width="420" height="280" alt="De Domijnen" src="images/beeld3.jpg"></amp-img>
+        <amp-img class="background" width="300" height="200" alt="De Domijnen" src="images/beeld3.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <span class="subtitle"></span>
@@ -631,7 +635,7 @@
 
     <div class="slide slide4">
       <figure>
-        <amp-img class="background" width="420" height="280" alt="De Domijnen" src="images/beeld4.jpg"></amp-img>
+        <amp-img class="background" width="300" height="200" alt="De Domijnen" src="images/beeld4.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <span class="subtitle"></span>
@@ -642,7 +646,7 @@
 
     <div class="slide slide5">
       <figure>
-        <amp-img class="background" width="420" height="280" alt="De Domijnen" src="images/beeld4.jpg"></amp-img>
+        <amp-img class="background" width="300" height="200" alt="De Domijnen" src="images/beeld4.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <span class="subtitle"></span>
