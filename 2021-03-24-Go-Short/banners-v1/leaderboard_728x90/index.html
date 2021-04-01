@@ -212,6 +212,13 @@
   }
 
    .ad figure.child9 {
+     background-image: url(images/sixth.svg);
+    background-position:right center;
+    background-size:50%;
+    left:0.05em;
+  }
+
+   .ad figure.child10 {
      left:0.21em;
   }
 
@@ -238,7 +245,7 @@
     transition:transform 0.2s ease-out;
     animation-name:ctaEnd, ctaEnd;
     animation-timing-function: ease-out;
-    animation-delay:16.5s, 20.5s;
+    animation-delay:18.5s, 22.5s;
     animation-duration:1s, 1s;
   }
 
@@ -493,7 +500,7 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="Child8" layout="nodisplay" trigger="visibility">
+   <amp-animation id="Child9" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
         "delay": "16s",
@@ -508,12 +515,43 @@
             "offset": "0.1"
            },
            {
+            "opacity": "1.0",
+            "offset": "0.8"
+           },
+           {
+            "opacity": "0.0",
+            "offset": "0.85"
+           },
+           {
+            "opacity": "0.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Child10" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18s",
+        "duration": "3s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child10",
+        "keyframes": [
+           {
+            "opacity": "1.0",
+            "offset": "0.1"
+           },
+           {
             "opacity": "1.0"           
            }
         ]
       }]
     </script>
   </amp-animation>
+
 
 
   <!-- Setup structure-->
@@ -548,7 +586,8 @@
       </div>
     </figure>
     <figure class="child8"></figure>
-    <figure class="child9"><button class="cta"></button></figure>
+    <figure class="child9"></figure>
+    <figure class="child10"><button class="cta"></button></figure>
   </div>
   </div>
 </body>
