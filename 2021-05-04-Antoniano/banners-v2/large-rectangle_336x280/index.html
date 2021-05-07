@@ -131,8 +131,12 @@
     left:-30%;
   }
 
-  .ad .slide3 figure .background, .ad .slide4 figure .background, .ad .slide5 figure .background {
+  .ad .slide3 figure .background {
     left:-60%;
+  }
+
+  .ad .slide4 figure .background, .ad .slide5 figure .background {
+    left:-40%;
   }
 
   .ad .slide figure .background {
@@ -368,36 +372,6 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="Slide2_title" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "3.5s",
-        "duration": "12s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".slide2 figure span.title",
-        "keyframes": [
-          { 
-             "opacity": "1.0",
-             "transform": "translate(0%,0)scale(1.0,1.0)",
-             "offset": "0.1"
-          },
-          {
-             "opacity": "1.0",
-             "transform": "translate(0%,0)scale(1.0,1.0)",
-              "offset": "0.7"
-          },
-          {
-             "opacity": "0.0",
-             "transform": "translate(-10%,0)scale(1.0,1.0)"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
   <amp-animation id="Slide3" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -428,15 +402,45 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="Slide3_title" layout="nodisplay" trigger="visibility">
+  <amp-animation id="Slide4" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
-        "delay": "6.5s",
+        "delay": "9s",
         "duration": "12s",
         "fill": "both",
         "easing": "ease-out",
         "iterations": "2",
-        "selector": ".slide3 figure span.title",
+        "selector": ".slide4",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.01"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.4"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.45"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Slide2_title" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "3.5s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide2 figure span.title",
         "keyframes": [
           { 
              "opacity": "1.0",
@@ -458,45 +462,15 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="Slide4" layout="nodisplay" trigger="visibility">
+  <amp-animation id="Slide3_title" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
-        "delay": "9s",
+        "delay": "6.5s",
         "duration": "12s",
         "fill": "both",
         "easing": "ease-out",
         "iterations": "2",
-        "selector": ".slide4",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "offset": "0.001"
-          },
-          {
-             "opacity": "1.0",
-             "offset": "0.4"
-          },
-          {
-             "opacity": "0.0",
-             "offset": "0.45"
-          },
-          {
-             "opacity": "0.0"
-          }
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-   <amp-animation id="Slide4_title" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "9.5s",
-        "duration": "12s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".slide4 figure span.title",
+        "selector": ".slide3 figure span.title",
         "keyframes": [
           { 
              "opacity": "1.0",
@@ -669,7 +643,7 @@
 
     <div class="slide slide4">
       <figure>
-        <amp-img class="background" width="420" height="280" alt="" src="images/frame_3.jpg"></amp-img>
+        <amp-img class="background" width="420" height="280" alt="" src="images/frame_4.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <button class="cta donate"></button>
@@ -680,7 +654,7 @@
 
     <div class="slide slide5">
       <figure>
-        <amp-img class="background" width="420" height="280" alt="" src="images/frame_3.jpg"></amp-img>
+        <amp-img class="background" width="420" height="280" alt="" src="images/frame_4.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <button class="cta donate"></button>
