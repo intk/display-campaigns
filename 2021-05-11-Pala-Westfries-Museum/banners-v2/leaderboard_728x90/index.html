@@ -106,7 +106,7 @@
     position: absolute;
     top:0%;
     left:-10%;
-    width:50%;
+    width:40%;
     height:100%;
     transform-origin:left top;
     transform: scale(1.0,1.0);
@@ -141,12 +141,28 @@
     width:50%;
     height:calc(100%);
     top:0em;
-    right:10%;
-    display: block;
+    left:calc(30% - 1px);
+    display:block;
     position: absolute;
     z-index: 0;
     opacity:0.0;
     transform: translate(5%,0%);
+ }
+
+ .ad .slide1 figure span.slogan, .ad .slide1 figure span.sloganEnd { 
+    background-image:url('images/slogan.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:bottom left;
+    width:0.22em;
+    height:0.22em;
+    bottom:0px;
+    left:36%;
+    display: block;
+    position: absolute;
+    z-index:0;
+    opacity:0.0;
+    transform: translate(0%,-10%);
  }
 
  .ad .slide1 figure figcaption span.subtitle, .ad .slide1 figure figcaption span.subtitleEnd { 
@@ -182,7 +198,7 @@
     font-size:110px;
     width:1em;
     height:auto;
-    background-color:#5e9b72;
+    background-color:#F4000E;
     padding:calc(1em/6.9) calc(1.1em/2);
     text-decoration: none;
     position:absolute;
@@ -277,6 +293,64 @@
     </script>
   </amp-animation>
 
+  <amp-animation id="slogan" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure span.slogan",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)",
+              "offset": "0.9"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,5%)scale(1.0,1.0)",
+              "offset": "0.95"
+          },
+          {
+             "opacity": "0.0",
+              "transform": "translate(0%,5%)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="sloganEnd" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.sloganEnd",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0%)scale(1.0,1.0)",
+              "offset": "0.2"
+          },
+          {
+             "opacity": "1.0",
+              "transform": "translate(0%,0px)scale(1.0,1.0)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
   <amp-animation id="subtitle" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -341,6 +415,7 @@
     <figure>
       <div class="background"></div><div class="background-right"></div>
       <span class="title"></span><span class="titleEnd"></span>
+      <span class="slogan"></span><span class="sloganEnd"></span>
       <figcaption><span class="subtitle"></span><span class="subtitleEnd"></span></figcaption>
       <button class="cta animated"></button>
     </figure>
