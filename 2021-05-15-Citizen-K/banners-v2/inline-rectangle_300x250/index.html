@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=300,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Inline rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:728px;
-    height:90px;
+    width:300px;
+    height:250px;
   }
 
   .ad .slide .wrapper {
@@ -89,16 +89,16 @@
     position:relative;
     background-color:#EB5A2D;
     overflow:hidden;
-    font-size:330px;
+    font-size:300px;
   }
 
   .ad .slide1 figure .background  {
     display:block;
     position: absolute;
-    top:-60%;
+    top:-12%;
     left:0;
     transform-origin:center center;
-    transform: scale(1.0,1.0)translate(0%,-10%);
+    transform: scale(1.0,1.0)translate(-10%,0%);
   }
 
   .ad .slide1 figure .background:after {
@@ -115,13 +115,13 @@
   .ad .slide1 figure figcaption { 
     position: absolute;
     z-index: 1;
-    top:50%;
-    right:-5%;
-    width:50%;
-    height:125%;
-    display:block;
+    bottom:-20%;
+    left:0;
+    width:110%;
+    height:50%;
+    display: block;
     background-color:#cc0000;
-    transform: rotate(-3deg)translate(0,-50%);
+    transform: rotate(-3deg);
   }
 
   .ad .slide1 figure figcaption span.title, .ad .slide1 figure figcaption span.titleEnd { 
@@ -130,7 +130,7 @@
     background-size:contain;
     width:0.45em;
     height:0.55em;
-    top:0.12em;
+    top:0.04em;
     left:0.04em;
     display: block;
     position: absolute;
@@ -144,8 +144,8 @@
     background-repeat: no-repeat;
     background-size:contain;
     width:0.55em;
-    height:0.13em;
-    bottom:0%;
+    height:0.22em;
+    bottom:18%;
     left:0.04em;
     display: block;
     position: absolute;
@@ -159,10 +159,10 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: left top;
-    width:0.65em;
+    width:0.8em;
     height:0.55em;
-    top:0.06em;
-    left:0.01em;
+    top:-0.06em;
+    left:0.04em;
     display: block;
     position: absolute;
     z-index: 2;
@@ -191,8 +191,8 @@
     background-position:top center;
     width:0.25em;
     height:0.25em;
-    top:15px;
-    left:15px;
+    top:20px;
+    left:20px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -205,10 +205,10 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position:top right;
-    width:0.1em;
-    height:0.1em;
-    top:calc(15px + 10%);
-    right:calc(10px + 10%);
+    width:0.11em;
+    height:0.11em;
+    top:10px;
+    right:45px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -217,7 +217,7 @@
  }
 
   button.cta {
-    font-size:100px;
+    font-size:90px;
     width:1em;
     height:auto;
     background-color:#FFF;

@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=120,height=600">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Skyscraper</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -20,15 +20,15 @@
   @keyframes ctaShow {
     0% {
        opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
+       transform:translate(-50%,0)scale(1.1,1.1);
     }
     100% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
 
   }
@@ -36,15 +36,15 @@
    @keyframes cta {
     0% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
+       transform:translate(-50%,0)scale(1.1,1.1);
     }
     100% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
 
   }
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:728px;
-    height:90px;
+    width:120px;
+    height:600px;
   }
 
   .ad .slide .wrapper {
@@ -89,16 +89,16 @@
     position:relative;
     background-color:#EB5A2D;
     overflow:hidden;
-    font-size:330px;
+    font-size:250px;
   }
 
   .ad .slide1 figure .background  {
     display:block;
     position: absolute;
-    top:-60%;
-    left:0;
+    top:0%;
+    left:-155%;
     transform-origin:center center;
-    transform: scale(1.0,1.0)translate(0%,-10%);
+    transform: scale(1.0,1.0)translate(-10%,0%);
   }
 
   .ad .slide1 figure .background:after {
@@ -115,23 +115,23 @@
   .ad .slide1 figure figcaption { 
     position: absolute;
     z-index: 1;
-    top:50%;
-    right:-5%;
-    width:50%;
-    height:125%;
-    display:block;
+    bottom:-15%;
+    left:-5%;
+    width:115%;
+    height:50%;
+    display: block;
     background-color:#cc0000;
-    transform: rotate(-3deg)translate(0,-50%);
+    transform: rotate(-3deg);
   }
 
   .ad .slide1 figure figcaption span.title, .ad .slide1 figure figcaption span.titleEnd { 
     background-image:url('images/title.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.45em;
+    width:0.42em;
     height:0.55em;
-    top:0.12em;
-    left:0.04em;
+    top:0.06em;
+    left:0.07em;
     display: block;
     position: absolute;
     z-index: 2;
@@ -143,10 +143,10 @@
     background-image:url('images/subtitle.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.55em;
-    height:0.13em;
-    bottom:0%;
-    left:0.04em;
+    width:0.72em;
+    height:0.22em;
+    top:14%;
+    left:0.07em;
     display: block;
     position: absolute;
     z-index: 2;
@@ -159,10 +159,10 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: left top;
-    width:0.65em;
+    width:0.84em;
     height:0.55em;
-    top:0.06em;
-    left:0.01em;
+    top:-0.1em;
+    left:0.07em;
     display: block;
     position: absolute;
     z-index: 2;
@@ -189,10 +189,10 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position:top center;
-    width:0.25em;
-    height:0.25em;
-    top:15px;
-    left:15px;
+    width:0.3em;
+    height:0.3em;
+    top:20px;
+    left:20px;
     display: block;
     position: absolute;
     z-index: 2;
@@ -203,30 +203,30 @@
   .ad span.npo3-logo { 
     background-image:url('images/logo-npo3.svg');
     background-repeat: no-repeat;
-    background-size:contain;
-    background-position:top right;
+    background-size:100%;
+    background-position:center top;
     width:0.1em;
     height:0.1em;
-    top:calc(15px + 10%);
-    right:calc(10px + 10%);
+    bottom:10px;
+    left:50%;
     display: block;
     position: absolute;
     z-index: 2;
     opacity:1.0;
-    transform-origin:left bottom;
+    transform:translate(-50%,0);
  }
 
   button.cta {
-    font-size:100px;
+    font-size:90px;
     width:1em;
     height:auto;
     background-color:#FFF;
     padding:calc(1em/6.5) calc(1.1em/2);
     text-decoration: none;
     position:absolute;
-    bottom:10px;
-    right:10px;
-    transform:translate(0%,0);
+    bottom:12%;
+    left:50%;
+    transform:translate(-50%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
     background-size:110%;
@@ -247,7 +247,7 @@
   }
 
   .ad:hover figure button.cta {
-    transform:translate(0%,0)scale(1.1,1.1);
+    transform:translate(-50%,0)scale(1.1,1.1);
 
   }
   </style>
@@ -458,14 +458,14 @@
   <div class="ad">
     <div class="slide slide1">
     <figure>
-      <amp-img class="background" width="420" height="280" alt="" src="images/background.jpg"></amp-img>
+      <amp-img class="background" width="600" height="400" alt="" src="images/background.jpg"></amp-img>
       <figcaption>
         <span class="quote"></span><span class="quoteEnd"></span>
         <span class="title"></span><span class="titleEnd"></span>
         <span class="subtitle"></span><span class="subtitleEnd"></span> 
-        <span class="npo3-logo"></span>
       </figcaption>
       <button class="cta animated"></button>
+      <span class="npo3-logo"></span>
       <span class="logo"></span>
     </figure>
   </div>
