@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=250,height=250">
+  <meta name="ad.size" content="width=300,height=50">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Square</title>
+  <title>Banner Mobile</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:250px;
-    height:250px;
+    width:300px;
+    height:50px;
   }
 
   .ad .slide .wrapper {
@@ -87,15 +87,15 @@
     margin:0;
     padding:0;
     position:relative;
-    background-color:#EB5A2D;
+    background-color:#e4501e;
     overflow:hidden;
-    font-size:300px;
+    font-size:150px;
   }
 
   .ad .slide1 figure .background  {
     display:block;
     position: absolute;
-    top:-10%;
+    top:-30%;
     left:0;
     transform-origin:center center;
     transform: scale(1.0,1.0)translate(0%,-10%);
@@ -104,53 +104,56 @@
   .ad .slide1 figure figcaption { 
     position: absolute;
     z-index: 1;
-    top:15px;
-    left:15px;
+    top:0.05em;
+    left:44%;
     width:100%;
     height:100%;
   }
+ 
+
+   .ad .slide1 figure figcaption span.date, .ad .slide1 figure figcaption span.dateEnd { 
+    background-image:url('images/date.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: top left;
+    width:0.5em;
+    height:0.5em;
+    top:0.02em;
+    left:0.45em;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:0.0;
+    filter: drop-shadow(1px 1px 0px rgba(70,61,54,0.3));
+    transform: translate(10%,0%);
+ }
 
   .ad .slide1 figure figcaption span.title, .ad .slide1 figure figcaption span.titleEnd { 
     background-image:url('images/title.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.55em;
-    height:0.55em;
-    top:0.1em;
+    width:0.45em;
+    height:0.45em;
+    top:0.01em;
     left:0%;
     display: block;
     position: absolute;
     z-index: 2;
     opacity:0.0;
-    filter: drop-shadow(1px 1px 0px rgba(70,61,54,0.5));
+    filter: drop-shadow(1px 1px 0px rgba(70,61,54,0.3));
     transform: translate(-10%,0%);
- }
-
- .ad .slide1 figure figcaption span.date, .ad .slide1 figure figcaption span.dateEnd { 
-    background-image:url('images/date.svg');
-    background-repeat: no-repeat;
-    background-size:contain;
-    width:0.45em;
-    height:0.22em;
-    top:0.4em;
-    left:0em;
-    display: block;
-    position: absolute;
-    z-index: 2;
-    opacity:0.0;
-    filter: drop-shadow(1px 1px 0px rgba(70,61,54,0.5));
-    transform: translate(10%,0%);
  }
 
  .ad .slide1 figure figcaption span.subtitle, .ad .slide1 figure figcaption span.subtitleEnd { 
     background-image:url('images/subtitle.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.55em;
-    height:0.22em;
-    bottom:-5%;
-    left:0;
-    display: block;
+    background-position: top left;
+    width:0.7em;
+    height:0.12em;
+    bottom:0.06em;
+    left:20%;
+    display:none;
     position: absolute;
     z-index: 2;
     opacity:0.0;
@@ -176,8 +179,8 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position:top center;
-    width:0.17em;
-    height:0.17em;
+    width:0.12em;
+    height:0.12em;
     top:10px;
     right:10px;
     display: block;
@@ -188,19 +191,19 @@
  }
 
   button.cta {
-    font-size:100px;
+    font-size:70px;
     width:1em;
     height:auto;
     background-color:#66C0C0;
-    padding:calc(1em/6.9) calc(1.1em/2);
+    padding:calc(1em/6.9) calc(1.1em/2.5);
     text-decoration: none;
     position:absolute;
-    bottom:10px;
-    right:10px;
+    bottom:5px;
+    right:5px;
     transform:translate(0%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
-    background-size:95%;
+    background-size:100%;
     background-position:center center;
     transform-origin:50%, 50%;
     border-radius:0px;
@@ -211,8 +214,8 @@
     transition:transform 0.2s ease-out;
     animation-name:ctaHidden, ctaShow, cta, cta;
     animation-timing-function:ease-out;
-    animation-delay:0s, 3.5s, 11s, 19s;
-    animation-duration:3.5s, 0.5s, 0.5s, 0.5s;
+    animation-delay:0s, 2.5s, 11s, 19s;
+    animation-duration:2.5s, 0.5s, 0.5s, 0.5s;
     animation-iteration-count: 1, 1, 1, 1;
     animation-fill-mode:none;
   }
@@ -239,7 +242,7 @@
         "keyframes": [
           {
              "transform": "scale(1.0,1.0)translate(0%,0%)",
-             "offset": "0.5"
+             "offset": "0.3"
           },
           {
              "transform": "scale(1.1,1.1)translate(0%,0%)"
@@ -254,7 +257,7 @@
   <amp-animation id="first" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
-        "delay": "2s",
+        "delay": "1s",
         "duration": "8s",
         "fill": "both",
         "easing": "ease-out",
@@ -312,7 +315,7 @@
   <amp-animation id="second" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
-        "delay": "2.5s",
+        "delay": "1.5s",
         "duration": "8s",
         "fill": "both",
         "easing": "ease-out",
@@ -370,7 +373,7 @@
   <amp-animation id="date" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
-        "delay": "2.5s",
+        "delay": "1.5s",
         "duration": "8s",
         "fill": "both",
         "easing": "ease-out",
@@ -429,8 +432,8 @@
   <div class="ad">
     <div class="slide slide1">
     <figure>
-      <amp-img class="background" width="250" height="375" alt="KAF" src="images/background.jpg"></amp-img>
-      <figcaption><span class="title"></span><span class="titleEnd"></span>
+      <amp-img class="background" width="150" height="100" alt="KAF" src="images/background.jpg"></amp-img>
+      <figcaption><span class="title"></span><span class="titleEnd"></span><!--<span class="date"></span><span class="dateEnd"></span>-->
       <span class="subtitle"></span><span class="subtitleEnd"></span></figcaption>
       <button class="cta animated"></button>
       <span class="logo"></span>
