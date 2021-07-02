@@ -10,6 +10,29 @@
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
   <style amp-custom>
   /* Animations */
+  @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+
   @keyframes ctaHover {
     0% {
       transform:scale(1.0,1.0);
@@ -138,7 +161,7 @@
     background-position:center top;
     background-size: 90%;
     background-repeat: no-repeat;
-    transform: translate(0,-10%);
+    transform: translate(0,-10%)scale(1.1,1.1);
     opacity:0.0;
     position: absolute;
   }
@@ -164,7 +187,7 @@
     background-position:center bottom;
     background-repeat: no-repeat;
     opacity:0.0;
-    transform: translate(0,-10%);
+    transform: translate(0,10%);
     position:absolute;
   }
 
@@ -188,20 +211,17 @@
         z-index: 100;
         outline: none;
         transition: transform 0.2s ease-out;
-        animation-name: ctaEnd, ctaEnd, ctaEnd;
-        animation-timing-function: ease-out, ease-out, ease-out;
-        animation-delay: 2.5s, 10.5s, 20.5s;
-        animation-duration: 2.5s, 2.5s, 2.5s;
-        animation-iteration-count: 1, 1, 1;
-        animation-fill-mode: none, none, none;
+        animation-name:ctaHidden, ctaShow, ctaEnd, ctaEnd;
+        animation-timing-function: ease-out;
+        animation-delay:0s, 2.5s, 10.5s, 20.5s;
+        animation-duration:2.5s, 0.5s, 2.5s, 2.5s, 2.5s;
+        animation-iteration-count:1;
+        animation-fill-mode:none;
     }
 
 
  .ad:hover > figure button.cta {
-    -webkit-animation: ctaHover 0.2s 1; /* Safari 4.0 - 8.0 */
-    animation: ctaHover 0.2s; /* Safari 4.0 - 8.0 */
-    animation-fill-mode:forwards;
-    animation-timing-function:ease-out;
+    transform:translate(0%,0)scale(1.1,1.1);
   }
   </style>
 
@@ -223,7 +243,7 @@
           {
              "transform": "translate(0, 0)",
              "opacity": "1.0",
-             "offset": 0.1
+             "offset": 0.05
           },
           {
              "transform": "translate(0, 0)",
@@ -257,7 +277,7 @@
           {
              "transform": "translate(0, 0)",
              "opacity": "1.0",
-             "offset": 0.1
+             "offset": 0.05
           },
           {
              "transform": "translate(0, 0)",

@@ -2,15 +2,14 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=250,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Square</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
   <style amp-custom>
   /* Animations */
-
   @keyframes ctaHidden {
     from, to {
       opacity: 0.0;
@@ -35,24 +34,30 @@
 
   @keyframes ctaHover {
     0% {
+      opacity: 1.0;
       transform:scale(1.0,1.0);
     }
     100% {
+      opacity: 1.0;
       transform:scale(1.1,1.1);
     }
   }
 
   @keyframes ctaEnd {
     0% {
+      opacity: 1.0;
       transform:scale(1.0,1.0);
     }
     10% {
+      opacity: 1.0;
       transform:scale(1.0,1.0);
     }
     20% {
+      opacity: 1.0;
       transform:scale(1.1,1.1);
     }
     40%,100% {
+      opacity: 1.0;
       transform:scale(1.0,1.0);
     }
   }
@@ -71,9 +76,9 @@
     position: absolute;
   }
   .ad figure {
-    width:728px;
-    height:90px;
-    font-size:336px;
+    width:250px;
+    height:250px;
+    font-size:250px;
     display: block;
     margin:0;
     padding:0;
@@ -82,7 +87,7 @@
   }
 
   .ad {
-   background-color:#ebeee2;
+   background-color:#f3b8a0;
   }
 
   .ad.slide1 {
@@ -93,8 +98,8 @@
   }
 
   .ad figure span.logo-outline {
-    width:0.25em;
-    height:0.25em;
+    width:0.7em;
+    height:0.7em;
     display: block;
     margin:0;
     padding:0;
@@ -110,36 +115,36 @@
   }
 
   .ad figure span.logo {
-    width:60px;
-    height:60px;
+    width:50px;
+    height:50px;
     display: block;
     margin:0;
     padding:0;
     background-image:url(images/logo.svg);
     background-size:contain;
-    background-position:left bottom;
+    background-position: right bottom;
     background-repeat: no-repeat;
     position: absolute;
     z-index: 1;
     top:15px;
-    left:15px;
+    right:15px;
   }
 
 
   .ad figure div.text {
-    width:50%;
-    height:80%;
+    width:100%;
+    height:75%;
     display: block;
     position: absolute;
     z-index: 3;
     top:50%;
-    transform: translate(-50%,-50%);
-    left:50%;
+    transform: translate(0,-50%);
+    left:0;
   }
   .ad figure div.text .wrapper {
     position: relative;
     margin:0;
-    padding:5px;
+    padding:12px;
   }
 
   .ad figure div.text div.title-wrapper {
@@ -151,23 +156,23 @@
   }
 
   .ad figure div.text span.title, .ad figure div.text span.titleAfter {
-    width:100%;
+    width:0.9em;
     height:0.4em;
     display: block;
     margin:0;
     padding:0;
     background-image:url(images/title.svg);
-    background-size:90%;
+    background-size:contain;
     background-position:center top;
     background-repeat: no-repeat;
-    transform: translate(0,-10%)scale(1.1,1.1);
+    transform: translate(-10%,-10%)scale(1.1,1.1);
     opacity:0.0;
     position: absolute;
   }
 
   .ad figure div.text div.subtitle-wrapper {
      width:100%;
-     height:0.08em;
+     height:0.4em;
      padding:0 0 0 0;
      display: block;
      position: relative;
@@ -175,7 +180,7 @@
 
   .ad figure div.text div.subtitle-wrapper span.subtitle, .ad figure div.text div.subtitle-wrapper span.subtitleAfter  {
     width:100%;
-    height:0.045em;
+    height:0.05em;
     display: block;
     left:0em;
     bottom:0;
@@ -186,7 +191,7 @@
     background-position:center bottom;
     background-repeat: no-repeat;
     opacity:0.0;
-    transform: translate(0,10%);
+    transform: translate(10%,0%);
     position:absolute;
   }
 
@@ -198,7 +203,7 @@
         text-decoration: none;
         position: absolute;
         bottom:0;
-        right:15px;
+        right:12px;
         background-image: url(images/cta.svg);
         background-repeat: no-repeat;
         background-size:100%;
@@ -209,6 +214,7 @@
         cursor: pointer;
         z-index: 100;
         outline: none;
+        opacity: 1.0;
         transition: transform 0.2s ease-out;
         animation-name:ctaHidden, ctaShow, ctaEnd, ctaEnd;
         animation-timing-function: ease-out;
@@ -220,7 +226,7 @@
 
 
  .ad:hover > figure button.cta {
-    transform:translate(0%,0)scale(1.1,1.1);
+   transform:translate(0%,0)scale(1.1,1.1);
   }
   </style>
 
