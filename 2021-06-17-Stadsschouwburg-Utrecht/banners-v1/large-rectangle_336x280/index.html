@@ -199,12 +199,29 @@
     transform-origin: center center;
  }
 
+ .ad span.logo-buitenspelen { 
+    background-image:url('images/logo-debuitenspelen.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:bottom right;
+    width:0.25em;
+    height:0.25em;
+    top:10px;
+    right:0px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+    transform-origin: center center;
+ }
+
+
   button.cta {
     font-size:100px;
     width:0.7em;
     height:auto;
     background-color:#fff;
-    padding:calc(1.1em/6.9) calc(1.1em/1.9);
+    padding:calc(1.1em/6.9) calc(1.1em/1.6);
     text-decoration: none;
     position:absolute;
     bottom:15px;
@@ -212,7 +229,7 @@
     transform:translate(0%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
-    background-size:80%;
+    background-size:93%;
     background-position:center center;
     transform-origin:50%, 50%;
     border-radius:0px;
@@ -445,6 +462,7 @@
       <figcaption><span class="title"></span><span class="titleEnd"></span><span class="subtitle"></span><span class="subtitleEnd"></span><span class="date"></span><span class="dateEnd"></span></figcaption>
       <button class="cta animated"></button>
       <span class="logo"></span>
+      <span class="logo-buitenspelen"></span>
     </figure>
   </div>
   </div>
