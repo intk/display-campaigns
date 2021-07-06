@@ -110,24 +110,6 @@
     width:100%;
     height:100%;
   }
- 
-
-   .ad .slide1 figure span.date, .ad .slide1 figure span.dateEnd { 
-    background-image:url('images/date.svg');
-    background-repeat: no-repeat;
-    background-size:78%;
-    background-position:10px center;
-    background-color: #000;
-    width:0.38em;
-    height:0.17em;
-    top:50%;
-    right:0;
-    display: block;
-    position: absolute;
-    z-index: 2;
-    opacity:0.0;
-    transform: translate(10%,-50%);
- }
 
   .ad .slide1 figure figcaption span.first, .ad .slide1 figure figcaption span.firstEnd { 
     background-image:url('images/first.svg');
@@ -398,64 +380,6 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="date" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "2s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".slide figure span.date",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(0%,-50%)scale(1.0,1.0)",
-              "offset": "0.1"
-          },
-          {
-             "opacity": "1.0",
-              "transform": "translate(0%,-50%)scale(1.0,1.0)",
-              "offset": "0.8"
-          },
-          {
-             "opacity": "0.0",
-              "transform": "translate(10%,-50%)scale(1.0,1.0)",
-              "offset": "0.85"
-          },
-          {
-             "opacity": "0.0",
-              "transform": "translate(10%,-50%)scale(1.0,1.0)"
-          }
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="dateEnd" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "18s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".slide figure span.dateEnd",
-        "keyframes": [
-          {
-             "opacity": "1.0",
-             "transform": "translate(0%,-50%)scale(1.0,1.0)",
-              "offset": "0.1"
-          },
-          {
-             "opacity": "1.0",
-              "transform": "translate(0%,-50%)scale(1.0,1.0)"
-          }
-        ]
-      }]
-    </script>
-  </amp-animation>
-
   <amp-animation id="first" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -640,7 +564,6 @@
         <span class="second"></span><span class="secondEnd"></span>
         <span class="third"></span><span class="thirdEnd"></span>
      </figcaption>
-     <span class="date"></span><span class="dateEnd"></span>
     <button class="cta animated"></button>
     <span class="logoText"></span><span class="logoTextEnd"></span><span class="logoBorder"></span><span class="logoBorderEnd"></span>
     </div>
