@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=728,height=90">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Leaderboard</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -128,8 +128,8 @@
   }
 
   .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
-    width:336px;
-    height:280px;
+    width:728px;
+    height:90px;
   }
 
   .ad figure {
@@ -159,13 +159,13 @@
     height:100%;
   }
 
-   .ad .slide figure figcaption span.logo { 
-    background-image:url('images/logo.svg');
+   .ad .slide figure figcaption span.slogan { 
+    background-image:url('images/slogan.svg');
     background-repeat: no-repeat;
     background-size:contain;
     background-position:center center;
-    width:1em;
-    height:1em;
+    width:1.2em;
+    height:1.2em;
     top:50%;
     left:50%;
     display: block;
@@ -181,32 +181,49 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position:center center;
-    width:0.8em;
+    width:0.9em;
     height:0.8em;
     top:50%;
-    left:50%;
+    right:20%;
     display: block;
     position: absolute;
     z-index: 20;
     opacity:1.0;
-    transform: translate(-50%,-50%);
+    transform: translate(0%,-50%);
+    transform-origin: center center;
+ }
+
+  .ad .slide figure figcaption span.logo { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center center;
+    width:0.6em;
+    height:0.6em;
+    top:50%;
+    left:20%;
+    display: block;
+    position: absolute;
+    z-index: 20;
+    opacity:1.0;
+    transform: translate(0%,-50%);
     transform-origin: center center;
  }
 
  .ad .slide figure figcaption span.date { 
     background-image:url('images/date.svg');
     background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center center;
-    width:0.8em;
+    background-size:90%;
+    background-position:left center;
+    width:0.9em;
     height:0.8em;
     top:50%;
-    left:50%;
+    right:20%;
     display: block;
     position: absolute;
     z-index: 20;
     opacity:1.0;
-    transform: translate(-50%,-50%);
+    transform: translate(0%,-50%);
     transform-origin: center center;
  }
 
@@ -611,8 +628,8 @@
   <div class="ad">
     <div class="slide slide1">
       <figure>
-        <amp-img class="background" width="336" height="598" alt="" src="images/background.png"></amp-img>
-        <figcaption><span class="logo"></span></figcaption>
+        <amp-img class="background" width="728" height="1296" alt="" src="images/background.png"></amp-img>
+        <figcaption><span class="slogan"></span></figcaption>
         <div class="flashes">
         	<span class="first f1"></span>
         	<span class="second f1"></span>
@@ -641,8 +658,8 @@
 
     <div class="slide slide2">
       <figure>
-        <amp-img class="background" width="336" height="598" alt="" src="images/background.png"></amp-img>
-        <figcaption><span class="curators"></span></figcaption>
+        <amp-img class="background" width="728" height="1296" alt="" src="images/background.png"></amp-img>
+        <figcaption><span class="logo"></span><span class="curators"></span></figcaption>
         <div class="flashes">
         	<span class="first f1"></span>
         	<span class="second f1"></span>
@@ -672,8 +689,8 @@
 
     <div class="slide slide3">
       <figure>
-        <amp-img class="background" width="336" height="598" alt="" src="images/background.png"></amp-img>
-        <figcaption><span class="date"></span></figcaption>
+        <amp-img class="background" width="728" height="1296" alt="" src="images/background.png"></amp-img>
+        <figcaption><span class="logo"></span><span class="date"></span></figcaption>
         <div class="flashes">
         	<span class="first f1"></span>
         	<span class="second f1"></span>
