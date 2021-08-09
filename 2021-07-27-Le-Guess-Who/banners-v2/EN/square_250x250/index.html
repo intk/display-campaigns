@@ -1,0 +1,704 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=250,height=250">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Square</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes title {
+    0% {
+      opacity: 0.0;
+      transform: translate(20px,20px)scale(1.1,1.1);
+    }
+    2% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+    80% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+    84% {
+      opacity:0.0;
+      transform: translate(0px,-10px)scale(1.0,1.0);
+    }
+  }
+
+  @keyframes titleEnd {
+    0% {
+      opacity: 0.0;
+      transform: translate(20px,20px)scale(1.,1.1);
+    }
+    2%, 100% {
+      opacity:1.0;
+      transform: translate(0px,0px)scale(1.0,1.0);
+    }
+  }
+
+   @keyframes ctaHidden {
+    from {
+      opacity: 0.0;
+    }
+    to {
+      opacity: 0.0;
+    }
+   }
+
+   @keyframes cta {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    60% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    63% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    66%, 96% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    97%, 100% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+  @keyframes ctaEnd {
+    0% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    10% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    20% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+    opacity:0.0;
+  }
+
+  .ad .slide1 {
+    z-index:3;
+    opacity:0.0;
+  }
+
+  .ad .slide2 {
+    z-index:2;
+  }
+
+  .ad .slide3 {
+    z-index:0;
+  }
+
+  .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
+    width:250px;
+    height:250px;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#FFF;
+    overflow:hidden;
+    font-size:200px;
+  }
+
+  .ad figure .background {
+    position: absolute;
+    left:0;
+    top:50%;
+     transform: translate(0%,-50%)scale(1.0,1.0);
+  }
+
+  .ad .slide figure figcaption { 
+    position: absolute;
+    z-index:4;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+
+   .ad .slide figure figcaption span.logo { 
+    background-image:url('images/logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center center;
+    width:1em;
+    height:1em;
+    top:50%;
+    left:50%;
+    display: block;
+    position: absolute;
+    z-index: 20;
+    opacity:1.0;
+    transform: translate(-50%,-50%);
+    transform-origin: center center;
+ }
+
+ .ad .slide figure figcaption span.slogan { 
+    background-image:url('images/slogan.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center center;
+    width:0.8em;
+    height:0.8em;
+    top:50%;
+    left:50%;
+    display: block;
+    position: absolute;
+    z-index: 20;
+    opacity:1.0;
+    transform: translate(-50%,-50%);
+    transform-origin: center center;
+ }
+
+ .ad .slide figure figcaption span.date { 
+    background-image:url('images/date.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center center;
+    width:0.8em;
+    height:0.8em;
+    top:50%;
+    left:50%;
+    display: block;
+    position: absolute;
+    z-index: 20;
+    opacity:1.0;
+    transform: translate(-50%,-50%);
+    transform-origin: center center;
+ }
+
+ .ad .slide figure .flashes span {
+ 	background-image:url('images/flash.png');
+    background-repeat: no-repeat;
+    background-size:2.3em;
+    height:0.04em;
+   	position: absolute;
+    z-index: 2;
+    opacity:0.0;
+
+ }
+
+ .ad .slide figure .flashes span.first {
+ 	top:0.05em;
+ 	width:0.9em;
+ 	right:0;
+ 	background-position:top center;
+ }
+
+  .ad .slide figure .flashes span.second {
+ 	top:0.16em;
+ 	width:0.4em;
+ 	left:30%;
+ 	background-position:top right;
+ }
+
+  .ad .slide figure .flashes span.third {
+ 	bottom:0.15em;
+ 	width:0.15em;
+ 	left:0;
+ 	background-position:top left;
+ }
+
+  .ad .slide figure .flashes span.fourth {
+ 	bottom:0.15em;
+ 	width:1.1em;
+ 	right:0;
+ 	background-position:top center;
+ }
+
+ .ad .slide figure .flashes span.fifth {
+ 	top:0.2em;
+ 	width:0.4em;
+ 	right:10%;
+ 	background-position:top right;
+ }
+
+  .ad .slide figure .flashes span.sixth {
+ 	top:0.5em;
+ 	width:0.33em;
+ 	left:0;
+ 	background-position:top left;
+ }
+
+  .ad .slide figure .flashes span.seventh {
+ 	top:0.5em;
+ 	width:0.45em;
+ 	left:30%;
+ 	background-position:top center;
+ }
+
+  .ad .slide figure .flashes span.eight {
+ 	top:0.05em;
+ 	width:1.2em;
+ 	right:0;
+ 	background-position:top center;
+ }
+
+  .ad .slide figure .flashes span.ninth, .ad .slide figure .flashes span.twelfth  {
+ 	top:0.2em;
+ 	width:1.2em;
+ 	right:0;
+ 	background-position:top center;
+ }
+
+  .ad .slide figure .flashes span.tenth, .ad .slide figure .flashes span.thirteenth {
+ 	bottom:0.41em;
+ 	width:0.55em;
+ 	left:0;
+ 	background-position:top left;
+ }
+
+  .ad .slide figure .flashes span.eleventh, .ad .slide figure .flashes span.fourteenth {
+ 	bottom:0.41em;
+ 	width:0.85em;
+ 	right:0;
+ 	background-position:top center;
+ }
+
+  .ad .slide figure figcaption .wrapper span.title { 
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:calc(1em - 20px);
+    height:0.3em;
+    top:12px;
+    left:10px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity:1.0;
+ }
+
+ .ad .slide figure figcaption .wrapper span.title { 
+    background-image:url('images/title.svg');
+ }
+
+ .ad .slide figure figcaption .wrapper span.subtitle { 
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:calc(1em - 10px);
+    left:10px;
+    top:calc(0.21em - 5px);
+    height:0.3em;
+    display: block;
+    position: absolute;
+ }
+
+  .ad figure figcaption .wrapper span.subtitle { 
+    background-image:url('images/date.svg');
+  }
+
+ button.cta {
+        font-size:100px;
+        width: 1em;
+        height: auto;
+        background-color:transparent;
+        padding: calc(1em/7.5) calc(1em/2.5);
+        text-decoration: none;
+        position: absolute;
+        bottom:10px;
+        right:10px;
+        background-image: url(images/cta.svg);
+        background-repeat: no-repeat;
+        background-size: 85%;
+        background-position: center center;
+        transform-origin: 50%, 50%;
+        border-radius:0px;
+        border:2px solid #fff;
+        cursor: pointer;
+        z-index: 100;
+        outline: none;
+        transition: transform 0.2s ease-out;
+        animation-name:ctaHidden, ctaShow, ctaEnd, ctaEnd;
+        animation-timing-function: ease-out;
+        animation-delay:0s, 4.5s, 10.5s, 20.5s;
+        animation-duration:4.5s, 0.5s, 2.5s, 2.5s, 2.5s;
+        animation-iteration-count:1;
+        animation-fill-mode:none;
+    }
+
+  .ad:hover button.cta {
+    transform:translate(0%,0)scale(1.1,1.1);
+  }
+</style>
+
+
+</head>
+<body>
+
+  <!--Animate banner-->
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide1",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.55"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+
+  <amp-animation id="Slide2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "4s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide2",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.01"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.55"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.6"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="Slide3" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "8s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide3",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.05"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.5"
+          },
+          {
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Flashes_first" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "4s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "6",
+        "selector": ".slide .flashes .f1",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.04"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.1"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.11"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="Flashes_first" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.33s",
+        "duration": "4s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "6",
+        "selector": ".slide .flashes .f2",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.04"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.1"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.11"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="Flashes_first" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.66s",
+        "duration": "4s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "6",
+        "selector": ".slide .flashes .f3",
+        "keyframes": [
+           {
+             "opacity": "1.0",
+             "offset": "0.04"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.1"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.11"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Flashes_first" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.1s",
+        "duration": "4s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "6",
+        "selector": ".slide .flashes .f4",
+        "keyframes": [
+           {
+             "opacity": "1.0",
+             "offset": "0.04"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.1"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.11"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Flashes_first" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2.33s",
+        "duration": "4s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "6",
+        "selector": ".slide .flashes .f5",
+        "keyframes": [
+           {
+             "opacity": "1.0",
+             "offset": "0.04"
+          },
+          {
+             "opacity": "1.0",
+             "offset": "0.1"
+          },
+          {
+             "opacity": "0.0",
+             "offset": "0.11"
+          },
+          {
+             "opacity": "0.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+      <figure>
+        <amp-img class="background" width="250" height="445" alt="" src="images/background.png"></amp-img>
+        <figcaption><span class="slogan"></span></figcaption>
+        <div class="flashes">
+        	<span class="first f1"></span>
+        	<span class="second f1"></span>
+        	<span class="third f1"></span>
+        	<span class="fourth f1"></span>
+        	<span class="fifth f2"></span>
+        	<span class="sixth f2"></span>
+        	<span class="seventh f2"></span>
+        	<span class="eight f2"></span>
+        	<span class="ninth f3"></span>
+        	<span class="tenth f3"></span>
+        	<span class="eleventh f3"></span>
+
+        	<span class="twelfth f4"></span>
+        	<span class="thirteenth f4"></span>
+        	<span class="fourteenth f4"></span>
+
+        	<span class="first f5"></span>
+        	<span class="second f5"></span>
+        	<span class="third f5"></span>
+        	<span class="fourth f5"></span>
+
+        </div>
+      </figure>
+    </div>
+
+    <div class="slide slide2">
+      <figure>
+       <amp-img class="background" width="250" height="445" alt="" src="images/background.png"></amp-img>
+        <figcaption><span class="logo"></span></figcaption>
+        <div class="flashes">
+        	<span class="first f1"></span>
+        	<span class="second f1"></span>
+        	<span class="third f1"></span>
+        	<span class="fourth f1"></span>
+        	<span class="fifth f2"></span>
+        	<span class="sixth f2"></span>
+        	<span class="seventh f2"></span>
+        	<span class="eight f2"></span>
+        	<span class="ninth f3"></span>
+        	<span class="tenth f3"></span>
+        	<span class="eleventh f3"></span>
+
+        	<span class="twelfth f4"></span>
+        	<span class="thirteenth f4"></span>
+        	<span class="fourteenth f4"></span>
+
+        	<span class="first f5"></span>
+        	<span class="second f5"></span>
+        	<span class="third f5"></span>
+        	<span class="fourth f5"></span>
+
+        </div>
+      </figure>
+      <span class="logo"></span>
+    </div>
+
+    <div class="slide slide3">
+      <figure>
+        <amp-img class="background" width="250" height="445" alt="" src="images/background.png"></amp-img>
+        <figcaption><span class="date"></span></figcaption>
+        <div class="flashes">
+        	<span class="first f1"></span>
+        	<span class="second f1"></span>
+        	<span class="third f1"></span>
+        	<span class="fourth f1"></span>
+        	<span class="fifth f2"></span>
+        	<span class="sixth f2"></span>
+        	<span class="seventh f2"></span>
+        	<span class="eight f2"></span>
+        	<span class="ninth f3"></span>
+        	<span class="tenth f3"></span>
+        	<span class="eleventh f3"></span>
+
+        	<span class="twelfth f4"></span>
+        	<span class="thirteenth f4"></span>
+        	<span class="fourteenth f4"></span>
+
+        	<span class="first f5"></span>
+        	<span class="second f5"></span>
+        	<span class="third f5"></span>
+        	<span class="fourth f5"></span>
+        </div>
+      </figure>
+      <span class="logo"></span>
+    </div>
+    <button class="cta animated"></button>
+  </div>
+</body>
+</html>
