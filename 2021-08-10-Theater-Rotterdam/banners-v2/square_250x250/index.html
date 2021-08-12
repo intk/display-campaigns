@@ -1,0 +1,433 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=250,height=250">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Square</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+  @keyframes ctaHover {
+    0% {
+      opacity: 1.0;
+      transform:scale(1.0,1.0);
+    }
+    100% {
+      opacity: 1.0;
+      transform:scale(1.1,1.1);
+    }
+  }
+
+  @keyframes ctaEnd {
+    0% {
+      opacity: 1.0;
+      transform:scale(1.0,1.0);
+    }
+    10% {
+      opacity: 1.0;
+      transform:scale(1.0,1.0);
+    }
+    20% {
+      opacity: 1.0;
+      transform:scale(1.1,1.1);
+    }
+    40%,100% {
+      opacity: 1.0;
+      transform:scale(1.0,1.0);
+    }
+  }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+  .ad {
+    display: inline-block;;
+    width:auto;
+    height:auto;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .ad figure {
+    width:250px;
+    height:250px;
+    display: block;
+    margin:0;
+    padding:0;
+    position: relative;
+    overflow: hidden;
+    font-size: 300px;
+  }
+
+  .ad figure .background  {
+    display:block;
+    position: absolute;
+    display: block;
+    top:0;
+    left:50%;
+    transform:scale(1.0,1.0)translate(-50%,0%);
+  }
+
+  .ad {
+   background-color:#55384d;
+  }
+
+  .ad.slide1 {
+  }
+  .ad.slide2 {
+     opacity: 0.0;
+     z-index: 10;
+  }
+
+   .ad figure span.gap {
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/gap.png);
+    background-size:contain;
+    background-position:left top;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left:50%;
+    transform:scale(1.0,1.0)translate(-50%,0%);
+  }
+
+   .ad figure span.link {
+    width:0.35em;
+    height:0.15em;
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/link.svg);
+    background-size:contain;
+    background-position:left bottom;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    bottom:15px;
+    left:15px;
+  }
+
+  .ad figure span.logo {
+    width:50px;
+    height:50px;
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/logo.svg);
+    background-size:contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top:15px;
+    right:15px;
+  }
+
+
+  .ad figure div.text {
+    width:100%;
+    height:75%;
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top:50%;
+    transform: translate(0,-50%);
+    left:0;
+  }
+
+  figcaption {
+    font-size:250px;
+    width:100%;
+    height:100%;
+  }
+
+
+  .ad figure div.text .wrapper {
+    position: relative;
+    margin:0;
+    padding:12px;
+  }
+
+  .ad figure div.text div.title-wrapper {
+     width:100%;
+     height:0.1em;
+     padding:0 0 0 0;
+     display: block;
+     position: relative;
+  }
+
+  .ad figure div.text span.title, .ad figure div.text span.titleAfter {
+    width:0.9em;
+    height:0.32em;
+    display: block;
+    top:0.04em;
+    margin:0;
+    padding:0;
+    background-image:url(images/title.svg);
+    background-size:contain;
+    background-position:center top;
+    background-repeat: no-repeat;
+    transform: translate(-10%,-10%)scale(1.1,1.1);
+    opacity:0.0;
+    position: absolute;
+  }
+
+  .ad figure div.text div.subtitle-wrapper {
+     width:100%;
+     height:0.4em;
+     padding:0 0 0 0;
+     display: block;
+     position: relative;
+  }
+
+  .ad figure div.text div.subtitle-wrapper span.subtitle, .ad figure div.text div.subtitle-wrapper span.subtitleAfter  {
+    width:100%;
+    height:0.08em;
+    display: block;
+    left:0em;
+    bottom:0.03em;
+    margin:0;
+    padding:0;
+    background-image:url(images/subtitle.svg);
+    background-size:contain;
+    background-position:center bottom;
+    background-repeat: no-repeat;
+    opacity:0.0;
+    transform: translate(10%,0%);
+    position:absolute;
+  }
+
+  button.cta {
+        font-size:90px;
+        width: 1em;
+        height: auto;
+        background-color:#e4e8db;
+        padding: calc(1em/8) calc(1em/2.5);
+        text-decoration: none;
+        position: absolute;
+        bottom:15px;
+        right:15px;
+        background-image: url(images/cta.svg);
+        background-repeat: no-repeat;
+        background-size: 85%;
+        background-position: center center;
+        transform-origin: 50%, 50%;
+        border-radius:20px;
+        border:0px;
+        cursor: pointer;
+        z-index: 100;
+        outline: none;
+        transition: transform 0.2s ease-out;
+        animation-name:ctaHidden, ctaShow, ctaEnd, ctaEnd;
+        animation-timing-function: ease-out;
+        animation-delay:0s, 2.5s, 10.5s, 20.5s;
+        animation-duration:2.5s, 0.5s, 2.5s, 2.5s, 2.5s;
+        animation-iteration-count:1;
+        animation-fill-mode:none;
+    }
+
+
+ .ad:hover > figure button.cta {
+   transform:translate(0%,0)scale(1.1,1.1);
+  }
+  </style>
+
+
+</head>
+<body>
+  <!--Animate banner-->
+  <amp-animation id="Slide1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": ".slide1 figure .background",
+        "keyframes": [
+          { 
+             "transform": "scale(1.1,1.1)translate(-45%,0%)",
+             "offset": 0.3
+          },
+          {
+             "transform": "scale(1.2,1.2)translate(-40%,0%)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+ 
+  <amp-animation id="titleFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "backwards",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".title",
+        "keyframes": [
+          {
+             "transform": "translate(0, 0)",
+             "opacity": "1.0",
+             "offset": 0.05
+          },
+          {
+             "transform": "translate(0, 0)",
+             "opacity": "1.0",
+             "offset": 0.75
+          },
+          {
+             "transform": "translateY(-20%)",
+             "opacity": "0.0",
+              "offset": 0.8
+          },
+          {
+             "transform": "translateY(-20%)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="titleFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".titleAfter",
+        "keyframes": [
+          {
+             "transform": "translate(0, 0)",
+             "opacity": "1.0",
+             "offset": 0.05
+          },
+          {
+             "transform": "translate(0, 0)",
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="SubtitleFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".subtitle",
+        "keyframes": [
+        {
+          "transform": "translateY(0)",
+          "opacity": "1.0",
+          "offset": 0.1
+        },
+        {
+          "transform": "translateY(0)",
+           "opacity": "1.0",
+           "offset": 0.7
+        },
+        {
+          "transform": "translateY(-10%)",
+          "opacity": "0.0",
+          "offset": 0.75
+        },
+        {
+          "transform": "translateY(-10%)",
+           "opacity": "0.0"
+        }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="SubtitleAfterFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".subtitleAfter",
+        "keyframes": [
+        {
+          "transform": "translateY(0)",
+          "opacity": "1.0",
+          "offset": 0.1
+        },
+        {
+          "transform": "translateY(0)",
+           "opacity": "1.0"
+           
+        }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+
+  <!-- Setup structure-->
+	<div class="ad slide1">
+    <figure>
+      <amp-img class="background" width="300" height="250" alt="" src="images/background.png"></amp-img>
+      <span class="gap" style="width:300px;height:250px;"></span>
+      <figcaption>
+      <div class="text">
+        <div class="wrapper">
+          <div class="title-wrapper">
+            <span class="title"></span>
+            <span class="titleAfter"></span>
+          </div>
+          <div class="subtitle-wrapper">
+            <span class="subtitle"></span>
+            <span class="subtitleAfter"></span>
+          </div>
+        </div>
+      </div>
+      <span class="link"></span>
+      <span class="logo"></span>
+      <button class="cta animated"></button>
+    </figcaption>
+    </figure>
+  </div>
+</body>
+</html>
