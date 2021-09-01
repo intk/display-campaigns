@@ -234,7 +234,7 @@
   }
 
   .ad:hover button.cta {
-    transform:translate(0%,0)scale(1.1,1.1);
+    transform:translate(-50%,0)scale(1.1,1.1);
   }
 </style>
 
@@ -491,6 +491,30 @@
     </script>
   </amp-animation>
 
+   <amp-animation id="background" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "24s",
+        "duration": "12s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide3 .background",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0)scale(1.4,1.4)",
+             "offset": "0.85"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "translate(0%,0)scale(1.4,1.4)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
   <amp-animation id="title" layout="nodisplay" trigger="visibility">
     <script type="application/json">
       [{
@@ -556,7 +580,7 @@
     </div>
     <div class="slide slide3">
       <figure>
-        <amp-img class="background" width="394" height="280" alt="" src="images/background.png"></amp-img>
+        <amp-img class="background" width="563" height="400" alt="" src="images/background.png"></amp-img>
         <figcaption><span class="title"></span><span class="subtitle"></span></figcaption>
         <span class="logo"></span><button class="cta"></button>
       </figure>
