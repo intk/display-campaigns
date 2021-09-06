@@ -1,0 +1,434 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=336,height=280">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Large rectangle</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+
+  @keyframes ctaEnd {
+    0% {
+      transform:translateX(-50%)scale(1.0,1.0);
+    }
+    40% {
+      transform:translateX(-50%)scale(1.0,1.0);
+    }
+    70% {
+      transform:translateX(-50%)scale(1.1,1.1);
+    }
+    100% {
+      transform:translateX(-50%)scale(1.0,1.0);
+    }
+  }
+
+  @keyframes ctaHover {
+    0% {
+      transform:translateX(-50%)scale(1.0,1.0);
+    }
+    100% {
+      transform:translateX(-50%)scale(1.1,1.1);
+    }
+  }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
+    width:336px;
+    height:280px;
+    font-size:200px;
+  }
+
+  .ad .slide .wrapper {
+    position:absolute;
+    display: block;
+    width:100%;
+  }
+
+  .ad figure {
+    display:block;
+    margin:0;
+    padding:0;
+    position:absolute;
+    background-color:#000;
+    overflow:hidden;
+    opacity:0.0;
+
+  }
+
+  .ad figure .logo {
+    position: absolute;
+    z-index: 100;
+    display: block;
+    width:0.4em;
+    height:0.4em;
+    left:50%;
+    top:10px;
+    transform: translateX(-50%);
+    background-image:url('images/logo.svg');
+    background-size: contain;
+    background-position:center top;
+    background-repeat: no-repeat;
+  }
+
+  /*First child*/
+  .ad figure.child1 .logo {
+     width:1.2em;
+     height:0.9em;
+     top:50%;
+     transform:translate(-50%,-50%);
+    background-position: center center;
+  }
+
+  /*second child*/
+  .ad figure.child2 .background {
+    position: absolute;
+    top:0;
+    left:-10%;
+    transform: translate(-10%,0);
+  }
+
+  /*third child*/
+  .ad figure.child3 .text {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width:1.3em;
+    height:0.6em;
+    left:50%;
+    bottom:20%;
+    transform: translateX(-50%);
+    background-image:url('images/text1.svg');
+    background-size: contain;
+    background-position:center top;
+    background-repeat: no-repeat;
+  }
+
+  /*fourth child*/
+  .ad figure.child4 .background {
+    position: absolute;
+    top:0;
+    left:-5%;
+    transform: translate(10%,0);
+  }
+
+  /*fifth child*/
+  .ad figure.child5 .text, .ad figure.child6 .text {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width:1em;
+    height:0.5em;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background-image:url('images/text2.svg');
+    background-size: contain;
+    background-position:center center;
+    background-repeat: no-repeat;
+  }
+
+  button.cta {
+    font-size:250px;
+    width:1em;
+    height:auto;
+    padding:22px 60px;
+    text-decoration: none;
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background-color:transparent;
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:80%;
+    background-position:center center;
+    transform-origin: center center;
+    border-radius:0px;
+    border:0px solid #ffa757;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 1.0;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaEnd, ctaEnd;
+    animation-timing-function: ease-out;
+    animation-delay:12s, 26s;
+    animation-duration:1s;
+  }
+
+  .ad:hover button.cta {
+    transform:translateX(-50%)scale(1.1,1.1);
+  }
+
+</style>
+
+</head>
+<body>
+
+  <!--Animate banner-->
+   <amp-animation id="Figure1" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0s",
+        "duration": "14s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure.child1",
+        "keyframes": [
+           {
+            "opacity": "1.0",
+            "offset": "0.01"
+           },
+           {
+            "opacity": "1.0",
+            "offset": "0.4"
+           },
+           {
+            "opacity": "0.0",
+            "offset": "0.45"
+           },
+           {
+            "opacity": "0.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure2" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2s",
+        "duration": "14s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure.child2",
+        "keyframes": [
+           {
+            "opacity": "1.0",
+            "offset": "0.05"
+           },
+           {
+            "opacity": "1.0",
+            "offset": "0.4"
+           },
+           {
+            "opacity": "0.0",
+            "offset": "0.45"
+           },
+           {
+            "opacity": "0.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure2 Background" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2s",
+        "duration": "14s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure.child2 .background",
+        "keyframes": [
+           {
+            "transform": "translate(0%,0%)",
+            "offset": "0.8"
+           },
+           {
+            "transform": "translate(0%,0%)"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure3" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "5s",
+        "duration": "14s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure.child3",
+        "keyframes": [
+           {
+            "opacity": "1.0",
+            "offset": "0.05"
+           },
+           {
+            "opacity": "1.0",
+            "offset": "0.4"
+           },
+           {
+            "opacity": "0.0",
+            "offset": "0.45"
+           },
+           {
+            "opacity": "0.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure4" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "8s",
+        "duration": "14s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure.child4",
+        "keyframes": [
+           {
+            "opacity": "1.0",
+            "offset": "0.05"
+           },
+           {
+            "opacity": "1.0",
+            "offset": "0.4"
+           },
+           {
+            "opacity": "0.0",
+            "offset": "0.45"
+           },
+           {
+            "opacity": "0.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure2 Background" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "8s",
+        "duration": "14s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".slide figure.child4 .background",
+        "keyframes": [
+           {
+            "transform": "translate(0%,0%)",
+            "offset": "0.8"
+           },
+           {
+            "transform": "translate(0%,0%)"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure5" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "11s",
+        "duration": "14s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child5",
+        "keyframes": [
+           {
+            "opacity": "1.0",
+            "offset": "0.05"
+           },
+           {
+            "opacity": "1.0",
+            "offset": "0.35"
+           },
+           {
+            "opacity": "0.0",
+            "offset": "0.37"
+           },
+           {
+            "opacity": "0.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="Figure5" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "25s",
+        "duration": "0.6s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure.child6",
+        "keyframes": [
+           {
+            "opacity": "1.0"
+           }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+	<div class="ad">
+    <div class="slide slide1">
+    <figure class="child1">
+      <div class="logo"></div>
+    </figure>
+    <figure class="child2">
+      <amp-img class="background" width="420" height="280" alt="HNT" src="images/background1.jpg"></amp-img>
+      <div class="logo"></div>
+    </figure>
+    <figure class="child3">
+      <div class="logo"></div>
+      <div class="text"></div>
+    </figure>
+    <figure class="child4">
+      <amp-img class="background" width="420" height="280" alt="HNT" src="images/background2.jpg"></amp-img>
+      <div class="logo"></div>
+    </figure>
+    <figure class="child5">
+      <div class="logo"></div>
+      <div class="text"></div>
+      <button class="cta"></button>
+    </figure>
+     <figure class="child6">
+      <div class="logo"></div>
+      <div class="text"></div>
+      <button class="cta"></button>
+    </figure>
+  </div>
+  </div>
+</body>
+</html>
