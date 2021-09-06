@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=728,height=90">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Leaderboard</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -20,15 +20,15 @@
   @keyframes ctaShow {
     0% {
        opacity:0.0;
-       transform:translate(-50%,0)scale(1.0,1.0)rotate(-5deg);
+       transform:translate(0%,0)scale(1.0,1.0)rotate(-5deg);
     }
     50% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.1,1.1)rotate(-5deg);
+       transform:translate(0%,0)scale(1.1,1.1)rotate(-5deg);
     }
     100% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0)rotate(-5deg);
+       transform:translate(0%,0)scale(1.0,1.0)rotate(-5deg);
     }
 
   }
@@ -36,15 +36,15 @@
    @keyframes cta {
     0% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0)rotate(-5deg);
+       transform:translate(0%,0)scale(1.0,1.0)rotate(-5deg);
     }
     50% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.1,1.1)rotate(-5deg);
+       transform:translate(0%,0)scale(1.1,1.1)rotate(-5deg);
     }
     100% {
        opacity:1.0;
-       transform:translate(-50%,0)scale(1.0,1.0)rotate(-5deg);
+       transform:translate(0%,0)scale(1.0,1.0)rotate(-5deg);
     }
 
   }
@@ -71,8 +71,8 @@
   }
 
   .ad, .ad .slide, .ad .slide .wrapper, .ad figure,  .ad .slide1 figure figcaption {
-    width:336px;
-    height:280px;
+    width:728px;
+    height:90px;
   }
 
   .ad .slide .wrapper {
@@ -89,19 +89,7 @@
     position:relative;
     background-color:#FFF;
     overflow:hidden;
-    font-size:336px;
-  }
-
-  .ad .slide1 figure:after {
-    content:"";
-    width:100%;
-    height:40%;
-    bottom:0;
-    left:0;
-    position: absolute;
-    display: block;
-    background:linear-gradient(0deg,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.0) 100%);
-    z-index:2;
+    font-size:300px;
   }
 
   .ad .slide1 figure .background  {
@@ -116,9 +104,9 @@
   .ad .slide1 figure .boy  {
     background-image:url('images/boy.png');
     background-repeat: no-repeat;
-    background-size:0.22em;
+    background-size:0.7em;
     background-position: center center;
-    width:100%;
+    width:1.1em;
     height:100%;
     top:0%;
     left:0;
@@ -127,7 +115,7 @@
     z-index: 2;
     opacity:1.0;
     transform-origin: 0.5em -0.1em;
-    transform:rotate(-10deg)translate3d(0,10%,0)scale(2.5,2.5);
+    transform:rotate(-20deg)translate3d(0,50%,0)scale(1.5,1.5);
   }
 
 
@@ -135,8 +123,8 @@
     position: absolute;
     z-index:3;
     top:20px;
-    left:0px;
-    width:100%;
+    right:10%;
+    width:50%;
     height:100%;
   }
  
@@ -164,7 +152,7 @@
     background-position: center top;
     width:1em;
     height:0.2em;
-    bottom:21%;
+    bottom:30%;
     left:0;
     display: block;
     position: absolute;
@@ -179,10 +167,10 @@
     background-repeat: no-repeat;
     background-size:60%;
     background-position:center center;
-    width:0.1em;
-    height:0.1em;
-    top:15px;
-    right:15px;
+    width:0.08em;
+    height:0.08em;
+    top:10px;
+    right:10px;
     border:1px solid #fff;
     border-radius: 100%;
     display: block;
@@ -230,18 +218,17 @@
     text-decoration: none;
     position:absolute;
     bottom:15px;
-    left:50%;
-    transform:translate(-50%,0)rotate(-5deg);
+    right:15px;
+    transform:rotate(-5deg)translate(0%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
-    background-size:98%;
+    background-size:100%;
     background-position:center center;
     transform-origin:50%, 50%;
-    border:0px;
+    border:none;
     cursor: pointer;
     z-index: 100;
     outline:none;
-    transform-origin: center center;
     transition:transform 0.2s ease-out;
     animation-name:ctaHidden, ctaShow, cta, cta, cta, cta;
     animation-timing-function:ease-out;
@@ -252,7 +239,7 @@
   }
 
   .ad:hover figure button.cta {
-    transform:translate(-50%,0%)scale(1.1,1.1)rotate(-5deg);
+    transform:rotate(-5deg)translate(0%,0)scale(1.1,1.1);
 
   }
   */
@@ -300,7 +287,7 @@
              "offset": "0.3"
           },
           {
-             "transform": "scale(1.0,1.0)translate3d(0,-1%,0)"
+             "transform": "scale(1.0,1.0)translate3d(1%,0%,0)"
           }
 
         ]
@@ -429,7 +416,7 @@
   <div class="ad">
     <div class="slide slide1">
     <figure>
-      <amp-img class="background" width="336" height="474" alt="" src="images/background.jpg"></amp-img>
+      <amp-img class="background" width="728" height="516" alt="" src="images/background.jpg"></amp-img>
       <span class="boy"></span>
       <figcaption>
         <span class="title"></span><span class="titleEnd"></span>
