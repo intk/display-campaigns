@@ -1,0 +1,512 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=336,height=280">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Large rectangle</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes ctaHover {
+    0% {
+      transform:scale(1.0,1.0);
+    }
+    100% {
+      transform:scale(1.1,1.1);
+    }
+  }
+
+  @keyframes ctaEnd {
+    0% {
+      transform:scale(1.0,1.0);
+    }
+    10% {
+      transform:scale(1.0,1.0);
+    }
+    20% {
+      transform:scale(1.1,1.1);
+    }
+    40%,100% {
+      transform:scale(1.0,1.0);
+    }
+  }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+  .ad {
+    display: inline-block;;
+    width:auto;
+    height:auto;
+    cursor: pointer;
+    position: absolute;
+  }
+  .ad figure {
+    width:336px;
+    height:280px;
+    font-size:336px;
+    display: block;
+    margin:0;
+    padding:0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad {
+   background-color:#ebeee2;
+  }
+
+  .ad.slide1 {
+  }
+  .ad.slide2 {
+     opacity: 0.0;
+     z-index: 10;
+  }
+
+  .ad figure .background-wrapper {
+  	width:100%;
+  	height:100%;
+  	position: absolute;
+  	display: block;
+  	left:calc(0.1em + 1px);
+    top:calc(-0.1em  + 1px);
+    z-index:1;
+    overflow: hidden;
+
+  }
+
+  .ad figure .background {
+    width:100%;
+    height:auto;
+    position: absolute;
+    top:0;
+    left:-12%;
+  }
+
+  .ad figure span.logo {
+    width:0.18em;
+    height:0.18em;
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/logo.svg);
+    background-size:contain;
+    background-position:left top;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top:0.02em;
+    left:0.04em;
+  }
+
+  .ad figure span.title, .ad figure span.titleAfter {
+    width:0.75em;
+    height:0.7em;
+    top:0.3em;
+    left:10px;
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/title.svg);
+    background-size:contain;
+    background-position:left top;
+    background-repeat: no-repeat;
+    transform: translate(0,-10%);
+    opacity:0.0;
+    position: absolute;
+    z-index:0;
+  }
+
+  .ad figure span.titleOverlay, .ad figure span.titleOverlayAfter {
+    width:0.75em;
+    height:0.7em;
+    top:0.295em;
+    left:calc(10px + 0.013em);
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/title-overlay.svg);
+    background-size:contain;
+    background-position:left top;
+    background-repeat: no-repeat;
+    transform: translate(0,-10%);
+    opacity:0.0;
+    position: absolute;
+    z-index: 3;
+  }
+
+  .ad figure span.subtitle, .ad figure span.subtitleAfter {
+    width:0.35em;
+    height:0.4em;
+    top:0.6em;
+    left:calc(10px + 0.02em);
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/subtitle.svg);
+    background-size:contain;
+    background-position:left top;
+    background-repeat: no-repeat;
+    transform: translate(0,-10%);
+    opacity:0.0;
+    position: absolute;
+    z-index:0;
+  }
+
+  .ad figure span.subtitleOverlay, .ad figure span.subtitleOverlayAfter {
+    width:0.35em;
+    height:0.4em;
+    top:0.585em;
+    left:calc(10px + 0.026em);
+    display: block;
+    margin:0;
+    padding:0;
+    background-image:url(images/subtitle-overlay.svg);
+    background-size:contain;
+    background-position:left top;
+    background-repeat: no-repeat;
+    transform: translate(0,-10%);
+    opacity:0.0;
+    position: absolute;
+    z-index: 3;
+  }
+
+
+  .ad figure div.location-wrapper span.date, .ad figure div.location-wrapper span.dateAfter  {
+    width:0.6em;
+    height:0.1em;
+    display: block;
+    bottom:6px;
+    left:10px;
+    opacity:0.0;
+    background-image:url(images/date.svg);
+    background-size:100%;
+    background-position:left top;
+    transform: translate(0%,10%);
+    background-repeat: no-repeat;
+    position:absolute;
+    z-index: 3;
+  }
+
+  button.cta {
+        font-size:100px;
+        width:1em;
+        height:0.5em;
+        background-color:transparent;
+        text-decoration: none;
+        position: absolute;
+        bottom:6px;
+        right:10px;
+        background-image: url(images/cta.svg);
+        background-repeat: no-repeat;
+        background-size:100%;
+        background-position: center center;
+        transform-origin: 50%, 50%;
+        border-radius:0;
+        border:0px;
+        cursor: pointer;
+        z-index: 100;
+        outline: none;
+        transition: transform 0.2s ease-out;
+        animation-name: ctaEnd, ctaEnd, ctaEnd;
+        animation-timing-function: ease-out, ease-out, ease-out;
+        animation-delay: 2.5s, 10.5s, 20.5s;
+        animation-duration: 2.5s, 2.5s, 2.5s;
+        animation-iteration-count: 1, 1, 1;
+        animation-fill-mode: none, none, none;
+    }
+
+
+ .ad:hover > figure button.cta {
+    -webkit-animation: ctaHover 0.2s 1; /* Safari 4.0 - 8.0 */
+    animation: ctaHover 0.2s; /* Safari 4.0 - 8.0 */
+    animation-fill-mode:forwards;
+    animation-timing-function:ease-out;
+  }
+  </style>
+
+
+</head>
+<body>
+  <!--Animate banner-->
+  <amp-animation id="backgroundSlideIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "7s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "3",
+        "selector": ".background",
+        "keyframes": [
+          {
+             "transform": "scale(1.1,1.1)translate(0%,0%)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="titleFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "backwards",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".titleElement",
+        "keyframes": [
+          {
+             "transform": "translate(0, 0)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(0, 0)",
+             "opacity": "1.0",
+             "offset": 0.75
+          },
+          {
+             "transform": "translateY(-20%)",
+             "opacity": "0.0",
+              "offset": 0.8
+          },
+          {
+             "transform": "translateY(-20%)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="titleFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".titleElementAfter",
+        "keyframes": [
+          {
+             "transform": "translate(0, 0)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(0, 0)",
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="SubtitleFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".subtitleElement",
+        "keyframes": [
+        {
+          "transform": "translateY(0)",
+          "opacity": "1.0",
+          "offset": 0.1
+        },
+        {
+          "transform": "translateY(0)",
+           "opacity": "1.0",
+           "offset": 0.7
+        },
+        {
+          "transform": "translateY(-10%)",
+          "opacity": "0.0",
+          "offset": 0.75
+        },
+        {
+          "transform": "translateY(-10%)",
+           "opacity": "0.0"
+        }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="SubtitleAfterFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".subtitleAfterElement",
+        "keyframes": [
+        {
+          "transform": "translateY(0)",
+          "opacity": "1.0",
+          "offset": 0.1
+        },
+        {
+          "transform": "translateY(0)",
+           "opacity": "1.0"
+           
+        }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="dateFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".date",
+        "keyframes": [
+        {
+          "transform": "translateY(0)",
+          "opacity": "1.0",
+          "offset": 0.1
+        },
+        {
+          "transform": "translateY(0)",
+           "opacity": "1.0",
+           "offset": 0.7
+        },
+        {
+          "transform": "translateY(-10%)",
+          "opacity": "0.0",
+          "offset": 0.75
+        },
+        {
+          "transform": "translateY(-10%)",
+           "opacity": "0.0"
+        }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="dateAfter" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".dateAfter",
+        "keyframes": [
+        {
+          "transform": "translateY(0)",
+          "opacity": "1.0",
+          "offset": 0.1
+        },
+        {
+          "transform": "translateY(0)",
+           "opacity": "1.0"
+        }
+        ]
+      }]
+    </script>
+  </amp-animation>
+   <amp-animation id="online" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "2s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".online",
+        "keyframes": [
+        {
+          "transform": "rotate(-30.4deg)scale(1.0,1.0)",
+          "opacity": "1.0",
+          "offset": 0.05
+        },
+        {
+          "transform": "rotate(-30.4deg)scale(1.0,1.0)",
+           "opacity": "1.0",
+           "offset": 0.7
+        },
+        {
+          "transform": "rotate(-30.4deg)scale(1.2,1.2)",
+          "opacity": "0.0",
+          "offset": 0.75
+        },
+        {
+          "transform": "rotate(-30.4deg)scale(1.2,1.2)",
+           "opacity": "0.0"
+        }
+        ]
+      }]
+    </script>
+  </amp-animation>
+  <amp-animation id="onlineAfter" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".onlineAfter",
+        "keyframes": [
+        {
+          "transform": "rotate(-30.4deg)scale(1.0,1.0)",
+          "opacity": "1.0",
+          "offset": 0.05
+        },
+        {
+          "transform": "rotate(-30.4deg)scale(1.0,1.0)",
+           "opacity": "1.0"
+        }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+
+
+  <!-- Setup structure-->
+	<div class="ad slide1">
+    <figure>
+      <div class="background-wrapper">
+        <amp-img class="background" width="498" height="280" alt="Theater Rotterdam" src="images/background.jpg"></amp-img>
+      </div>
+      <span class="title titleElement"></span>
+      <span class="titleAfter titleElementAfter"></span>
+      <span class="titleOverlay titleElement"></span>
+      <span class="titleOverlayAfter titleElementAfter"></span>
+        
+      <span class="subtitle subtitleElement"></span>
+      <span class="subtitleAfter subtitleAfterElement"></span>
+      <span class="subtitleOverlay subtitleElement"></span>
+      <span class="subtitleOverlayAfter subtitleAfterElement"></span>
+        
+      <div class="location-wrapper">
+        <span class="date"></span>
+        <span class="dateAfter"></span>
+      </div>
+      <span class="online"></span><span class="onlineAfter"></span>
+      <span class="logo"></span>
+      <button class="cta"></button>
+    </figure>
+  </div>
+</body>
+</html>
