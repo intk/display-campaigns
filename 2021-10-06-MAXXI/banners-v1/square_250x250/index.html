@@ -1,0 +1,325 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=250,height=250">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Square</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+
+   @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes cta {
+    0% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad figure,  .ad .slide1 figure figcaption {
+    width:250px;
+    height:250px;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#000;
+    overflow:hidden;
+    font-size:250px;
+  }
+
+  .gwd-image_1  {
+    position: absolute;
+    z-index:2;
+    right:-3px;
+    bottom:-5px;
+    transform-origin: center;
+    transform: rotate(-30deg);
+  }
+
+  .gwd-image_1:after {
+    content:"";
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: 2;
+    background-image:url('images/ticket_blu-min.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:65%;
+    transform: rotate(-2.1899deg);
+    opacity: 0.7;
+  }
+
+  .polaroid {
+    left:109px;
+    top:108px;
+    position: absolute;
+    transform-origin: center;
+    z-index: 3;
+  }
+
+
+  .ad .slide1 figure figcaption { 
+    position: absolute;
+    z-index:4;
+    top:18px;
+    left:0px;
+    width:100%;
+    height:100%;
+  }
+
+  .ad .slide1 figure figcaption span.first { 
+    background-image:url('images/first.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: left top;
+    width:0.63em;
+    height:0.3em;
+    top:6px;
+    left:46px;
+    display: block;
+    position: absolute;
+    z-index:4;
+    opacity:0.0;
+    transform: translate(0%,0%);
+ }
+
+ .ad .slide1 figure figcaption span.second { 
+    background-image:url('images/second.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: left top;
+    width:0.63em;
+    height:0.3em;
+    top:26px;
+    left:46px;
+    display: block;
+    position: absolute;
+    z-index:4;
+    opacity:0.0;
+    transform: translate(0%,0%);
+ }
+
+ .ad .slide1 figure .scritta-round {
+    position: absolute;
+    bottom:0.15em;
+    right:0.4em;
+    transform-origin: center;
+    transform: scale(2,2);
+    opacity:0.0;
+    z-index: 3;
+
+ }
+
+ .ad .slide1 figure span.logo { 
+    background-image:url('images/maxxi-logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:right top;
+    width:0.25em;
+    height:0.1em;
+    left:14px;
+    top:215px;
+    display: block;
+    position: absolute;
+    z-index:1;
+    opacity:1.0;
+    transform: translate(0%,0%);
+ }
+
+  button.cta {
+    font-size:90px;
+    width:1em;
+    height:auto;
+    background-color:#FFF;
+    padding:calc(1em/9) calc(1em/2);
+    text-decoration: none;
+    position:absolute;
+    top:70px;
+    left:46px;
+    transform:translate(0%,0);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:75%;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:none;
+    cursor: pointer;
+    z-index: 100;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaHidden, ctaShow, cta, cta;
+    animation-timing-function:ease-out;
+    animation-delay:0s, 3s, 11s, 19s;
+    animation-duration:3s, 0.5s, 0.5s, 0.5s;
+    animation-iteration-count: 1, 1, 1, 1;
+    animation-fill-mode:none;
+  }
+
+  .ad:hover figure button.cta {
+    transform:translate(0%,0)scale(1.1,1.1);
+
+  }
+  </style>
+
+
+</head>
+<body>
+
+  <amp-animation id="first" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.first",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="second" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.second",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="scritta-round" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.8s",
+        "duration": "15s",
+        "fill": "both",
+        "easing": "linear",
+        "iterations": "1",
+        "selector": ".slide figure .scritta-round",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "transform": "scale(3,3)",
+             "offset": "0.007"
+          },
+          {
+             "opacity": "1.0",
+             "transform": "scale(1.0,1.0)",
+             "offset": "0.03"
+          },
+          {  
+             "opacity": "1.0",
+             "transform": "scale(1.0,1.0)rotate(360deg)"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+    <figure>
+      <amp-img class="polaroid" width="200" height="198" src="images/polaroid-min.png"></amp-img>
+      <amp-anim class="gwd-image_1" width="113" height="113" src="images/water.gif">
+        <amp-img placeholder width="113" height="113" src="images/water.jpg">
+        </amp-img>
+      </amp-anim>
+      <amp-img class="scritta-round" width="79" height="79" src="images/scritta-round-min.png"></amp-img>
+     
+      <figcaption>
+        <span class="first"></span>
+        <span class="second"></span>
+        <button class="cta animated"></button>
+     </figcaption>
+
+     <span class="logo"></span>
+    </figure>
+   </div>
+  </div>
+</body>
+</html>

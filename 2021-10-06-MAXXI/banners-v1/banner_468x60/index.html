@@ -1,0 +1,283 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=468,height=60">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Banner</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+
+   @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+   @keyframes cta {
+    0% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+
+  .ad {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad .slide {
+    position: absolute;
+    display: block;
+
+  }
+
+  .ad, .ad .slide, .ad figure,  .ad .slide1 figure figcaption {
+    width:468px;
+    height:60px;
+  }
+
+  .ad figure {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    background-color:#000;
+    overflow:hidden;
+    font-size:225px;
+  }
+
+  .gwd-image_1  {
+    position: absolute;
+    z-index:2;
+    left:115px;
+    bottom:-8px;
+    transform-origin: center;
+    transform: rotate(-30deg);
+  }
+
+  .gwd-image_1:after {
+    content:"";
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: 2;
+    background-image:url('images/ticket_blu-min.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:65%;
+    transform: rotate(-2.1899deg);
+    opacity: 0.7;
+  }
+
+  .polaroid {
+    left:102px;
+    top:1px;
+    position: absolute;
+    transform-origin: center;
+    z-index: 3;
+  }
+
+
+  .ad .slide1 figure figcaption { 
+    position: absolute;
+    z-index:4;
+    top:7px;
+    left:32px;
+    width:calc(100% - 64px);
+    height:100%;
+  }
+
+  .ad .slide1 figure figcaption span.first { 
+    background-image:url('images/first.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: left top;
+    width:0.55em;
+    height:0.3em;
+    top:0px;
+    left:182px;
+    display: block;
+    position: absolute;
+    z-index:4;
+    opacity:0.0;
+    transform: translate(0%,0%);
+ }
+
+ .ad .slide1 figure figcaption span.second { 
+    background-image:url('images/second.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: left top;
+    width:0.55em;
+    height:0.3em;
+    top:17px;
+    left:182px;
+    display: block;
+    position: absolute;
+    z-index:4;
+    opacity:0.0;
+    transform: translate(0%,0%);
+ }
+
+ .ad .slide1 figure span.logo { 
+    background-image:url('images/maxxi-logo.svg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:left top;
+    width:0.33em;
+    height:0.15em;
+    left:12px;
+    top:17px;
+    display: block;
+    position: absolute;
+    z-index:1;
+    opacity:1.0;
+    transform: translate(0%,0%);
+ }
+
+  button.cta {
+    font-size:70px;
+    width:1em;
+    height:auto;
+    background-color:#FFF;
+    padding:calc(1em/7) calc(1em/2.3);
+    text-decoration: none;
+    position:absolute;
+    top:14px;
+    right:-20px;
+    transform:translate(0%,0);
+    background-image:url(images/cta.svg);
+    background-repeat: no-repeat;
+    background-size:75%;
+    background-position:center center;
+    transform-origin:50%, 50%;
+    border-radius:0px;
+    border:none;
+    cursor: pointer;
+    z-index: 100;
+    outline:none;
+    transition:transform 0.2s ease-out;
+    animation-name:ctaHidden, ctaShow, cta, cta;
+    animation-timing-function:ease-out;
+    animation-delay:0s, 3s, 11s, 19s;
+    animation-duration:3s, 0.5s, 0.5s, 0.5s;
+    animation-iteration-count: 1, 1, 1, 1;
+    animation-fill-mode:none;
+  }
+
+  .ad:hover figure button.cta {
+    transform:translate(0%,0)scale(1.1,1.1);
+
+  }
+  </style>
+
+
+</head>
+<body>
+  <amp-animation id="first" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.first",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="second" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".slide figure span.second",
+        "keyframes": [
+          {
+             "opacity": "1.0",
+             "offset": "0.2"
+          },
+          {
+             "opacity": "1.0"
+          }
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <!-- Setup structure-->
+  <div class="ad">
+    <div class="slide slide1">
+    <figure>
+      <amp-img class="polaroid" width="90" height="90" src="images/polaroid-min.png"></amp-img>
+      <amp-anim class="gwd-image_1" width="51" height="51" src="images/water.gif">
+        <amp-img placeholder width="51" height="51" src="images/water.jpg">
+        </amp-img>
+      </amp-anim>
+     
+      <figcaption>
+        <span class="first"></span>
+        <span class="second"></span>
+        <button class="cta animated"></button>
+     </figcaption>
+
+     <span class="logo"></span>
+    </figure>
+   </div>
+  </div>
+</body>
+</html>
