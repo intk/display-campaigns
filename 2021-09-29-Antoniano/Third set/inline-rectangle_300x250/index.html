@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=300,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Inline rectangle</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -106,9 +106,9 @@
   }
 
   .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
-    width:728px;
-    height:90px;
-    font-size:250px;
+    width:300px;
+    height:250px;
+    font-size:300px;
   }
 
   .ad figure {
@@ -123,26 +123,24 @@
 
   .ad figure .background {
     position: absolute;
-    left:0%;
+    left:-30%;
     top:0px;
   }
 
   .ad .slide2 figure .background {
-    top:-100%;
-    left:-5%;
+    left:-40%;
   }
 
   .ad .slide3 figure .background {
-    top:-140%;
-    left:-5%;
+    left:-30%;
   }
 
   .ad .slide4 figure .background, .ad .slide5 figure .background { 
-    top:-160%;
+    left:-60%;
   }
 
   .ad .slide figure .background {
-    transform: translate(0%,10%)scale(1.0,1.0);
+    transform: translate(10%,0%)scale(1.0,1.0);
   }
 
   .ad .slide figure figcaption { 
@@ -160,9 +158,9 @@
     background-repeat: no-repeat;
     background-size:100%;
     background-position: left bottom;
-    width:0.6em;
-    height:0.3em;
-    top:0.018em;
+    width:calc(100% - 20px);
+    height:0.25em;
+    top:0.18em;
     left:10px;
     display: block;
     position: absolute;
@@ -187,8 +185,8 @@
     background-repeat: no-repeat;
     background-size:100%;
     background-position:center center;
-    width:0.3em;
-    height:0.3em;
+    width:0.2em;
+    height:0.2em;
     top:10px;
     left:10px;
     display: block;
@@ -202,10 +200,10 @@
     background-repeat: no-repeat;
     background-size:100%;
     background-position:center center;
-    width:0.2em;
-    height:0.2em;
-    top:-0.1em;
-    right:0.3em;
+    width:0.1em;
+    height:0.1em;
+    top:0.01em;
+    right:20px;
     display: block;
     position: absolute;
     z-index:3;
@@ -220,7 +218,7 @@
     width:0.15em;
     height:0.15em;
     top:0.2em;
-    right:0.2em;
+    right:0.15em;
     display: block;
     position: absolute;
     z-index:3;
@@ -233,10 +231,10 @@
     background-repeat: no-repeat;
     background-size:100%;
     background-position:center center;
-    width:0.25em;
-    height:0.25em;
+    width:0.2em;
+    height:0.2em;
     bottom:0.1em;
-    left:1.1em;
+    right:0.1em;
     display: block;
     position: absolute;
     z-index:3;
@@ -248,10 +246,10 @@
     background-repeat: no-repeat;
     background-size:100%;
     background-position:center center;
-    width:0.2em;
-    height:0.2em;
+    width:0.15em;
+    height:0.15em;
     bottom:0.01em;
-    left:0.4em;
+    left:10px;
     display: block;
     position: absolute;
     z-index:3;
@@ -266,8 +264,8 @@
     background-position:center center;
     width:0.3em;
     height:0.3em;
-    bottom:0.1em;
-    left:0.6em;
+    bottom:0.25em;
+    left:0.01em;
     display: block;
     position: absolute;
     z-index:3;
@@ -275,15 +273,14 @@
  }
 
 
-
   .ad .slide2 figure figcaption span.title {
     background-image:url('images/frame_2.svg');
     background-repeat: no-repeat;
     background-size:100%;
     background-position: left bottom;
-    width:0.6em;
+    width:calc(100% - 20px);
     height:0.25em;
-    top:0.04em;
+    top:0.18em;
     left:10px;
     display: block;
     position: absolute;
@@ -295,7 +292,7 @@
     content:"";
     background-image:url('images/line.svg');
     background-repeat: no-repeat;
-    background-size:60%;
+    background-size:70%;
     background-position:left bottom;
     width:110%;
     height:0.05em;
@@ -313,9 +310,9 @@
     background-repeat: no-repeat;
     background-size:100%;
     background-position: left bottom;
-    width:0.6em;
+    width:calc(100% - 20px);
     height:0.25em;
-    top:0.04em;
+    top:0.18em;
     left:10px;
     display: block;
     position: absolute;
@@ -328,9 +325,9 @@
     background-repeat: no-repeat;
     background-size:100%;
     background-position: left bottom;
-    width:0.6em;
+    width:calc(100% - 20px);
     height:0.25em;
-    top:0.04em;
+    top:0.18em;
     left:10px;
     display: block;
     position: absolute;
@@ -342,11 +339,11 @@
     content:"";
     background-image:url('images/line.svg');
     background-repeat: no-repeat;
-    background-size:60%;
+    background-size:70%;
     background-position:left bottom;
     width:110%;
     height:0.05em;
-    top:0.24em;
+    top:0.23em;
     left:0;
     display: block;
     position: absolute;
@@ -368,10 +365,10 @@
     background-image:url('images/logo.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    background-position:top right;
-    width:0.3em;
-    height:0.3em;
-    top:10px;
+    background-position: bottom right;
+    width:0.25em;
+    height:0.25em;
+    bottom:10px;
     right:10px;
     display: block;
     position: absolute;
@@ -381,15 +378,15 @@
  }
 
  button.cta {
-    font-size:120px;
+    font-size:100px;
     width:1em;
     height:auto;
     background-color:#ff4438;
     padding:calc(1em/9) calc(1em/1.8);
     text-decoration: none;
     position:absolute;
-    bottom:10px;
-    right:10px;
+    bottom:30%;
+    left:10px;
     transform:translate(0%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
@@ -829,7 +826,7 @@
 
     <div class="slide slide2">
       <figure>
-        <amp-img class="background" width="420" height="280" alt="" src="images/frame_2.jpg"></amp-img>
+        <amp-img class="background" width="354" height="250" alt="" src="images/frame_2.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <button class="cta"></button>
@@ -840,7 +837,7 @@
 
      <div class="slide slide3">
       <figure>
-        <amp-img class="background" width="420" height="280" alt="" src="images/frame_3.jpg"></amp-img>
+        <amp-img class="background" width="323" height="250" alt="" src="images/frame_3.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <button class="cta cta2"></button>
@@ -851,7 +848,7 @@
 
     <div class="slide slide4">
       <figure>
-        <amp-img class="background" width="364" height="257" alt="" src="images/frame_4.jpg"></amp-img>
+        <amp-img class="background" width="354" height="250" alt="" src="images/frame_4.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <button class="cta cta3"></button>
@@ -862,7 +859,7 @@
 
     <div class="slide slide5">
       <figure>
-        <amp-img class="background" width="364" height="257" alt="" src="images/frame_4.jpg"></amp-img>
+        <amp-img class="background" width="354" height="250" alt="" src="images/frame_4.jpg"></amp-img>
         <figcaption>
           <span class="title"></span>
           <button class="cta cta3"></button>
