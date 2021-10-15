@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=728,height=90">
+  <meta name="ad.size" content="width=250,height=250">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Leaderboard</title>
+  <title>Square</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -77,14 +77,14 @@
   }
 
   .ad figure {
-    width:728px;
-    height:90px;
+    width:250px;
+    height:250px;
     display: block;
     margin:0;
     padding:0;
     position: relative;
     overflow: hidden;
-    font-size: 300px;
+    font-size: 230px;
   }
 
   .ad figure figcaption {
@@ -98,8 +98,8 @@
     display:block;
     position: absolute;
     display: block;
-    top:-150%;
-    right:0%;
+    top:0;
+    right:-10%;
     transform:scale(1.0,1.0)translate(0%,0%);
   }
 
@@ -122,7 +122,7 @@
   }
 
   .ad figure span.title, .ad figure span.titleAfter {
-    width:1.8em;
+    width:1em;
     height:1em;
     display: block;
     top:50%;
@@ -141,16 +141,16 @@
   }
 
   .ad figure span.date, .ad figure span.dateAfter {
-    width:95%;
+    width:0.95em;
     height:0.2em;
     display: block;
-    top:0.035em;
+    top:0.05em;
     left:50%;
     margin:0;
     padding:0;
     background-image:url(images/date.svg);
     background-size:contain;
-    background-position:center top;
+    background-position:top left;
     background-repeat: no-repeat;
     transform: translate(-50%,-10%);
     opacity:0.0;
@@ -158,48 +158,9 @@
     z-index: 2;
   }
 
-   .ad figure span.splatters, .ad figure span.splattersAfter {
-    width:0.7em;
-    height:0.7em;
-    display: block;
-    margin:0;
-    padding:0;
-    background-image:url(images/splatters.png);
-    background-size:contain;
-    background-position:center;
-    background-repeat: no-repeat;
-    transform-origin: center;
-    opacity:0.0;
-    position: absolute;
-    z-index: 3;
-  }
-
-  .ad figure span.splatters.left, .ad figure span.splattersAfter.left {
-    top:-0.4em;
-    left:5%;
-    transform:rotate(50deg)scale(2,2);
-  }
-
-  .ad figure span.splatters.center, .ad figure span.splattersAfter.center {
-    width:1em;
-    height:1em;
-    top:-0.35em;
-    left:30%;
-    transform:rotate(30deg)scale(2,2);
-  }
-
-  .ad figure span.splatters.right, .ad figure span.splattersAfter.right {
-    width:0.6em;
-    height:0.6em;
-    top:-0.1em;
-    right:10%;
-    transform:scale(2,2);
-  }
-
-
   .ad figure span.logo {
-    width:0.15em;
-    height:0.15em;
+    width:0.2em;
+    height:0.2em;
     display: block;
     bottom:10px;
     right:10px;
@@ -215,7 +176,7 @@
   }
 
   button.cta {
-        font-size:60px;
+        font-size:70px;
         width: 1em;
         height: auto;
         background-color:transparent;
@@ -400,198 +361,16 @@
     </script>
   </amp-animation>
 
-  <amp-animation id="splattersLeft" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "1.5s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".splatters.left",
-        "keyframes": [
-          {
-             "transform": "scale(1.0,1.0)rotate(50deg)",
-             "opacity": "1.0",
-             "offset": 0.05
-          },
-          {
-             "transform": "scale(1.0,1.0)rotate(50deg)",
-             "opacity": "1.0",
-             "offset": 0.8
-          },
-          {
-             "transform": "scale(1.5,1.5)rotate(50deg)",
-             "opacity": "0.0",
-              "offset": 0.85
-          },
-          {
-             "transform": "scale(1.5,1.5)rotate(50deg)",
-             "opacity": "0.0"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-   <amp-animation id="splattersLeft" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "17.5s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".splattersAfter.left",
-        "keyframes": [
-          {
-             "transform": "scale(1.0,1.0)rotate(50deg)",
-             "opacity": "1.0",
-             "offset": 0.05
-          },
-          {
-             "transform": "scale(1.0,1.0)rotate(50deg)",
-             "opacity": "1.0"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="splattersCenter" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "1.7s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".splatters.center",
-        "keyframes": [
-          {
-             "transform": "scale(1.0,1.0)rotate(30deg)",
-             "opacity": "1.0",
-             "offset": 0.05
-          },
-          {
-             "transform": "scale(1.0,1.0)rotate(30deg)",
-             "opacity": "1.0",
-             "offset": 0.8
-          },
-          {
-             "transform": "scale(1.5,1.5)rotate(30deg)",
-             "opacity": "0.0",
-              "offset": 0.85
-          },
-          {
-             "transform": "scale(1.5,1.5)rotate(30deg)",
-             "opacity": "0.0"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-   <amp-animation id="splattersCenter" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "17.7s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".splattersAfter.center",
-        "keyframes": [
-          {
-             "transform": "scale(1.0,1.0)rotate(30deg)",
-             "opacity": "1.0",
-             "offset": 0.05
-          },
-          {
-             "transform": "scale(1.0,1.0)rotate(30deg)",
-             "opacity": "1.0"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-  <amp-animation id="splattersRight" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "1.9s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "2",
-        "selector": ".splatters.right",
-        "keyframes": [
-          {
-             "transform": "scale(1.0,1.0)",
-             "opacity": "1.0",
-             "offset": 0.05
-          },
-          {
-             "transform": "scale(1.0,1.0)",
-             "opacity": "1.0",
-             "offset": 0.8
-          },
-          {
-             "transform": "scale(1.5,1.5)",
-             "opacity": "0.0",
-              "offset": 0.85
-          },
-          {
-             "transform": "scale(1.5,1.5)",
-             "opacity": "0.0"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
-   <amp-animation id="splattersRight" layout="nodisplay" trigger="visibility">
-    <script type="application/json">
-      [{
-        "delay": "17.9s",
-        "duration": "8s",
-        "fill": "both",
-        "easing": "ease-out",
-        "iterations": "1",
-        "selector": ".splattersAfter.right",
-        "keyframes": [
-          {
-             "transform": "scale(1.0,1.0)",
-             "opacity": "1.0",
-             "offset": 0.05
-          },
-          {
-             "transform": "scale(1.0,1.0)",
-             "opacity": "1.0"
-          }
-
-        ]
-      }]
-    </script>
-  </amp-animation>
-
 
   <!-- Setup structure-->
-  <div class="ad slide1">
+	<div class="ad slide1">
     <figure>
-      <amp-img class="background" width="728" height="381" alt="" src="images/background.jpg"></amp-img>
+      <amp-img class="background" width="477" height="250" alt="" src="images/background.jpg"></amp-img>
       <figcaption>
         <span class="date"></span><span class="dateAfter"></span>
+        <span class="title-under"></span>
         <span class="title"></span><span class="titleAfter"></span>
       </figcaption>
-      <span class="splatters left"></span><span class="splattersAfter left"></span>
-      <span class="splatters center"></span><span class="splattersAfter center"></span>
-      <span class="splatters right"></span><span class="splattersAfter right"></span>
       <span class="logo"></span>
       <button class="cta animated"></button>
     </figure>
