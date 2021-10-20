@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=160,height=600">
+  <meta name="ad.size" content="width=200,height=200">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Wide Skyscraper</title>
+  <title>Square Small</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -77,35 +77,23 @@
   }
 
   .ad figure {
-    width:160px;
-    height:600px;
+    width:200px;
+    height:200px;
     display: block;
     margin:0;
     padding:0;
     position: relative;
     overflow: hidden;
-    font-size: 250px;
-  }
-
-  .ad figure:after {
-    content:"";
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    position: absolute;
-    z-index: 1;
-    background:linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.0) 20%, rgba(0,0,0,0.0) 60%, rgba(0,0,0,0.9) 100%);
+    font-size: 200px;
   }
 
   .ad figure figcaption {
-    bottom:0.24em;
+    top:0.24em;
     left:50%;
     width:0.55em;
     height:0.55em;
     position: absolute;
     transform:scale(1.0,1.0)translate(-50%,0%);
-    z-index: 2;
   }
 
   .ad figure .background  {
@@ -113,7 +101,7 @@
     position: absolute;
     display: block;
     top:0;
-    left:-40%;
+    right:-10%;
     transform:scale(1.0,1.0)translate(0%,0%);
   }
 
@@ -166,24 +154,24 @@
   }
 
    .ad figure  span.subtitle, .ad figure span.subtitleEnd {
-    width:100%;
+    width:0.4em;
     height:0.2em;
     display: block;
-    top:0.35em;
-    left:0px;
+    top:15px;
+    left:15px;
     background-image:url(images/subtitle.svg);
     background-size:contain;
-    background-position:top center;
+    background-position:top left;
     background-repeat: no-repeat;
     opacity:0.0;
-    transform:translate(0%,-10%);
+    transform:translate(-10%,0%);
     position: absolute;
     z-index: 2;
   }
 
   .ad figure span.logo {
-    width:0.18em;
-    height:0.18em;
+    width:0.2em;
+    height:0.2em;
     display: block;
     top:15px;
     right:15px;
@@ -199,7 +187,7 @@
   }
 
   button.cta {
-        font-size:100px;
+        font-size:90px;
         width: 1em;
         height: auto;
         background-color:transparent;
@@ -503,7 +491,7 @@
   <!-- Setup structure-->
 	<div class="ad slide1">
     <figure>
-      <amp-img class="background" width="400" height="600" alt="" src="images/background.jpg"></amp-img>
+      <amp-img class="background" width="300" height="200" alt="" src="images/background.jpg"></amp-img>
       <figcaption>
         <span class="first"></span><span class="firstAfter"></span>
         <span class="second"></span><span class="secondAfter"></span>
