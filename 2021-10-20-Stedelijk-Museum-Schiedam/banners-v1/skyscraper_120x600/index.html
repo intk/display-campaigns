@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=336,height=280">
+  <meta name="ad.size" content="width=120,height=600">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Large rectangle</title>
+  <title>Skyscraper</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -42,33 +42,33 @@
 
    @keyframes ctaHidden {
     from {
-      opacity: 0.0;
+      opacity: 1.0;
     }
     to {
-      opacity: 0.0;
+      opacity: 1.0;
     }
    }
 
   @keyframes cta {
     0% {
        opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     60% {
        opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     63% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
+       transform:translate(-50%,0)scale(1.1,1.1);
     }
     66%, 96% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     97%, 100% {
        opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
 
   }
@@ -76,19 +76,19 @@
    @keyframes ctaEnd {
     0% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     10% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
+       transform:translate(-50%,0)scale(1.1,1.1);
     }
     20% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
     100% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(-50%,0)scale(1.0,1.0);
     }
 
   }
@@ -126,12 +126,12 @@
   }
 
   .ad, .ad .slide, .ad figure,  .ad .slide figure figcaption {
-    width:336px;
-    height:280px;
+    width:120px;
+    height:600px;
   }
 
    .ad {
-    font-size:221px;
+    font-size:130px;
   }
 
 
@@ -145,21 +145,26 @@
     overflow:hidden;
   }
 
+  .ad .slide1 figure {
+    background-color: #d4d6d1;
+  }
+
   .ad figure .background {
     position: absolute;
-    left:0%;
-    top:10%;
-    transform: translate(-5%,0)scale(1.2,1.2);
-
+    left:-320%;
+    top:0px;
   }
 
-   .ad .slide2 figure .background, .ad .slide3 figure .background {
-    position: absolute;
-    left:0%;
-    top:10%;
-    transform: translate(5%,0)scale(1.2,1.2);
-
+  .ad .slide1 figure .background {
+    transform: translate(-5%,0)scale(1.0,1.0);
   }
+
+  .ad .slide2 figure .background, .ad .slide3 figure .background {
+    top:0px;
+    left:-320%;
+    transform: translate(5%,0)scale(1.0,1.0);
+  }
+
 
   .ad .slide figure figcaption { 
     position: absolute;
@@ -171,14 +176,14 @@
   }
 
   .ad .slide figure figcaption .wrapper { 
-    width:calc(1em + 10px);
-    height:0.32em;
+    width:calc(100% - 20px);
+    height:0.53em;
     display: block;
     position: absolute;
     background-color: #FFF;
     z-index: 1;
-    left:15px;
-    top:15px;
+    left:10px;
+    top:10px;
   }
 
 
@@ -186,7 +191,7 @@
     background-image:url('images/title.svg');
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.6em;
+    width:calc(0.77em - 20px);
     height:0.22em;
     top:10px;
     left:10px;
@@ -199,21 +204,21 @@
  .ad .slide figure figcaption .wrapper span.subtitle { 
     background-repeat: no-repeat;
     background-size:contain;
-    width:0.95em;
+    width:0.35em;
     left:10px;
-    top:calc(0.21em + 0px);
+    top:calc(0.23em + 0px);
     height:0.3em;
     display: block;
     position: absolute;
  }
 
   .ad .slide1 figure figcaption .wrapper span.subtitle { 
-    background-image:url('images/subtitle.svg');
+    background-image:url('images/date.svg');
   }
 
   .ad .slide2 figure figcaption .wrapper span.subtitle, .ad .slide3 figure figcaption .wrapper span.subtitle { 
-    background-image:url('images/date.svg');
-    width:0.7em;
+    width:0.55em;
+    background-image:url('images/subtitle.svg');
   }
 
   .ad span.logo { 
@@ -221,10 +226,11 @@
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom center;
-    width:120px;
-    height:120px;
+    width:100px;
+    height:100px;
     bottom:0px;
-    right:10px;
+    left:50%;
+    transform: translateX(-50%);
     display: block;
     position: absolute;
     z-index: 2;
@@ -233,16 +239,16 @@
  }
 
   button.cta {
-    font-size:130px;
+    font-size:100px;
     width:1em;
     height:auto;
     background-color:#000;
     padding:calc(1em/7.9) calc(1em/1.9);
     text-decoration: none;
     position:absolute;
-    top:calc(30% - 2px);
-    left:15px;
-    transform:translate(0%,0);
+    bottom:30%;
+    left:50%;
+    transform:translate(-50%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
     background-size:90%;
@@ -262,7 +268,7 @@
   }
 
   .ad:hover button.cta {
-    transform:translate(0%,0)scale(1.1,1.1);
+    transform:translate(-50%,0)scale(1.1,1.1);
   }
   </style>
 
@@ -312,11 +318,11 @@
         "selector": ".slide1 figure .background",
         "keyframes": [
           {
-             "transform": "translate(0%,0)scale(1.2,1.2)",
+             "transform": "translate(0%,0)scale(1.02,1.02)",
              "offset": "0.7"
           },
           {
-             "transform": "translate(0%,0)scale(1.2,1.2)"
+             "transform": "translate(0%,0)scale(1.1,1.1)"
           }
 
         ]
@@ -366,11 +372,11 @@
         "selector": ".slide2 figure .background",
         "keyframes": [
           {
-             "transform": "translate(0%,0)scale(1.2,1.2)",
+             "transform": "translate(0%,0)scale(1.02,1.02)",
              "offset": "0.8"
           },
           {
-             "transform": "translate(0%,0)scale(1.2,1.2)"
+             "transform": "translate(0%,0)scale(1.1,1.1)"
           }
 
         ]
@@ -415,11 +421,11 @@
         "selector": ".slide3 figure .background",
         "keyframes": [
           {
-             "transform": "translate(0%,0)scale(1.0,1.0)",
+             "transform": "translate(0%,0)scale(1.02,1.02)",
              "offset": "0.8"
           },
           {
-             "transform": "translate(0%,0)scale(1.0,1.0)"
+             "transform": "translate(0%,0)scale(1.02,1.02)"
           }
 
         ]
@@ -427,12 +433,13 @@
     </script>
   </amp-animation>
 
+  
 
   <!-- Setup structure-->
   <div class="ad">
     <div class="slide slide1">
       <figure>
-        <amp-img class="background" width="419" height="280" alt="Stedelijk Museum Schiedam" src="images/background_1.jpg"></amp-img>
+        <amp-img class="background" width="898" height="600" alt="Stedelijk Museum Schiedam" src="images/background_1.jpg"></amp-img>
         <figcaption><div class="wrapper"><span class="title"></span><span class="subtitle"></span></div></figcaption>
       </figure>
       <span class="logo"></span>
@@ -440,14 +447,14 @@
 
     <div class="slide slide2">
       <figure>
-        <amp-img class="background" width="419" height="280" alt="Stedelijk Museum Schiedam" src="images/background_2.jpg"></amp-img>
+        <amp-img class="background" width="898" height="600" alt="Stedelijk Museum Schiedam" src="images/background_2.jpg"></amp-img>
         <figcaption><div class="wrapper"><span class="title"></span><span class="subtitle"></span></div></figcaption>
       </figure>
       <span class="logo"></span>
     </div>
     <div class="slide slide3">
       <figure>
-        <amp-img class="background" width="419" height="280" alt="Stedelijk Museum Schiedam" src="images/background_2.jpg"></amp-img>
+        <amp-img class="background" width="898" height="600" alt="Stedelijk Museum Schiedam" src="images/background_2.jpg"></amp-img>
         <figcaption><div class="wrapper"><span class="title"></span><span class="subtitle"></span></div></figcaption>
       </figure>
       <span class="logo"></span>
