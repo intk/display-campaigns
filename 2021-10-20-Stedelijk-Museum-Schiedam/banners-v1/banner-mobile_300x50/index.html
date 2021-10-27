@@ -154,13 +154,13 @@
   .ad .slide1 figure .background {
     top:-40%;
     left:0;
-    transform: translate(0%,10%)scale(1.0,1.0);
+    transform: translate(0%,10%)scale(1.1,1.1);
   }
 
   .ad .slide2 figure .background, .ad .slide3 figure .background {
     top:-125%;
     left:0;
-    transform: translate(0%,-10%)scale(1.0,1.0);
+    transform: translate(0%,-10%)scale(1.1,1.1);
   }
 
 
@@ -314,8 +314,12 @@
         "iterations": "3",
         "selector": ".slide1 figure .background",
         "keyframes": [
+            {
+             "transform": "translate(0%,0)scale(1.05,1.05)",
+             "offset": "0.7"
+          },
           {
-             "transform": "translate(0%,0)scale(1.05,1.05)"
+             "transform": "translate(0%,0)scale(1.0,1.0)"
           }
 
         ]
@@ -366,7 +370,7 @@
         "keyframes": [
           {
              "transform": "translate(0%,0)scale(1.05,1.05)",
-             "offset": "0.8"
+             "offset": "0.7"
           },
           {
              "transform": "translate(0%,0)scale(1.0,1.0)"
@@ -415,7 +419,7 @@
         "keyframes": [
            {
              "transform": "translate(0%,0)scale(1.05,1.05)",
-             "offset": "0.8"
+             "offset": "0.7"
           },
           {
              "transform": "translate(0%,0)scale(1.05,1.05)"
@@ -432,7 +436,7 @@
   <div class="ad">
     <div class="slide slide1">
       <figure>
-        <amp-img class="background" width="300" height="108" alt="Stedelijk Museum Schiedam" src="images/background_1.jpg"></amp-img>
+        <amp-img class="background" width="330" height="119" alt="Stedelijk Museum Schiedam" src="images/background_1.jpg"></amp-img>
         <figcaption><div class="wrapper"><span class="title"></span><span class="subtitle"></span></div></figcaption>
       </figure>
       <span class="logo"></span>
@@ -440,14 +444,14 @@
 
     <div class="slide slide2">
       <figure>
-        <amp-img class="background" width="300" height="201" alt="Stedelijk Museum Schiedam" src="images/background_2.jpg"></amp-img>
+        <amp-img class="background" width="330" height="234" alt="Stedelijk Museum Schiedam" src="images/background_2.jpg"></amp-img>
         <figcaption><div class="wrapper"><span class="title"></span><span class="subtitle"></span></div></figcaption>
       </figure>
       <span class="logo"></span>
     </div>
     <div class="slide slide3">
       <figure>
-        <amp-img class="background" width="300" height="201" alt="Stedelijk Museum Schiedam" src="images/background_2.jpg"></amp-img>
+        <amp-img class="background" width="330" height="234" alt="Stedelijk Museum Schiedam" src="images/background_2.jpg"></amp-img>
         <figcaption><div class="wrapper"><span class="title"></span><span class="subtitle"></span></div></figcaption>
       </figure>
       <span class="logo"></span>
