@@ -20,11 +20,11 @@
   @keyframes ctaShow {
     0% {
        opacity:0.0;
-       transform:translate(0%,0)scale(1.0,1.0);
+       transform:translate(0%,5%)scale(1.0,1.0);
     }
     50% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
+       transform:translate(0%,5%)scale(1.0,1.0);
     }
     100% {
        opacity:1.0;
@@ -40,7 +40,7 @@
     }
     50% {
        opacity:1.0;
-       transform:translate(0%,0)scale(1.1,1.1);
+       transform:translate(0%,0)scale(1.0,1.0);
     }
     100% {
        opacity:1.0;
@@ -189,7 +189,7 @@
     width:1em;
     height:auto;
     background-color:transparent;
-    padding:calc(1em/7.5) calc(1.1em/2);
+    padding:calc(1em/10.5) calc(1.1em/2.5);
     text-decoration: none;
     position:absolute;
     bottom:15px;
@@ -197,15 +197,16 @@
     transform:translate(0%,0);
     background-image:url(images/cta.svg);
     background-repeat: no-repeat;
-    background-size:90%;
+    background-size:95%;
     background-position:left center;
     transform-origin:50%, 50%;
     border-radius:0px;
-    border:none;
+    border:0;
+    border-bottom:2px solid transparent;
     cursor: pointer;
     z-index: 100;
     outline:none;
-    transition:transform 0.2s ease-out;
+    transition:all 0.1s ease-out;
     animation-name:ctaHidden, ctaShow, cta, cta, cta;
     animation-timing-function:ease-out;
     animation-delay:0s, 3s, 11.5s, 19.5s, 27s;
@@ -215,7 +216,7 @@
   }
 
   .ad:hover figure button.cta {
-    transform:translate(0%,0)scale(1.1,1.1);
+    border-bottom:2px solid #000;
 
   }
   </style>
