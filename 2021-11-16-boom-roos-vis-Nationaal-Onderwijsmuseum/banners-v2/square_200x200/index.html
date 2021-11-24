@@ -1,0 +1,839 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="ad.size" content="width=200,height=200">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <title>Square Small</title>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+  /* Animations */
+  @keyframes ctaHidden {
+    from, to {
+      opacity: 0.0;
+    }
+   }
+
+  @keyframes ctaShow {
+    0% {
+       opacity:0.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+    50% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.1,1.1);
+    }
+    100% {
+       opacity:1.0;
+       transform:translate(0%,0)scale(1.0,1.0);
+    }
+
+  }
+
+  @keyframes ctaHover {
+    0% {
+      opacity: 1.0;
+      transform:scale(1.0,1.0);
+    }
+    100% {
+      opacity: 1.0;
+      transform:scale(1.1,1.1);
+    }
+  }
+
+  @keyframes ctaEnd {
+    0% {
+      opacity: 1.0;
+      transform:scale(1.0,1.0);
+    }
+    10% {
+      opacity: 1.0;
+      transform:scale(1.0,1.0);
+    }
+    20% {
+      opacity: 1.0;
+      transform:scale(1.1,1.1);
+    }
+    40%,100% {
+      opacity: 1.0;
+      transform:scale(1.0,1.0);
+    }
+  }
+
+  /* Setup */
+  body {
+    margin:0;
+    padding:0;
+    font-size:14px;
+  }
+  .ad {
+    display: inline-block;;
+    width:auto;
+    height:auto;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .ad figure {
+    width:200px;
+    height:200px;
+    display: block;
+    margin:0;
+    padding:0;
+    position: relative;
+    overflow: hidden;
+    font-size:170px;
+    background-color: #71bc74;
+  }
+
+  .ad figure figcaption {
+    top:0.07em;
+    left:50%;
+    width:0.7em;
+    height:0.92em;
+    position: absolute;
+    transform:scale(1.0,1.0)translate(-50%,0%);
+  }
+
+  .ad figure .background  {
+    display:block;
+    position: absolute;
+    display: block;
+    top:0;
+    right:0%;
+    transform:scale(1.0,1.0)translate(0%,0%);
+  }
+
+  .ad figure figcaption span.first, .ad figure figcaption span.firstAfter {
+    width:0.5em;
+    height:0.17em;
+    display: block;
+    top:0.1em;
+    left:0;
+    background-image:url(images/boom.svg);
+    background-size:85%;
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    transform:rotate(-1.5deg)translate(-10%,-10%);
+    opacity:0.0;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .ad figure figcaption span.boom, .ad figure figcaption span.boomAfter {
+    width:0.5em;
+    height:0.55em;
+    display: block;
+    top:-0.08em;
+    left:-0.2em;
+    background-image:url(images/boom.png);
+    background-size:contain;
+    background-position:top right;
+    background-repeat: no-repeat;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    transform: scale(-1.1,1.1);
+    opacity:0.0;
+    position: absolute;
+    z-index:1;
+  }
+
+  .ad figure figcaption span.second, .ad figure figcaption span.secondAfter {
+    width:0.42em;
+    height:0.15em;
+    display: block;
+    top:0.315em;
+    right:0.01em;
+    background-image:url(images/roos.svg);
+    background-size:85%;
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    transform:rotate(1deg)translate(10%,0%);
+    opacity:0.0;
+    position: absolute;
+    z-index: 2;
+  }
+
+   .ad figure figcaption span.roos, .ad figure figcaption span.roosAfter {
+    width:0.5em;
+    height:0.5em;
+    display: block;
+    top:0.2em;
+    right:-0.3em;
+    background-image:url(images/roos.png);
+    background-size:contain;
+    background-position:top right;
+    background-repeat: no-repeat;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    transform:rotate(20deg)scale(-1.1,1.1);
+    opacity:0.0;
+    position: absolute;
+    z-index:1;
+  }
+
+  .ad figure figcaption span.third, .ad figure figcaption span.thirdAfter {
+    width:0.28em;
+    height:0.16em;
+    display: block;
+    top:0.52em;
+    left:0.15em;
+    background-image:url(images/vis.svg);
+    background-size:75%;
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    transform:rotate(-4deg)translate(10%,10%);
+    opacity:0.0;
+    position: absolute;
+    z-index: 2;
+  }
+
+   .ad figure figcaption span.vis, .ad figure figcaption span.visAfter {
+    width:0.4em;
+    height:0.4em;
+    display: block;
+    left:-0.22em;
+    bottom:-0.02em;
+    background-image:url(images/vis.png);
+    background-size:contain;
+    background-position:top right;
+    background-repeat: no-repeat;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    transform:rotate(-10deg)scale(-1.1,1.1);
+    opacity:0.0;
+    position: absolute;
+    z-index:4;
+  }
+
+   .ad figure  span.subtitle, .ad figure span.subtitleEnd {
+    width:0.5em;
+    height:0.15em;
+    display: block;
+    bottom:0.02em;
+    left:0.05em;
+    background-image:url(images/subtitle.svg);
+    background-size:80%;
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    transform:translate(0,10%)scale(1.1,1.1);
+    opacity:0.0;
+    position: absolute;
+    z-index: 2;
+  }
+
+   .ad figure  span.nu-te-zien, .ad figure span.nu-te-zienEnd {
+    width:0.4em;
+    height:0.15em;
+    display: block;
+    top:-5px;
+    right:0.04em;
+    background-image:url(images/nu-te-zien.svg);
+    background-size:80%;
+    background-position:left top;
+    background-repeat: no-repeat;
+    transform:translate(10%,0%)scale(1.0,1.0);
+    opacity:0.0;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .ad figure span.logo {
+    width:0.55em;
+    height:0.1em;
+    display: block;
+    bottom:10px;
+    left:5px;
+    margin:0;
+    padding:0;
+    background-image:url(images/logo.svg);
+    background-size:contain;
+    background-position:bottom center;
+    background-repeat: no-repeat;
+    transform: translate(0%,0);
+    opacity:1.0;
+    position: absolute;
+    z-index: 2;
+  }
+
+  /*button.cta {
+        font-size:80px;
+        width: 1em;
+        height: auto;
+        background-color:transparent;
+        padding: calc(1em/8) calc(1em/2.5);
+        text-decoration: none;
+        position: absolute;
+        top:0px;
+        right:0.15em;
+        background-image: url(images/cta.svg);
+        background-repeat: no-repeat;
+        background-size: 90%;
+        background-position:left top;
+        transform-origin: 50%, 50%;
+        border-radius:0px;
+        border:0px;
+        cursor: pointer;
+        z-index: 100;
+        outline: none;
+        transition: transform 0.2s ease-out;
+        animation-name:ctaHidden, ctaShow, ctaEnd, ctaEnd;
+        animation-timing-function: ease-out;
+        animation-delay:0s, 2.5s, 10.5s, 20.5s;
+        animation-duration:2.5s, 0.5s, 2.5s, 2.5s, 2.5s;
+        animation-iteration-count:1;
+        animation-fill-mode:none;
+    }
+    */
+
+    button.cta {
+        font-size:80px;
+        width: 1em;
+        height: auto;
+        background-color:#fff;
+        padding: calc(1em/7.5) calc(1em/2.1);
+        text-decoration: none;
+        position: absolute;
+        bottom:5px;
+        right:5px;
+        background-image: url(images/cta.svg);
+        background-repeat: no-repeat;
+        background-size: 90%;
+        background-position:center center;
+        transform-origin: 50%, 50%;
+        border-radius:0px;
+        border:0px;
+        cursor: pointer;
+        z-index: 100;
+        outline: none;
+         filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+        transition: transform 0.2s ease-out;
+        animation-name:ctaHidden, ctaShow, ctaEnd, ctaEnd;
+        animation-timing-function: ease-out;
+        animation-delay:0s, 2.5s, 10.5s, 20.5s;
+        animation-duration:2.5s, 0.5s, 2.5s, 2.5s, 2.5s;
+        animation-iteration-count:1;
+        animation-fill-mode:none;
+    }
+
+
+ .ad:hover > figure button.cta {
+   transform:translate(0%,0)scale(1.1,1.1);
+  }
+  </style>
+
+
+</head>
+<body>
+  <!--Animate banner-->
+
+  <amp-animation id="firstFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".first",
+        "keyframes": [
+          {
+             "transform": "translate(-3%, -0%)rotate(-1.5deg)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-1.5deg)",
+             "opacity": "1.0",
+             "offset": 0.9
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-1.5deg)",
+             "opacity": "0.0",
+             "offset": 0.95
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-1.5deg)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="firstFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".firstAfter",
+        "keyframes": [
+          {
+             "transform": "translate(-3%, -0%)rotate(-1.5deg)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-1.5deg)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="secondFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".second",
+        "keyframes": [
+          {
+             "transform": "translate(3%, -0%)rotate(1deg)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(1deg)",
+             "opacity": "1.0",
+             "offset": 0.9
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(1deg)",
+             "opacity": "0.0",
+             "offset": 0.95
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(1deg)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="secondFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".secondAfter",
+        "keyframes": [
+          {
+             "transform": "translate(3%, -0%)rotate(1deg)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(1deg)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="thirdFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".third",
+        "keyframes": [
+          {
+             "transform": "translate(-3%, -0%)rotate(-4deg)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-4deg)",
+             "opacity": "1.0",
+             "offset": 0.9
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-4deg)",
+             "opacity": "0.0",
+             "offset": 0.95
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-4deg)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="thirdFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".thirdAfter",
+        "keyframes": [
+          {
+             "transform": "translate(-3%, -0%)rotate(-4deg)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-4deg)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="subtitleFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".subtitle",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "1.0",
+             "offset": 0.08
+          },
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "1.0",
+             "offset": 0.9
+          },
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "0.0",
+             "offset": 0.95
+          },
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="subtitleFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".subtitleEnd",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "1.0",
+             "offset": 0.08
+          },
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+   <amp-animation id="nuTeZienFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".nu-te-zien",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "1.0",
+             "offset": 0.08
+          },
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "1.0",
+             "offset": 0.9
+          },
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "0.0",
+             "offset": 0.95
+          },
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="nuteZienEndFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".nu-te-zienEnd",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "1.0",
+             "offset": 0.08
+          },
+          {
+             "transform": "translate(-0%, -0%)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+
+  <!-- IMAGES -->
+  <amp-animation id="firstFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".boom",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)scale(-1,1)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)scale(-1.05,1.05)",
+             "opacity": "1.0",
+             "offset": 0.9
+          },
+          {
+             "transform": "translate(-0%, -0%)scale(-1,1)",
+             "opacity": "0.0",
+             "offset": 0.95
+          },
+          {
+             "transform": "translate(-0%, -0%)scale(-1,1)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="firstFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17.5s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".boomAfter",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)scale(-1,1)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)scale(-1,1)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="secondFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "0.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".roos",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)rotate(20deg)scale(-1,1)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(20deg)scale(-1,1)",
+             "opacity": "1.0",
+             "offset": 0.9
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(20deg)scale(-1,1)",
+             "opacity": "0.0",
+             "offset": 0.95
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(20deg)scale(-1,1)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="secondFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "17.8s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".roosAfter",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)rotate(20deg)scale(-1,1)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(20deg)scale(-1,1)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="thirdFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "1.1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "2",
+        "selector": ".vis",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)rotate(-10deg)scale(-1,1)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-10deg)scale(-1.1,1.1)",
+             "opacity": "1.0",
+             "offset": 0.9
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-10deg)scale(-1,1)",
+             "opacity": "0.0",
+             "offset": 0.95
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-10deg)scale(-1,1)",
+             "opacity": "0.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+  <amp-animation id="thirdFadeIn" layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{
+        "delay": "18.1s",
+        "duration": "8s",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "selector": ".visAfter",
+        "keyframes": [
+          {
+             "transform": "translate(-0%, -0%)rotate(-10deg)scale(-1,1)",
+             "opacity": "1.0",
+             "offset": 0.1
+          },
+          {
+             "transform": "translate(-0%, -0%)rotate(-10deg)scale(-1.1,1.1)",
+             "opacity": "1.0"
+          }
+
+        ]
+      }]
+    </script>
+  </amp-animation>
+
+
+  <!-- Setup structure-->
+	<div class="ad slide1">
+    <figure>
+      <figcaption>
+        <span class="first"></span><span class="firstAfter"></span>
+        <span class="boom"></span><span class="boomAfter"></span>
+        <span class="second"></span><span class="secondAfter"></span>
+        <span class="roos"></span><span class="roosAfter"></span>
+        <span class="third"></span><span class="thirdAfter"></span>
+        <span class="vis"></span><span class="visAfter"></span>
+        <span class="subtitle"></span><span class="subtitleEnd"></span>
+        <span class="nu-te-zien"></span><span class="nu-te-zienEnd"></span>
+      </figcaption>
+      <span class="logo"></span>
+      <button class="cta animated"></button>
+
+    </figure>
+  </div>
+</body>
+</html>
