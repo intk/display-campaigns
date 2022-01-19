@@ -2,9 +2,9 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-  <meta name="ad.size" content="width=160,height=600">
+  <meta name="ad.size" content="width=300,height=50">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>Wide skyscraper</title>
+  <title>Banner</title>
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
@@ -48,9 +48,9 @@
     position: absolute;
   }
   .ad figure {
-    width:160px;
-    height:600px;
-    font-size:336px;
+    width:300px;
+    height:50px;
+    font-size:300px;
     display: block;
     margin:0;
     padding:0;
@@ -58,7 +58,7 @@
     overflow: hidden;
   }
 
-  .ad figure:after {
+   .ad figure:after {
     content:"";
     width:100%;
     height:100%;
@@ -66,10 +66,8 @@
     padding:0;
     position: absolute;
     z-index:2;
-    background:linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.0) 20%, rgba(0,0,0,0.0) 100%);
+    background:linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.5) 100%);
   }
-
-  
 
   .ad {
    background-color:#8a8a8a;
@@ -89,10 +87,9 @@
     width:100%;
     height:auto;
     position: absolute;
-    left:-75%;
-    top:0%;
+    left:-20px;
+    top:-60%;
     z-index:1;
-    transform: translate(10%,0);
   }
 
   .ad figure .background-overlay {
@@ -100,8 +97,8 @@
   }
 
   .ad figure span.logo {
-    width:120px;
-    height:70px;
+    width:30px;
+    height:30px;
     display: block;
     margin:0;
     padding:0;
@@ -110,40 +107,38 @@
     background-position: right bottom;
     background-repeat: no-repeat;
     position: absolute;
-    z-index:4;
-    top:10px;
-    right:10px;
+    z-index: 10;
+    top:0px;
+    right:5px;
   }
 
 
   .ad figure div.text {
     width:100%;
-    height:26%;
+    height:20%;
     display: block;
     position: absolute;
-    z-index:10;
-    bottom:0;
+    z-index: 6;
+    top:0;
     left:0;
   }
   .ad figure div.text .wrapper {
     position: relative;
     margin:0;
-    padding:12px;
+    padding:2px 10px;
   }
 
   .ad figure div.text div.title-wrapper {
      width:0.8em;
-     height:0.23em;
+     height:0.17em;
      padding:0 0 0 0;
      display: block;
      position: relative;
   }
 
   .ad figure div.text span.title, .ad figure div.text span.titleAfter {
-    width:0.4em;
-    height:0.2em;
-    top:-5px;
-    left:12px;
+    width:0.2em;
+    height:0.1em;
     display: block;
     margin:0;
     padding:0;
@@ -152,7 +147,6 @@
     background-position:left center;
     background-repeat: no-repeat;
     transform: translate(0,-10%);
-    filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.1));
     opacity:0.0;
     position: absolute;
   }
@@ -160,18 +154,18 @@
   .ad figure div.text div.subtitle-wrapper {
      margin:0px 0 0 0;
      width:0.6em;
-     height:0.01em;
+     height:0.1em;
      padding:0 0px 0 0;
      display: block;
      position: relative;
   }
 
   .ad figure div.text div.subtitle-wrapper span.subtitle, .ad figure div.text div.subtitle-wrapper span.subtitleAfter  {
-    width:0.35em;
-    height:0.2em;
+    width:0.2em;
+    height:0.15em;
     display: block;
-    left:0.01em;
-    top:0.015em;
+    top:-0.11em;
+    left:0.53em;
     margin:0;
     padding:0;
     background-image:url(images/subtitle.svg);
@@ -179,33 +173,32 @@
     background-position:left top;
     background-repeat: no-repeat;
     opacity:0.0;
-    filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.1));
     transform: translate(0,-10%);
     position:absolute;
   }
 
   .ad figure div.location-wrapper span.date, .ad figure div.location-wrapper span.dateAfter  {
-    width:0.37em;
-    height:0.2em;
+    width:100%;
+    height:0.3em;
     display: block;
-    bottom:0.01em;
-    left:14px;
+    top:0.005em;
+    left:10px;
     opacity:0.0;
     background-image:url(images/date.svg);
     background-size:100%;
     background-position:left top;
-    transform: translate(-10%,0%);
+    transform: translate(0%,10%);
     background-repeat: no-repeat;
     position:absolute;
   }
 
    .ad figure  div.location-wrapper {
     width:100%;
-    height:0.14em;
+    height:0.05em;
     display: block;
     position: absolute;
     background-color:#0054d1;
-    z-index:3;
+    z-index:4;
     bottom:0;
     left:0;
    }
@@ -225,20 +218,20 @@
   }
 
   button.cta {
-        font-size:70px;
-        width:1em;
-        height:1em;
+        font-size:50px;
+        width:0.7em;
+        height:0.7em;
         background-color:transparent;
         text-decoration: none;
         position: absolute;
-        bottom:30%;
-        right:0px;
+        bottom:0.3em;
+        right:0.65em;
         background-image: url(images/cta.svg);
         background-repeat: no-repeat;
         background-size: 80%;
-        background-position:left center;
+        background-position: center center;
         transform-origin: 50%, 50%;
-        border-radius:100%;
+        border-radius: 0px;
         border:0px;
         cursor: pointer;
         z-index: 100;
@@ -276,7 +269,7 @@
         "selector": ".background",
         "keyframes": [
           {
-             "transform": "scale(1.1,1.1)translate(0%,0%)"
+             "transform": "scale(1.1,1.1)translate(-0%,-3%)"
           }
         ]
       }]
@@ -293,7 +286,7 @@
         "selector": ".background-overlay",
         "keyframes": [
           {
-             "transform": "scale(1.1,1.1)translate(0%,0%)"
+             "transform": "scale(1.1,1.1)translate(-2%,0%)"
           }
         ]
       }]
@@ -435,12 +428,12 @@
            "offset": 0.7
         },
         {
-          "transform": "translateX(-10%)",
+          "transform": "translateY(-10%)",
           "opacity": "0.0",
           "offset": 0.75
         },
         {
-          "transform": "translateX(-10%)",
+          "transform": "translateY(-10%)",
            "opacity": "0.0"
         }
         ]
@@ -534,19 +527,19 @@
 	<div class="ad slide1">
     <figure>
       <div class="background-wrapper">
-        <amp-img class="background" width="400" height="600" alt="Theater Rotterdam" src="images/background.jpg"></amp-img>
+        <amp-img class="background" width="320" height="109" alt="Theater Rotterdam" src="images/background.jpg"></amp-img>
       </div>
       <div class="text">
         <div class="wrapper">
-           <div class="subtitle-wrapper">
-            <span class="subtitle"></span>
-            <span class="subtitleAfter"></span>
-          </div>
-        </div>
           <div class="title-wrapper">
             <span class="title"></span>
             <span class="titleAfter"></span>
           </div>
+          <div class="subtitle-wrapper">
+            <span class="subtitle"></span>
+            <span class="subtitleAfter"></span>
+          </div>
+        </div>
       </div>
       <div class="location-wrapper">
         <span class="date"></span>
